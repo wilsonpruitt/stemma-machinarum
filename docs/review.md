@@ -77,6 +77,53 @@ Common cases in this era:
   weights): `alleged` only, with sources for the claim *and* any response.
   Leave these for the reviewer; don't add them in a volume pass.
 
+## Judgment calls: blind three-tier panel
+
+Most of a review pass is mechanical: the source says what it says, and
+the relation follows from `method.md`'s definitions. A minority of cases
+aren't — a technique doesn't cleanly fit an existing relation, a
+classification question has no obvious answer, a source is ambiguous
+about what actually happened. These calls turn on general ML knowledge
+(what a technique *is*, how it compares to others), not on anything
+Wilson's own expertise bears on — unlike, say, a Hebrew vocalization or
+a Syriac letterform, this is squarely inside what a model's training
+already covers. The risk isn't lack of expertise; it's a single
+session's judgment (mine or a preparer's) quietly becoming the answer
+because Wilson has no independent way to check it.
+
+**Trigger.** A preparer hits this section instead of just picking an
+answer when: no existing relation type fits without stretching its
+definition (the `depth_upscaled_from` case); a technique could
+reasonably be classified two different ways; or a source's own wording
+is genuinely ambiguous about what happened. Routine cases — a card says
+"fine-tuned from X," a paper gives a dataset — are not this; don't
+escalate those.
+
+**Mechanism.** Spawn three agents in parallel, one per tier (Haiku,
+Sonnet, Opus, unless the person running the pass says otherwise), each
+with:
+- the relevant parts of `method.md` and this file,
+- the candidate's record and the specific edge or field in its
+  *pre-ruling* state (no accept/relation decision baked in),
+- and nothing else: no prior ruling, no other agent's answer, no
+  conversation history. Each one reasons from the same starting point,
+  independently.
+
+Ask each for three things: **(1)** whether the documentation and the
+record gave enough to decide, and what's missing if not; **(2)** the
+ruling, with reasoning; **(3)** a confidence read.
+
+**Reconciling.** If two or three agree, that's the prepared
+recommendation — present it to Wilson for sign-off like any other
+candidate, noting any dissent. If they split roughly evenly, that's a
+real judgment call: present all three rulings and reasoning to Wilson
+verbatim, take no default action, and don't let a preparer's own read
+break the tie.
+
+A `record_history` entry for a panel-resolved edge names the panel, not
+just "preparer": e.g. `"ruling: 3-tier panel (2/3 depth_upscaled_from),
+see session log"`.
+
 ## IDs
 
 Choose the id before promotion. After promotion it never changes.

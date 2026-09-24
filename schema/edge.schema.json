@@ -15,7 +15,6 @@
         "merged_from",
         "quantized_from",
         "adapter_on",
-        "depth_upscaled_from",
         "same_architecture_retrained",
         "design_follows",
         "successor_in_series",
