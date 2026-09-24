@@ -164,7 +164,7 @@ def build_candidate(repo, info, info_status, config, config_url, walk, taken, re
     if isinstance(lic, list):
         lic_note += f" Card listed multiple licenses: {lic}; using the first."
         lic = lic[0] if lic else None
-    license_f = sourced(lic, card_url, lic_note, status="partial") if lic else not_recorded()
+    license_f = sourced(lic, card_url, status="partial", note=lic_note) if lic else not_recorded()
 
     # created date as a weak release date
     created = (info.get("createdAt") or "")[:10]
