@@ -1,0 +1,35 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { loadStations, loadRecords, recordUrl, notesCount, isRead, fmtDate, stationLabel } from '../../lib/data';
+export async function getStaticPaths() {
+  const { entries } = await loadStations();
+  return entries.map((entry) => ({ params: { id: entry.id }, props: { entry } }));
+}
+const { entry } = Astro.props;
+const { byId } = await loadRecords();
+const { Content } = await render(entry);
+const n = notesCount(entry.body);
+const d = entry.data;
+---
+<Base title={d.short} description={d.title}>
+  <p class="eyebrow">
+    {stationLabel(entry)} ·
+    {isRead(entry) ? `read ${fmtDate(d.read_on!)}` : 'not started'} · {n} {n === 1 ? 'note' : 'notes'}
+  </p>
+  <h1>{d.title}</h1>
+  <h2>Read or watch</h2>
+  <ul class="srclinks">
+    {d.sources.map((s) => <li><a href={s.url}>{s.label}</a></li>)}
+  </ul>
+  <Content />
+  <h2>Records in Stemma</h2>
+  {d.records.length === 0 ? (
+    <p class="empty">No records added or verified from this station yet.</p>
+  ) : (
+    <ul>
+      {d.records.map((id) => <li><a href={recordUrl(byId.get(id)!)}>{byId.get(id)!.name}</a> <code>{id}</code></li>)}
+    </ul>
+  )}
+  <p class="muted"><a href="/notebook/">← Back to the path</a></p>
+</Base>

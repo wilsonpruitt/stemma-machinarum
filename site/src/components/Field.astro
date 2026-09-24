@@ -1,0 +1,49 @@
+---
+// Renders a record's JSON faithfully: every key with its value; sourced fields as value · status · source.
+import Field from './Field.astro';
+const { value, k } = Astro.props;
+const isObj = (v: unknown): v is Record<string, unknown> => typeof v === 'object' && v !== null && !Array.isArray(v);
+const isUrl = (v: unknown) => typeof v === 'string' && /^https?:\/\//.test(v);
+const sourced = isObj(value) && 'value' in value && ('source' in value || 'status' in value || 'checked' in value);
+---
+{
+  sourced ? (
+    <>
+      <dt>{k}</dt>
+      <dd>
+        {value.value === null || value.value === undefined ? <em>null</em> : isUrl(value.value) ? <a href={String(value.value)}>{String(value.value)}</a> : String(value.value)}
+        {value.status && <span class="st-badge">{String(value.status)}</span>}
+        {value.checked && <span class="muted"> · checked {String(value.checked)}</span>}
+        {value.source && <span class="src"> · <a href={String(value.source)}>source</a></span>}
+        {Object.entries(value).filter(([kk]) => !['value', 'status', 'checked', 'source'].includes(kk)).map(([kk, vv]) => (
+          <div class="muted src"><b>{kk}:</b>&nbsp; {isUrl(vv) ? <a href={String(vv)}>{String(vv)}</a> : String(vv)}</div>
+        ))}
+      </dd>
+    </>
+  ) : isObj(value) ? (
+    <>
+      <dt>{k}</dt>
+      <dd><dl class="rec">{Object.entries(value).map(([kk, vv]) => <Field k={kk} value={vv} />)}</dl></dd>
+    </>
+  ) : Array.isArray(value) ? (
+    <>
+      <dt>{k}</dt>
+      <dd>
+        {value.map((item) =>
+          isObj(item) ? (
+            <div>{Object.entries(item).map(([kk, vv]) => <span><span class="muted">{kk}:</span> {isUrl(vv) ? <a href={String(vv)}>{String(vv)}</a> : String(vv)}{' · '}</span>)}</div>
+          ) : isUrl(item) ? (
+            <div><a href={String(item)}>{String(item)}</a></div>
+          ) : (
+            <div>{String(item)}</div>
+          ),
+        )}
+      </dd>
+    </>
+  ) : (
+    <>
+      <dt>{k}</dt>
+      <dd>{isUrl(value) ? <a href={String(value)}>{String(value)}</a> : value === null ? <em>null</em> : String(value)}</dd>
+    </>
+  )
+}

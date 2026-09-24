@@ -1,0 +1,65 @@
+---
+import Base from '../layouts/Base.astro';
+import Tag from '../components/Tag.astro';
+import { loadRecords, loadEdges, loadStations, recordUrl, notesCount, isRead, EVIDENCE_TAGS } from '../lib/data';
+const { models, datasets, byId } = await loadRecords();
+const edges = loadEdges();
+const { entries } = await loadStations();
+const dates: string[] = [];
+for (const r of byId.values()) for (const h of r.data.record_history ?? []) dates.push(h.date);
+const lastChange = dates.sort().at(-1);
+const sorted = (kind: string) => [...byId.values()].filter((r) => r.kind === kind).sort((a, b) => a.name.localeCompare(b.name));
+const read = entries.filter((e) => e.data.kind === 'source' && isRead(e)).length;
+const total = entries.filter((e) => e.data.kind === 'source').length;
+const notes = entries.reduce((s, e) => s + notesCount(e.body), 0);
+---
+<Base title="Stemma Machinarum">
+  <h1>Stemma Machinarum</h1>
+  <p>
+    A genealogy of machine-learning models, starting with open-weight language models. It records which model descends
+    from which, what changed at each step, and the evidence for every claim.
+  </p>
+  <p>
+    The name comes from textual criticism: a <em>stemma</em> is the family tree of manuscript copies, and stemmatics
+    already has a term, <strong>contamination</strong>, for a copy that draws on two lines at once. Distillation and
+    model merging are contamination in exactly that sense, so the structure here is a network, not a strict tree.
+  </p>
+  <p>
+    It is built for people (developers, policymakers, advocates, historians) and for LLM agents that need a
+    machine-readable, dated record of lineage with fact and inference clearly separated. Agents: start at
+    <a href="/llms.txt"><code>llms.txt</code></a>.
+  </p>
+
+  <div class="counts">
+    <div><b>{models.length}</b>models</div>
+    <div><b>{datasets.length}</b>datasets</div>
+    <div><b>{edges.length}</b>edges</div>
+  </div>
+  <p class="muted">Last data change: {lastChange}. Counts are computed from the data at build time.</p>
+
+  <div class="doors">
+    <div class="door">
+      <h2>The Graph</h2>
+      <p>Every model and dataset, every lineage edge, each with an evidence tag and a source. Raw JSON is served as-is.</p>
+      <p><a href="#records">Browse records</a> · <a href="/data/edges/edges.jsonl">edges.jsonl</a> · <a href="/method/">Method</a></p>
+    </div>
+    <div class="door">
+      <h2>The Notebook</h2>
+      <p>
+        The reading path through the primary sources, with dated notes and hands-on exercises. Each station links to the
+        records it produced.
+      </p>
+      <p><a href="/notebook/">Follow the path</a> · {read} of {total} stations read · {notes} {notes === 1 ? 'note' : 'notes'}</p>
+    </div>
+  </div>
+
+  <h2>Evidence tags</h2>
+  <p>Every edge carries one. Definitions are in the <a href="/method/#evidence-tags">method</a>.</p>
+  <div class="legend">{EVIDENCE_TAGS.map((t) => <Tag evidence={t} />)}</div>
+
+  <h2 id="records">Records</h2>
+  <h3>Models ({sorted('model').length})</h3>
+  <ul class="cols">{sorted('model').map((r) => <li><a href={recordUrl(r)}>{r.name}</a></li>)}</ul>
+  <h3>Datasets ({sorted('dataset').length})</h3>
+  <ul class="cols">{sorted('dataset').map((r) => <li><a href={recordUrl(r)}>{r.name}</a></li>)}</ul>
+</Base>

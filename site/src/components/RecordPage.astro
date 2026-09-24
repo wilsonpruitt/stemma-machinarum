@@ -1,0 +1,79 @@
+---
+import Base from '../layouts/Base.astro';
+import Tag from './Tag.astro';
+import Field from './Field.astro';
+import { loadEdges, loadRecords, loadStations, recordUrl, stationUrl, stationLabel, RELATION_GROUPS, type Rec } from '../lib/data';
+
+const { rec } = Astro.props as { rec: Rec };
+const { byId } = await loadRecords();
+const { backlinks } = await loadStations();
+const edges = loadEdges();
+const parents = edges.filter((e) => e.child === rec.id);
+const children = edges.filter((e) => e.parent === rec.id);
+const readIn = backlinks.get(rec.id) ?? [];
+const d = rec.data;
+const maker = d.developer ?? d.builder;
+const dataUrl = `/data/${rec.kind === 'model' ? 'models' : 'datasets'}/${rec.id}.json`;
+
+function grouped(list: typeof edges) {
+  return RELATION_GROUPS.map((g) => ({ ...g, items: list.filter((e) => g.relations.includes(e.relation)) })).filter((g) => g.items.length);
+}
+const link = (id: string) => byId.get(id);
+---
+<Base title={rec.name} description={`${rec.name}: ${rec.kind} record with sourced fields and lineage edges.`}>
+  <p class="eyebrow">{rec.kind === 'model' ? 'Model' : 'Dataset'} · <code>{rec.id}</code></p>
+  <h1>{rec.name}</h1>
+  <p>
+    {maker && <>{rec.kind === 'model' ? 'Developer' : 'Builder'}: <b>{maker}</b><br /></>}
+    {d.availability && (
+      <>
+        Availability: <b>{d.availability.value}</b>
+        <span class="muted"> · checked {d.availability.checked}</span>
+        {d.availability.source && <span class="src"> · <a href={d.availability.source}>source</a></span>}
+        {d.availability.note && <span class="muted"><br />{d.availability.note}</span>}
+      </>
+    )}
+  </p>
+  <p class="src muted">Raw record: <a href={dataUrl}>{dataUrl}</a></p>
+
+  <h2>Fields</h2>
+  <dl class="rec">
+    {Object.entries(d).filter(([k]) => k !== 'name').map(([k, v]) => <Field k={k} value={v} />)}
+  </dl>
+
+  {[
+    { title: 'Parents', sub: 'What this record descends from or draws on', list: parents, side: 'parent' as const },
+    { title: 'Children', sub: 'What descends from or draws on this record', list: children, side: 'child' as const },
+  ].map((blk) => (
+    <>
+      <h2>{blk.title}</h2>
+      {blk.list.length === 0 && <p class="empty">No edges recorded.</p>}
+      {grouped(blk.list).map((g) => (
+        <>
+          <h3>{g.title}</h3>
+          <ul class="edges">
+            {g.items.map((e) => {
+              const other = link(e[blk.side]);
+              return (
+                <li>
+                  <span class="rel">{blk.side === 'parent' ? `${e.relation} →` : `← ${e.relation}`}</span>{' '}
+                  {other ? <a href={recordUrl(other)}>{other.name}</a> : <code>{e[blk.side]}</code>}{' '}
+                  <Tag evidence={e.evidence} />{' '}
+                  <a class="src" href={e.source}>source</a>
+                  {e.note && <span class="note">{e.note}</span>}
+                </li>
+              );
+            })}
+          </ul>
+        </>
+      ))}
+    </>
+  ))}
+
+  <h2>Read in</h2>
+  {readIn.length === 0 ? (
+    <p class="empty">No station on the reading path has touched this record yet.</p>
+  ) : (
+    <ul>{readIn.map((s) => <li><a href={stationUrl(s)}>{s.data.title}</a> <span class="muted">({stationLabel(s)})</span></li>)}</ul>
+  )}
+</Base>

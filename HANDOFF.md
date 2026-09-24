@@ -70,6 +70,7 @@ stemma/
 │   ├── pilot_candidates.txt    # Phase 2 repo list
 │   ├── validate.py             # schema + evidence-rule checks
 │   └── export_graph.py         # graph export (JSON, GraphML)
+├── site/                       # Astro static site (stemma.network); see docs/site-plan.md
 ├── narrative/
 │   ├── reading-order.md
 │   ├── notebook/                # one entry per source read

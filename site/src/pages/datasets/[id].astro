@@ -1,0 +1,10 @@
+---
+import RecordPage from '../../components/RecordPage.astro';
+import { loadRecords } from '../../lib/data';
+export async function getStaticPaths() {
+  const { byId } = await loadRecords();
+  return [...byId.values()].filter((r) => r.kind === 'dataset').map((rec) => ({ params: { id: rec.id }, props: { rec } }));
+}
+const { rec } = Astro.props;
+---
+<RecordPage rec={rec} />

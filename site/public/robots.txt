@@ -1,0 +1,36 @@
+# Stemma Machinarum: all crawlers welcome, including AI training and retrieval
+# crawlers. Being read is the point. Data licence: CC BY 4.0 (see /data/ and
+# https://github.com/wilsonpruitt/stemma-machinarum/blob/main/DATA_LICENSE).
+# Start at /llms.txt.
+
+User-agent: *
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: CCBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+User-agent: Amazonbot
+Allow: /
+User-agent: Bytespider
+Allow: /
+User-agent: meta-externalagent
+Allow: /
+
+Sitemap: https://stemma.network/sitemap-index.xml

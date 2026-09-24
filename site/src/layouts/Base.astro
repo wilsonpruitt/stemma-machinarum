@@ -1,0 +1,38 @@
+---
+import '../styles/global.css';
+interface Props { title: string; description?: string }
+const { title, description = 'A genealogy of machine-learning models: which model descends from which, and the evidence for every claim.' } = Astro.props;
+const full = title === 'Stemma Machinarum' ? title : `${title} · Stemma Machinarum`;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{full}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+  </head>
+  <body>
+    <header class="site">
+      <div class="wrap">
+        <a class="brand" href="/">Stemma Machinarum</a>
+        <a href="/notebook/">Notebook</a>
+        <a href="/glossary/">Glossary</a>
+        <a href="/method/">Method</a>
+        <a href="/review/">Review</a>
+        <a href="/disputes/">Disputes</a>
+        <a href="/data/edges/edges.jsonl">Raw data</a>
+        <a href="/llms.txt">llms.txt</a>
+      </div>
+    </header>
+    <main><div class="wrap"><slot /></div></main>
+    <footer class="site">
+      <div class="wrap">
+        Data and schema CC BY 4.0 · code MIT ·
+        <a href="https://github.com/wilsonpruitt/stemma-machinarum">source</a>
+      </div>
+    </footer>
+  </body>
+</html>

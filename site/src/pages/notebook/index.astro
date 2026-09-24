@@ -1,0 +1,37 @@
+---
+import Base from '../../layouts/Base.astro';
+import { loadStations, notesCount, isRead, fmtDate, stationUrl, stationLabel } from '../../lib/data';
+const { entries } = await loadStations();
+const groups = [
+  { title: 'The path', note: 'Primary sources in reading order.', kind: 'source' },
+  { title: 'Read alongside', note: 'Historiography: how technologies and their classifications evolve.', kind: 'alongside' },
+  { title: 'Exercises', note: 'Hands-on work with the records.', kind: 'exercise' },
+] as const;
+---
+<Base title="Notebook" description="The reading path behind Stemma: primary sources, exercises, and dated notes, cross-linked to the records they produced.">
+  <h1>Notebook</h1>
+  <p>
+    The path Wilson Pruitt is following through the primary sources of machine learning, with the notes he takes as he
+    reads. Every source is linked and every exercise is spelled out, so anyone can take the same route. Each station links
+    to the <a href="/">records</a> it added or verified, and each record links back.
+  </p>
+  {groups.map((g) => (
+    <>
+      <h2>{g.title}</h2>
+      <p class="muted">{g.note}</p>
+      <ul class="stations">
+        {entries.filter((e) => e.data.kind === g.kind).map((e) => {
+          const n = notesCount(e.body);
+          return (
+            <li>
+              <span class="st">{stationLabel(e)}</span><br />
+              <a href={stationUrl(e)}>{e.data.title}</a>
+              <span class={`status ${isRead(e) ? 'read' : ''}`}>{isRead(e) ? `read ${fmtDate(e.data.read_on!)}` : 'not started'}</span>
+              <span class="status">{n} {n === 1 ? 'note' : 'notes'}</span>
+            </li>
+          );
+        })}
+      </ul>
+    </>
+  ))}
+</Base>
