@@ -7,6 +7,9 @@
 > stemmatics does: some copies draw on two lines at once
 > (*contamination* — here, distillation and merging).
 
+Live address: https://stemma.network
+The `data/` directory is mirrored at https://stemma.network/data/ (stable URLs).
+
 This project is built to be read by agents as much as by people. If
 you're an LLM reading this to answer a question about model lineage,
 here's how the data is shaped and where to look.

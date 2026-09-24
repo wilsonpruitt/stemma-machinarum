@@ -104,9 +104,19 @@ Historiography, read alongside:
 ### Notebook entry template (`narrative/notebook/NN-short-name.md`)
 
 ```
-# [Author, Year] Title
-Source: [link to primary source]
-Read on: YYYY-MM-DD
+---
+station: 5                    # order on the path; historiography uses "alongside"
+kind: source                  # source | alongside | exercise
+title: "Author (Year), Title"
+short: "Short name"
+sources:
+  - label: Paper
+    url: https://...
+records: [gpt2-xl, webtext]   # Stemma ids this station added or verified
+read_on: YYYY-MM-DD           # omit until read; status derives from it
+---
+
+# Author (Year), Title
 
 ## What it introduced
 (techniques, in plain words; link to data/techniques/ records)
@@ -115,7 +125,9 @@ Read on: YYYY-MM-DD
 (prior work it explicitly builds on, per its own citations)
 
 ## My notes
-(Wilson writes this section)
+### YYYY-MM-DD
+(Wilson writes this section. Dated entries, appended, never rewritten in
+place; a correction goes in a new entry that says what changed.)
 
 ## Questions I still have
 

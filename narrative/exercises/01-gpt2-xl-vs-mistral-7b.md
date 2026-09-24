@@ -1,3 +1,17 @@
+---
+station: 1
+kind: exercise
+title: "Exercise 1: Reading a specimen, GPT-2 XL vs. Mistral 7B"
+short: "Reading a specimen"
+sources:
+  - label: GPT-2 XL config
+    url: https://huggingface.co/openai-community/gpt2-xl/raw/15ea56dee5df4983c59b2538573817e1667135e2/config.json
+  - label: Mistral 7B config
+    url: https://huggingface.co/mistralai/Mistral-7B-v0.1/raw/27d67f1b5f57dc0953326b2601d68371d40ea8da/config.json
+records: [gpt2-xl, mistral-7b-v0-1]
+read_on: 2026-09-24
+---
+
 # Exercise 1: Reading a specimen — GPT-2 XL vs. Mistral 7B
 
 Done: 2026-09-24
