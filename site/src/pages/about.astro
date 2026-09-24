@@ -1,0 +1,88 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="About" description="What Stemma Machinarum is: a sourced genealogy of machine-learning models, built for people and for machines.">
+  <h1>About</h1>
+  <p>
+    Stemma Machinarum is a genealogy of machine-learning models. It records which model descends from which, what
+    changed at each step, and the evidence for every claim. It starts with open-weight language models from roughly 2018
+    to 2023, the era from GPT-2 to Llama 2 and Mistral, because that era is well documented and its lineages are simple
+    enough to test the method on.
+  </p>
+
+  <h2>Why a stemma</h2>
+  <p>
+    The name comes from textual criticism. When a text survives in many manuscript copies, editors work out which copy
+    was made from which and draw the result as a family tree, the <em>stemma codicum</em>. Some ancestors are lost and
+    are known only through their descendants. Some copies were made from two exemplars at once, which editors call
+    <strong>contamination</strong>.
+  </p>
+  <p>
+    Language models have the same shape. A fine-tuned model is a copy of its parent’s weights, altered. A closed model
+    is a lost exemplar: its weights were never published, but its outputs became other models’ training data. And a
+    model trained on another model’s outputs, while starting from a third model’s weights, draws on two lines at once.
+    Distillation and merging are contamination in exactly the stemmatic sense, so the structure here is a network, not
+    a strict tree. <a href="/graph/">The stemma</a> shows one family drawn this way.
+  </p>
+
+  <h2>Genealogy and taxonomy</h2>
+  <p>
+    There are two different questions to ask about any model, and this project keeps them apart.
+  </p>
+  <ul>
+    <li>
+      <strong>Genealogy</strong> asks what a model descended from: whose weights it started from, what data it learned
+      from, whose outputs shaped that data. That is a matter of history, and it needs a source: a paper, a model card, a
+      release post. In Stemma, genealogy is the edges.
+    </li>
+    <li>
+      <strong>Taxonomy</strong> asks what a model is: its structural characters, such as how many layers, which kind of
+      attention, which positional encoding. That is a matter of classification. Franz Reuleaux did this for machines in
+      1875, sorting them by the kinematic pairs they were built from rather than by what they were for. In Stemma,
+      taxonomy is the architecture fields and techniques on each record.
+    </li>
+  </ul>
+  <p>
+    Neither is derived from the other. Two models can look nearly identical and share no recorded descent: Mistral 7B
+    uses the same recipe as LLaMA, but its developers never say it descends from any particular Llama, so no edge is
+    recorded. Whether structural resemblance tracks actual descent
+    is a question the data should be able to answer, and it can only answer it if the two are recorded separately.
+  </p>
+
+  <h2>Evidence</h2>
+  <p>
+    Every edge carries an evidence tag saying who makes the claim: the developer, the person who uploaded the model, an
+    inference from weights or behaviour, or a third party whose claim is disputed. Every edge and every non-trivial
+    field has a source. Where something is not known, the record says so; it is never filled with a plausible guess.
+    The rules are in the <a href="/method/">method</a>.
+  </p>
+
+  <h2>Two audiences, on purpose</h2>
+  <p>
+    Stemma is built for two kinds of reader, and neither is an afterthought.
+  </p>
+  <ul>
+    <li>
+      <strong>People</strong>: developers, policymakers, advocates, and historians who need a factual account of where AI
+      systems came from, without hype or doom. For them there are the record pages, the stemma, and the notebook.
+    </li>
+    <li>
+      <strong>Language-model agents</strong>, which increasingly answer questions about AI and need a dated,
+      machine-readable record in which fact and inference are kept apart. For them the same data is published as plain
+      JSON at stable addresses, with a schema, and described in <a href="/llms.txt">llms.txt</a>. All crawlers are
+      welcome, and the data is licensed CC BY 4.0.
+    </li>
+  </ul>
+  <p>
+    Both readers get the same thing: every page is built from the same files, and nothing on a page says more than its
+    record does.
+  </p>
+
+  <h2>The notebook</h2>
+  <p>
+    The project is built by Wilson Pruitt, who is learning the field from its primary sources as he goes. The
+    <a href="/notebook/">notebook</a> is that reading path, from Rosenblatt’s perceptron (1958) to the LLaMA paper (2023),
+    with his dated notes. Each source read should add or verify records in the data, and each station links to the
+    records it touched. Anyone can take the same route.
+  </p>
+</Base>

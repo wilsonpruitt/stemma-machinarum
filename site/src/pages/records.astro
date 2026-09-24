@@ -1,0 +1,23 @@
+---
+import Base from '../layouts/Base.astro';
+import Tag from '../components/Tag.astro';
+import { loadRecords, loadEdges, recordUrl, EVIDENCE_TAGS } from '../lib/data';
+const { byId } = await loadRecords();
+const edges = loadEdges();
+const sorted = (kind: string) => [...byId.values()].filter((r) => r.kind === kind).sort((a, b) => a.name.localeCompare(b.name));
+const models = sorted('model');
+const datasets = sorted('dataset');
+---
+<Base title="Records" description="Every model and dataset in Stemma, each with sourced fields and lineage edges.">
+  <h1>Records</h1>
+  <p>
+    {models.length} models, {datasets.length} datasets, and {edges.length} edges. Each record page shows every field with
+    its value, status, and source, then its parents and children. Every edge carries an evidence tag:
+  </p>
+  <div class="legend">{EVIDENCE_TAGS.map((t) => <Tag evidence={t} />)}</div>
+  <p class="muted">Definitions are in the <a href="/method/#evidence-tags">method</a>. The same data as JSON: each record at <code>/data/models/&lt;id&gt;.json</code> or <code>/data/datasets/&lt;id&gt;.json</code>, and every edge in <a href="/data/edges/edges.jsonl">edges.jsonl</a>.</p>
+  <h2>Models</h2>
+  <ul class="cols">{models.map((r) => <li><a href={recordUrl(r)}>{r.name}</a></li>)}</ul>
+  <h2>Datasets</h2>
+  <ul class="cols">{datasets.map((r) => <li><a href={recordUrl(r)}>{r.name}</a></li>)}</ul>
+</Base>

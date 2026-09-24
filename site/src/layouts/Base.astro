@@ -18,20 +18,25 @@ const full = title === 'Stemma Machinarum' ? title : `${title} · Stemma Machina
     <header class="site">
       <div class="wrap">
         <a class="brand" href="/">Stemma Machinarum</a>
-        <a href="/notebook/">Notebook</a>
-        <a href="/glossary/">Glossary</a>
-        <a href="/method/">Method</a>
-        <a href="/review/">Review</a>
-        <a href="/disputes/">Disputes</a>
-        <a href="/data/edges/edges.jsonl">Raw data</a>
-        <a href="/llms.txt">llms.txt</a>
+        <nav>
+          <a href="/about/">About</a>
+          <a href="/graph/">Stemma</a>
+          <a href="/records/">Records</a>
+          <a href="/notebook/">Notebook</a>
+          <a href="/method/">Method</a>
+        </nav>
       </div>
     </header>
     <main><div class="wrap"><slot /></div></main>
     <footer class="site">
       <div class="wrap">
-        Data and schema CC BY 4.0 · code MIT ·
-        <a href="https://github.com/wilsonpruitt/stemma-machinarum">source</a>
+        <a href="/glossary/">Glossary</a>
+        <a href="/review/">Review procedure</a>
+        <a href="/disputes/">Disputes policy</a>
+        <a href="/data/edges/edges.jsonl">Raw data</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="https://github.com/wilsonpruitt/stemma-machinarum">Source</a>
+        <span>Data and schema CC BY 4.0 · code MIT</span>
       </div>
     </footer>
   </body>

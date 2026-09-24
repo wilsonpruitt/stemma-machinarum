@@ -1,0 +1,44 @@
+---
+import Base from '../layouts/Base.astro';
+import StemmaKey from '../components/StemmaKey.astro';
+import { loadRecords, loadEdges } from '../lib/data';
+import { drawFamily } from '../lib/stemma-svg';
+const { byId } = await loadRecords();
+const svg = drawFamily(byId, loadEdges());
+---
+<Base title="The stemma" description="The LLaMA family of language models drawn as a manuscript stemma: descent, training data, and contamination, each line sourced.">
+  <p class="eyebrow">The stemma · first family</p>
+  <h1>The LLaMA family, drawn as a stemma</h1>
+  <p>
+    Textual critics draw the family tree of a text’s manuscripts as a <em>stemma</em>: the oldest copies at the top, each
+    copy below the one it was made from. This is the same drawing for one family of language models, from LLaMA (February
+    2023) through Llama 2, Code Llama, and the chat models fine-tuned from them.
+  </p>
+  <p>
+    Time runs down the page. The two hollow circles at the top left are closed models: their weights were never
+    published, so, like a lost manuscript, they are known only through what descends from them. The dashed lines are
+    what stemmatics calls <strong>contamination</strong>: text written by those closed models became the training data
+    for Alpaca and Vicuna, so those open models draw on two lines at once.
+  </p>
+  <div class="figure-wide" set:html={svg} />
+  <p class="muted">
+    Every line is a recorded edge and links to its source; every node links to its record. On a narrow screen, scroll
+    the drawing sideways.
+  </p>
+  <h2>Key</h2>
+  <StemmaKey />
+  <h2>How to read it</h2>
+  <ul>
+    <li>A node sits at its release date. A child is never drawn level with its parent, so a few nodes sit slightly below
+      their true month; the date under each name is the recorded one.</li>
+    <li>ShareGPT has no recorded release date, so it is placed just above the first model trained on it.</li>
+    <li>Line form tells you the relation; colour tells you the evidence. The full definitions are in the
+      <a href="/method/#relations">method</a>.</li>
+  </ul>
+  <h2>What this drawing is not</h2>
+  <p>
+    It is one family, laid out by hand, as a test of the drawing conventions. The whole network (every record, laid out
+    from the data) is the next step. The data behind it is already public:
+    <a href="/data/edges/edges.jsonl">edges.jsonl</a> and the <a href="/records/">records</a>.
+  </p>
+</Base>
