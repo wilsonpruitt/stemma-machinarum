@@ -59,8 +59,8 @@
     }
   },
   "training_data": {
-    "value": "RedPajama-Data-1T (~1 trillion tokens), a reproduction of the LLaMA training mix. No Stemma dataset record yet (see flags), so no trained_on edge.",
-    "source": "https://huggingface.co/togethercomputer/RedPajama-INCITE-7B-Base",
+    "value": "RedPajama-Data-1T (~1 trillion tokens), a reproduction of the LLaMA training mix. Card, Training Data: 'Please refer to togethercomputer/RedPajama-Data-1T'; Num of Tokens: 1.001T.",
+    "source": "https://huggingface.co/togethercomputer/RedPajama-INCITE-7B-Base/blob/78f7e482443971f4873ba3239f0ac810a367833b/README.md",
     "status": "recorded"
   },
   "techniques": [],
@@ -88,6 +88,11 @@
       "date": "2026-09-24",
       "change": "reviewed and promoted from staging (0 edge(s) accepted)",
       "by": "Wilson Pruitt"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "trained_on redpajama-data-1t added now the dataset record exists",
+      "by": "wilson-pruitt + claude"
     }
   ]
 }

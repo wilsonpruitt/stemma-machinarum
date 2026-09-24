@@ -1,0 +1,38 @@
+{
+  "id": "evol-instruct-70k",
+  "name": "WizardLM Evol-Instruct 70k",
+  "identifiers": {
+    "huggingface": [
+      "WizardLMTeam/WizardLM_evol_instruct_70k"
+    ]
+  },
+  "builder": "WizardLM team (Microsoft and Peking University authors per the paper)",
+  "release_date": {
+    "value": "2023-04-24",
+    "source": "https://arxiv.org/abs/2304.12244",
+    "status": "partial",
+    "note": "arXiv v1 date of the WizardLM paper. The HF dataset repo was created 2023-04-25."
+  },
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/datasets/WizardLMTeam/WizardLM_evol_instruct_70k",
+    "note": "One file, alpaca_evol_instruct_70k.json. The full 250k evolved set the 70k was sampled from is not in this repo."
+  },
+  "content": {
+    "value": "Paper: initialized 'with the 52k instruction dataset of Alpaca' and iteratively evolved 4 rounds, executed 'using Azure OpenAI ChatGPT API. Then, we leverage ChatGPT to generate responses. Finally, we obtain 250k instructions', of which 70k were randomly sampled as WizardLM's training data. The HF card says only 'This is the training data of WizardLM.' The seed set (Alpaca 52k, itself distilled from text-davinci-003) is a dataset-to-dataset derivation, recorded here rather than as an edge. The separate WizardLM_evol_instruct_V2_196k repo is not given a record: its card states no provenance.",
+    "source": "https://arxiv.org/abs/2304.12244",
+    "status": "recorded"
+  },
+  "primary_sources": [
+    "https://arxiv.org/abs/2304.12244",
+    "https://huggingface.co/datasets/WizardLMTeam/WizardLM_evol_instruct_70k"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created from primary sources (Evol-Instruct chase)",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}

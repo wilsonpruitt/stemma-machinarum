@@ -1,0 +1,35 @@
+{
+  "id": "code-evol-instruct",
+  "name": "Code Evol-Instruct (WizardCoder)",
+  "identifiers": {
+    "huggingface": []
+  },
+  "builder": "WizardLM team (WizardCoder authors)",
+  "release_date": {
+    "value": "2023-06-14",
+    "source": "https://arxiv.org/abs/2306.08568",
+    "status": "partial",
+    "note": "arXiv v1 date of the WizardCoder paper; no separate dataset release date."
+  },
+  "availability": {
+    "value": "unknown",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/api/datasets?author=WizardLMTeam",
+    "note": "The WizardLMTeam HF org lists only WizardLM_evol_instruct_70k and _V2_196k, neither described as the code set. Third-party reproductions exist on the Hub (e.g. nickrosh/Evol-Instruct-Code-80k-v1); they are not the builders' data and are not recorded here. Whether the builders released their set elsewhere (e.g. GitHub) was not checked."
+  },
+  "content": {
+    "value": "Paper: Code Alpaca ('around 20k samples') evolved iteratively with Code Evol-Instruct; 'OpenAI's gpt3.5turbo is used to evolve the dataset and generate responses. The evolved dataset consists of approximately 78k samples.' Used to fine-tune StarCoder and CodeLlama-34B-Python. The seed (Code Alpaca) is a dataset-to-dataset derivation, recorded here rather than as an edge.",
+    "source": "https://arxiv.org/abs/2306.08568",
+    "status": "recorded"
+  },
+  "primary_sources": [
+    "https://arxiv.org/abs/2306.08568"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created from primary sources (Evol-Instruct chase)",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}

@@ -19,18 +19,24 @@
     "source": "https://huggingface.co/datasets/nomic-ai/gpt4all-j-prompt-generations"
   },
   "content": {
-    "value": "Card: dataset used to train GPT4All-J and GPT4All-J-LoRA; versions v1.0 (original), v1.1-breezy (instances of 'AI language model' removed), v1.2-jazzy (also 'I'm sorry, I can't answer...' removed), v1.3-groovy (v1.2 with ShareGPT and Dolly added, ~8% semantic duplicates removed). Metadata lists 808,812 examples. The card does not say how the responses were generated, so no model-parent edge is recorded.",
-    "source": "https://huggingface.co/datasets/nomic-ai/gpt4all-j-prompt-generations",
-    "status": "partial",
-    "note": "Origin of the generated text is not stated in the sources read; not_recorded."
+    "value": "Card: dataset used to train GPT4All-J and GPT4All-J-LoRA; versions v1.0 (original), v1.1-breezy (instances of 'AI language model' removed), v1.2-jazzy (also 'I'm sorry, I can't answer...' removed), v1.3-groovy (v1.2 with ShareGPT and Dolly added, ~8% semantic duplicates removed). Metadata lists 808,812 examples. GPT4All-J technical report: 'the 800k point GPT4All-J dataset that is a superset of the original 400k points GPT4All dataset', built also from 'custom-generated creative questions'; 'we have spent about $800 in OpenAI API credits so far to generate the training samples'; 'The assistant data was gathered from OpenAI's GPT3.5-Turbo'. The dataset card itself does not name a generator.",
+    "source": "https://static.nomic.ai/gpt4all/2023_GPT4All-J_Technical_Report_2.pdf",
+    "status": "recorded",
+    "note": "The v1.3 additions (ShareGPT, Dolly) are not GPT-3.5-Turbo output as the report describes it; the edge below applies to the assistant data the report describes. Per-row provenance is in the `source` column, not read."
   },
   "primary_sources": [
-    "https://huggingface.co/datasets/nomic-ai/gpt4all-j-prompt-generations"
+    "https://huggingface.co/datasets/nomic-ai/gpt4all-j-prompt-generations",
+    "https://static.nomic.ai/gpt4all/2023_GPT4All-J_Technical_Report_2.pdf"
   ],
   "record_history": [
     {
       "date": "2026-09-24",
       "change": "created from primary sources (tranche 2 dataset records)",
+      "by": "wilson-pruitt + claude"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "content corrected from the GPT4All-J technical report (superset of gpt4all; GPT-3.5-Turbo assistant data)",
       "by": "wilson-pruitt + claude"
     }
   ]

@@ -66,7 +66,8 @@
   "training_data": {
     "value": "Evol-Instruct: instructions iteratively rewritten/elaborated by an LLM from a seed instruction set, per the WizardLM paper series. No single resolvable dataset id.",
     "source": "https://huggingface.co/WizardLMTeam/WizardLM-13B-V1.2",
-    "status": "partial"
+    "status": "partial",
+    "note": "Checked 2026-09-24: the V1.2 card names no training data. The evol-instruct-70k card says only 'This is the training data of WizardLM' (the paper's original model). No source found tying V1.2 to it, so no trained_on edge is recorded."
   },
   "techniques": [
     "instruction-tuning",
@@ -101,6 +102,11 @@
       "date": "2026-09-24",
       "change": "reviewed and promoted from staging (1 edge(s) accepted)",
       "by": "Wilson Pruitt"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "checked for an Evol-Instruct trained_on edge; none sourced, note added to training_data",
+      "by": "wilson-pruitt + claude"
     }
   ]
 }
