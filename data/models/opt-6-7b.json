@@ -1,0 +1,76 @@
+{
+  "id": "opt-6-7b",
+  "name": "OPT 6.7B",
+  "developer": "Meta AI",
+  "release_date": {
+    "value": "2022-05-02",
+    "source": "https://arxiv.org/abs/2205.01068",
+    "status": "partial",
+    "note": "arXiv v1 date of the paper."
+  },
+  "weights_status": "open",
+  "license": {
+    "value": "OPT-175B License Agreement: non-commercial research use only.",
+    "source": "https://github.com/facebookresearch/metaseq/blob/main/projects/OPT/MODEL_LICENSE.md",
+    "status": "recorded",
+    "note": "metaseq OPT README: 'The use of OPT model weights is subject to the Model License.'"
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "Paper: trained 'to roughly match the performance and sizes of the GPT-3 class of models'; hyperparameters 'largely follow Brown et al. (2020)'. ReLU activation. The HF model card for this repo was written by Hugging Face, not Meta; Meta's own card is Appendix D of the paper.",
+    "n_layers": {
+      "value": 32,
+      "source": "https://huggingface.co/facebook/opt-6.7b/raw/a45aa65bbeb77c1558bc99bedc6779195462dab0/config.json",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 4096,
+      "source": "https://huggingface.co/facebook/opt-6.7b/raw/a45aa65bbeb77c1558bc99bedc6779195462dab0/config.json",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 32,
+      "source": "https://huggingface.co/facebook/opt-6.7b/raw/a45aa65bbeb77c1558bc99bedc6779195462dab0/config.json",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 50272,
+      "source": "https://huggingface.co/facebook/opt-6.7b/raw/a45aa65bbeb77c1558bc99bedc6779195462dab0/config.json",
+      "status": "recorded",
+      "note": "Paper: GPT-2 byte-level BPE tokenizer."
+    },
+    "positional_encoding": {
+      "value": "learned_absolute",
+      "source": "https://github.com/huggingface/transformers/blob/v4.34.0/src/transformers/models/opt/modeling_opt.py",
+      "status": "recorded",
+      "note": "Code: OPTLearnedPositionalEmbedding."
+    },
+    "context_length": {
+      "value": 2048,
+      "source": "https://arxiv.org/abs/2205.01068",
+      "status": "recorded"
+    }
+  },
+  "training_data": {
+    "value": "~180B tokens: RoBERTa corpus subsets (BookCorpus, Stories, updated CCNews), a subset of the Pile, and PushShift.io Reddit; tokenized with the GPT-2 BPE.",
+    "source": "https://arxiv.org/abs/2205.01068",
+    "status": "recorded"
+  },
+  "techniques": [
+    "transformer-decoder",
+    "byte-pair-encoding"
+  ],
+  "primary_sources": [
+    "https://arxiv.org/abs/2205.01068",
+    "https://github.com/facebookresearch/metaseq/blob/main/projects/OPT/README.md",
+    "https://github.com/facebookresearch/metaseq/blob/main/projects/OPT/MODEL_LICENSE.md",
+    "https://huggingface.co/facebook/opt-6.7b/raw/a45aa65bbeb77c1558bc99bedc6779195462dab0/config.json"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created from primary sources (Phase 1 seed, batch 2)",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "id": "falcon-7b",
+  "name": "Falcon 7B",
+  "developer": "Technology Innovation Institute (TII)",
+  "release_date": {
+    "value": "2023-04-24",
+    "source": "https://huggingface.co/api/models/tiiuae/falcon-7b",
+    "status": "partial",
+    "note": "Creation date of the developer's HF repository (may predate public release). Card: training happened in early March 2023."
+  },
+  "weights_status": "open",
+  "license": {
+    "value": "Apache 2.0",
+    "source": "https://huggingface.co/tiiuae/falcon-7b/blob/ec89142b67d748a1865ea4451372db8313ada0d8/README.md",
+    "status": "recorded"
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "Card: 'broadly adapted from the GPT-3 paper' with rotary embeddings, multiquery attention + FlashAttention, and parallel attention/MLP with a single layer norm. d_model raised to 4544 'to compensate for multiquery'; head_dim 64.",
+    "n_layers": {
+      "value": 32,
+      "source": "https://huggingface.co/tiiuae/falcon-7b/blob/ec89142b67d748a1865ea4451372db8313ada0d8/README.md",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 4544,
+      "source": "https://huggingface.co/tiiuae/falcon-7b/blob/ec89142b67d748a1865ea4451372db8313ada0d8/README.md",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 71,
+      "source": "https://huggingface.co/tiiuae/falcon-7b/raw/ec89142b67d748a1865ea4451372db8313ada0d8/config.json",
+      "status": "recorded"
+    },
+    "n_kv_heads": {
+      "value": 1,
+      "source": "https://huggingface.co/tiiuae/falcon-7b/raw/ec89142b67d748a1865ea4451372db8313ada0d8/config.json",
+      "status": "recorded",
+      "note": "Config multi_query: true (one shared key/value head)."
+    },
+    "vocab_size": {
+      "value": 65024,
+      "source": "https://huggingface.co/tiiuae/falcon-7b/blob/ec89142b67d748a1865ea4451372db8313ada0d8/README.md",
+      "status": "recorded"
+    },
+    "positional_encoding": {
+      "value": "rotary (RoPE)",
+      "source": "https://huggingface.co/tiiuae/falcon-7b/blob/ec89142b67d748a1865ea4451372db8313ada0d8/README.md",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": 2048,
+      "source": "https://huggingface.co/tiiuae/falcon-7b/blob/ec89142b67d748a1865ea4451372db8313ada0d8/README.md",
+      "status": "recorded"
+    }
+  },
+  "training_data": {
+    "value": "1,500B tokens: RefinedWeb (filtered, deduplicated web crawl; 79% English) plus curated corpora, some 'inspired by The Pile'.",
+    "source": "https://huggingface.co/tiiuae/falcon-7b/blob/ec89142b67d748a1865ea4451372db8313ada0d8/README.md",
+    "status": "recorded"
+  },
+  "techniques": [
+    "transformer-decoder",
+    "rotary-position-embedding",
+    "multi-query-attention",
+    "parallel-attention-ffn"
+  ],
+  "primary_sources": [
+    "https://huggingface.co/tiiuae/falcon-7b/blob/ec89142b67d748a1865ea4451372db8313ada0d8/README.md",
+    "https://arxiv.org/abs/2311.16867",
+    "https://huggingface.co/tiiuae/falcon-7b/raw/ec89142b67d748a1865ea4451372db8313ada0d8/config.json"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created from primary sources (Phase 1 seed, batch 2)",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}

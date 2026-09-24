@@ -1,0 +1,74 @@
+{
+  "id": "gpt-neox-20b",
+  "name": "GPT-NeoX-20B",
+  "developer": "EleutherAI",
+  "release_date": {
+    "value": "2022-04-14",
+    "source": "https://arxiv.org/abs/2204.06745",
+    "status": "partial",
+    "note": "arXiv v1 date of the paper. EleutherAI announced the weights earlier; that date was not verified in-session."
+  },
+  "weights_status": "open",
+  "license": {
+    "value": "Apache 2.0",
+    "source": "https://huggingface.co/EleutherAI/gpt-neox-20b/blob/c292233c833e336628618a88a648727eb3dff0a7/README.md",
+    "status": "recorded"
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "Paper sec. 2.1: 'largely follows that of GPT-3' and 'almost identical to that of GPT-J'. Deviations: rotary on the first 25% of dims, attention and feed-forward computed in parallel, all-dense layers, new tokenizer trained on the Pile.",
+    "n_layers": {
+      "value": 44,
+      "source": "https://arxiv.org/abs/2204.06745",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 6144,
+      "source": "https://arxiv.org/abs/2204.06745",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 64,
+      "source": "https://arxiv.org/abs/2204.06745",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 50432,
+      "source": "https://huggingface.co/EleutherAI/gpt-neox-20b/raw/c292233c833e336628618a88a648727eb3dff0a7/config.json",
+      "status": "recorded",
+      "note": "Paper describes a new BPE tokenizer 'trained on the Pile' with vocabulary 50257; config's 50432 is the padded embedding size."
+    },
+    "positional_encoding": {
+      "value": "rotary (RoPE), partial: first 25% of dims",
+      "source": "https://arxiv.org/abs/2204.06745",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": 2048,
+      "source": "https://huggingface.co/EleutherAI/gpt-neox-20b/raw/c292233c833e336628618a88a648727eb3dff0a7/config.json",
+      "status": "recorded"
+    }
+  },
+  "training_data": {
+    "value": "The Pile (EleutherAI's ~800GB curated English corpus)",
+    "source": "https://arxiv.org/abs/2204.06745",
+    "status": "recorded"
+  },
+  "techniques": [
+    "transformer-decoder",
+    "rotary-position-embedding",
+    "parallel-attention-ffn"
+  ],
+  "primary_sources": [
+    "https://arxiv.org/abs/2204.06745",
+    "https://huggingface.co/EleutherAI/gpt-neox-20b/blob/c292233c833e336628618a88a648727eb3dff0a7/README.md",
+    "https://huggingface.co/EleutherAI/gpt-neox-20b/raw/c292233c833e336628618a88a648727eb3dff0a7/config.json"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created from primary sources (Phase 1 seed, batch 2)",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}

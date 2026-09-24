@@ -1,0 +1,73 @@
+{
+  "id": "bloom-7b1",
+  "name": "BLOOM 7B1",
+  "developer": "BigScience",
+  "release_date": {
+    "value": "2022-07-11",
+    "source": "https://huggingface.co/bigscience/bloom-7b1/blob/6232703e399354503377bf59dfbb8397fd569e4a/README.md",
+    "status": "partial",
+    "note": "Card: 'Release Date Estimate: Monday, 11.July.2022'."
+  },
+  "weights_status": "open",
+  "license": {
+    "value": "BigScience RAIL License v1.0 (open access with use restrictions)",
+    "source": "https://huggingface.co/bigscience/bloom-7b1/blob/6232703e399354503377bf59dfbb8397fd569e4a/README.md",
+    "status": "recorded"
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "Card: 'Modified from Megatron-LM GPT2' (the Megatron codebase, not OpenAI's weights). Paper: ALiBi instead of position embeddings, plus a LayerNorm on the embedding layer. GeLU activation.",
+    "n_layers": {
+      "value": 30,
+      "source": "https://huggingface.co/bigscience/bloom-7b1/blob/6232703e399354503377bf59dfbb8397fd569e4a/README.md",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 4096,
+      "source": "https://huggingface.co/bigscience/bloom-7b1/blob/6232703e399354503377bf59dfbb8397fd569e4a/README.md",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 32,
+      "source": "https://huggingface.co/bigscience/bloom-7b1/blob/6232703e399354503377bf59dfbb8397fd569e4a/README.md",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 250680,
+      "source": "https://huggingface.co/bigscience/bloom-7b1/blob/6232703e399354503377bf59dfbb8397fd569e4a/README.md",
+      "status": "recorded",
+      "note": "Config vocab_size is 250880 (padded)."
+    },
+    "positional_encoding": {
+      "value": "ALiBi (attention bias by distance; no position embeddings)",
+      "source": "https://arxiv.org/abs/2211.05100",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": 2048,
+      "source": "https://huggingface.co/bigscience/bloom-7b1/blob/6232703e399354503377bf59dfbb8397fd569e4a/README.md",
+      "status": "recorded"
+    }
+  },
+  "training_data": {
+    "value": "ROOTS corpus: 46 natural and 13 programming languages; 1.5TB of text, 350B unique tokens.",
+    "source": "https://arxiv.org/abs/2211.05100",
+    "status": "recorded"
+  },
+  "techniques": [
+    "transformer-decoder",
+    "alibi"
+  ],
+  "primary_sources": [
+    "https://arxiv.org/abs/2211.05100",
+    "https://huggingface.co/bigscience/bloom-7b1/blob/6232703e399354503377bf59dfbb8397fd569e4a/README.md",
+    "https://huggingface.co/bigscience/bloom-7b1/raw/6232703e399354503377bf59dfbb8397fd569e4a/config.json"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created from primary sources (Phase 1 seed, batch 2)",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "id": "gpt-neo-2-7b",
+  "name": "GPT-Neo 2.7B",
+  "developer": "EleutherAI",
+  "release_date": {
+    "value": "2021-03-21",
+    "source": "https://github.com/EleutherAI/gpt-neo/releases/tag/v1.0",
+    "status": "recorded",
+    "note": "GitHub release v1.0 'Release Pretrained Models'."
+  },
+  "weights_status": "open",
+  "license": {
+    "value": "MIT",
+    "source": "https://huggingface.co/EleutherAI/gpt-neo-2.7B/blob/e24fa291132763e59f4a5422741b424fb5d59056/README.md",
+    "status": "recorded"
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "Card: 'designed using EleutherAI's replication of the GPT-3 architecture.' Alternates global and local (256-token window) attention layers (config attention_types, window_size).",
+    "n_layers": {
+      "value": 32,
+      "source": "https://huggingface.co/EleutherAI/gpt-neo-2.7B/raw/e24fa291132763e59f4a5422741b424fb5d59056/config.json",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 2560,
+      "source": "https://huggingface.co/EleutherAI/gpt-neo-2.7B/raw/e24fa291132763e59f4a5422741b424fb5d59056/config.json",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 20,
+      "source": "https://huggingface.co/EleutherAI/gpt-neo-2.7B/raw/e24fa291132763e59f4a5422741b424fb5d59056/config.json",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 50257,
+      "source": "https://huggingface.co/EleutherAI/gpt-neo-2.7B/raw/e24fa291132763e59f4a5422741b424fb5d59056/config.json",
+      "status": "recorded"
+    },
+    "positional_encoding": {
+      "value": "learned_absolute",
+      "source": "https://github.com/huggingface/transformers/blob/v4.34.0/src/transformers/models/gpt_neo/modeling_gpt_neo.py",
+      "status": "recorded",
+      "note": "Code: wpe = nn.Embedding(max_position_embeddings, ...)."
+    },
+    "context_length": {
+      "value": 2048,
+      "source": "https://huggingface.co/EleutherAI/gpt-neo-2.7B/raw/e24fa291132763e59f4a5422741b424fb5d59056/config.json",
+      "status": "recorded"
+    }
+  },
+  "training_data": {
+    "value": "The Pile (EleutherAI's ~800GB curated English corpus); 420B tokens over 400,000 steps.",
+    "source": "https://huggingface.co/EleutherAI/gpt-neo-2.7B/blob/e24fa291132763e59f4a5422741b424fb5d59056/README.md",
+    "status": "recorded"
+  },
+  "techniques": [
+    "transformer-decoder",
+    "byte-pair-encoding"
+  ],
+  "primary_sources": [
+    "https://huggingface.co/EleutherAI/gpt-neo-2.7B/blob/e24fa291132763e59f4a5422741b424fb5d59056/README.md",
+    "https://github.com/EleutherAI/gpt-neo/releases/tag/v1.0",
+    "https://huggingface.co/EleutherAI/gpt-neo-2.7B/raw/e24fa291132763e59f4a5422741b424fb5d59056/config.json"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created from primary sources (Phase 1 seed, batch 2)",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}

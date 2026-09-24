@@ -1,0 +1,76 @@
+{
+  "id": "gpt-j-6b",
+  "name": "GPT-J 6B",
+  "developer": "EleutherAI (Ben Wang, Aran Komatsuzaki)",
+  "release_date": {
+    "value": "2021-06",
+    "source": "https://github.com/kingoflolz/mesh-transformer-jax/commit/b0c18e5205ea5ff7f97a7047e964fc04a78ea42b",
+    "status": "partial",
+    "note": "Repo commit 'gpt-j-6b release' is 2021-06-09 UTC; the linked announcement post's URL is dated 2021-06-04. Month is certain, day is not."
+  },
+  "weights_status": "open",
+  "license": {
+    "value": "Apache 2.0",
+    "source": "https://github.com/kingoflolz/mesh-transformer-jax",
+    "status": "recorded",
+    "note": "Repo README: 'The weights of GPT-J-6B are licensed under version 2.0 of the Apache License.'"
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "Card: 28 layers, d_model 4096, d_ff 16384, 16 heads of 256 dims; RoPE applied to 64 dimensions of each head. Trained with Mesh Transformer JAX.",
+    "n_layers": {
+      "value": 28,
+      "source": "https://huggingface.co/EleutherAI/gpt-j-6b/raw/47e169305d2e8376be1d31e765533382721b2cc1/config.json",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 4096,
+      "source": "https://huggingface.co/EleutherAI/gpt-j-6b/raw/47e169305d2e8376be1d31e765533382721b2cc1/config.json",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 16,
+      "source": "https://huggingface.co/EleutherAI/gpt-j-6b/raw/47e169305d2e8376be1d31e765533382721b2cc1/config.json",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 50400,
+      "source": "https://huggingface.co/EleutherAI/gpt-j-6b/raw/47e169305d2e8376be1d31e765533382721b2cc1/config.json",
+      "status": "recorded",
+      "note": "Card: embedding matrix is 50400 but only 50257 entries are used by the GPT-2 tokenizer."
+    },
+    "positional_encoding": {
+      "value": "rotary (RoPE), partial: 64 of 256 dims per head",
+      "source": "https://huggingface.co/EleutherAI/gpt-j-6b/blob/47e169305d2e8376be1d31e765533382721b2cc1/README.md",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": 2048,
+      "source": "https://huggingface.co/EleutherAI/gpt-j-6b/raw/47e169305d2e8376be1d31e765533382721b2cc1/config.json",
+      "status": "recorded"
+    }
+  },
+  "training_data": {
+    "value": "The Pile (EleutherAI's ~800GB curated English corpus); 402B tokens over 383,500 steps.",
+    "source": "https://huggingface.co/EleutherAI/gpt-j-6b/blob/47e169305d2e8376be1d31e765533382721b2cc1/README.md",
+    "status": "recorded"
+  },
+  "techniques": [
+    "transformer-decoder",
+    "rotary-position-embedding",
+    "byte-pair-encoding"
+  ],
+  "primary_sources": [
+    "https://huggingface.co/EleutherAI/gpt-j-6b/blob/47e169305d2e8376be1d31e765533382721b2cc1/README.md",
+    "https://github.com/kingoflolz/mesh-transformer-jax",
+    "https://github.com/kingoflolz/mesh-transformer-jax/commit/b0c18e5205ea5ff7f97a7047e964fc04a78ea42b",
+    "https://huggingface.co/EleutherAI/gpt-j-6b/raw/47e169305d2e8376be1d31e765533382721b2cc1/config.json"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created from primary sources (Phase 1 seed, batch 2)",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}

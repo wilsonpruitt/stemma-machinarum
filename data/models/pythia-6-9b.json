@@ -1,0 +1,74 @@
+{
+  "id": "pythia-6-9b",
+  "name": "Pythia 6.9B",
+  "developer": "EleutherAI",
+  "release_date": {
+    "value": "2023-04-03",
+    "source": "https://arxiv.org/abs/2304.01373",
+    "status": "partial",
+    "note": "arXiv v1 date. Card: an earlier version of the suite was released first and all models were renamed in January 2023."
+  },
+  "weights_status": "open",
+  "license": {
+    "value": "Apache 2.0",
+    "source": "https://huggingface.co/EleutherAI/pythia-6.9b/blob/c0e3eee36dc47af0c49f361c74cfe459c09f7f23/README.md",
+    "status": "recorded"
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "Paper sec. 2.3: architecture 'largely follow[s] Brown et al. (2020)' (GPT-3) with deviations from recent practice incl. GPT-NeoX-20B; uses the GPT-NeoX-20B tokenizer and the GPT-NeoX library. One of 16 models (8 sizes x Pile / deduplicated Pile) trained on identical data in identical order, with 154 public checkpoints each.",
+    "n_layers": {
+      "value": 32,
+      "source": "https://huggingface.co/EleutherAI/pythia-6.9b/raw/c0e3eee36dc47af0c49f361c74cfe459c09f7f23/config.json",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 4096,
+      "source": "https://huggingface.co/EleutherAI/pythia-6.9b/raw/c0e3eee36dc47af0c49f361c74cfe459c09f7f23/config.json",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 32,
+      "source": "https://huggingface.co/EleutherAI/pythia-6.9b/raw/c0e3eee36dc47af0c49f361c74cfe459c09f7f23/config.json",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 50432,
+      "source": "https://huggingface.co/EleutherAI/pythia-6.9b/raw/c0e3eee36dc47af0c49f361c74cfe459c09f7f23/config.json",
+      "status": "recorded"
+    },
+    "positional_encoding": {
+      "value": "rotary (RoPE), partial: 25% of dims",
+      "source": "https://arxiv.org/abs/2304.01373",
+      "status": "recorded",
+      "note": "Paper sec. 2.3: 'We use rotary embeddings'; the 25% fraction is config rotary_pct 0.25."
+    },
+    "context_length": {
+      "value": 2048,
+      "source": "https://huggingface.co/EleutherAI/pythia-6.9b/raw/c0e3eee36dc47af0c49f361c74cfe459c09f7f23/config.json",
+      "status": "recorded"
+    }
+  },
+  "training_data": {
+    "value": "The Pile (EleutherAI's ~800GB curated English corpus), 300B tokens; a twin model was trained on a near-deduplicated Pile (~207B tokens).",
+    "source": "https://arxiv.org/abs/2304.01373",
+    "status": "recorded"
+  },
+  "techniques": [
+    "transformer-decoder",
+    "rotary-position-embedding",
+    "parallel-attention-ffn"
+  ],
+  "primary_sources": [
+    "https://arxiv.org/abs/2304.01373",
+    "https://huggingface.co/EleutherAI/pythia-6.9b/blob/c0e3eee36dc47af0c49f361c74cfe459c09f7f23/README.md",
+    "https://huggingface.co/EleutherAI/pythia-6.9b/raw/c0e3eee36dc47af0c49f361c74cfe459c09f7f23/config.json"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created from primary sources (Phase 1 seed, batch 2)",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}

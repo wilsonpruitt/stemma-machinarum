@@ -1,0 +1,62 @@
+{
+  "id": "mpt-7b",
+  "name": "MPT-7B",
+  "developer": "MosaicML",
+  "release_date": {
+    "value": "2023-05-05",
+    "source": "https://www.databricks.com/blog/mpt-7b",
+    "status": "recorded",
+    "note": "Original HF repo mosaicml/mpt-7b returned HTTP 401 when checked 2026-09-24 (the whole mosaicml org appears unreachable); only third-party re-uploads were found. The Internet Archive was offline, so no archived config was retrieved."
+  },
+  "weights_status": "open",
+  "license": {
+    "value": "Apache 2.0",
+    "source": "https://www.databricks.com/blog/mpt-7b",
+    "status": "recorded"
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "Post: 'a transformer trained from scratch'; 'GPT-style decoder-only transformers' with ALiBi replacing positional embeddings, FlashAttention, and stability changes; 6.7B parameters. Dimensions are not stated in the post and the developer's config could not be retrieved.",
+    "n_layers": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "hidden_size": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "n_heads": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "vocab_size": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "positional_encoding": {
+      "value": "ALiBi (no position embeddings)",
+      "source": "https://www.databricks.com/blog/mpt-7b",
+      "status": "recorded"
+    }
+  },
+  "training_data": {
+    "value": "1T tokens of text and code 'curated by MosaicML's data team'.",
+    "source": "https://www.databricks.com/blog/mpt-7b",
+    "status": "partial",
+    "note": "Mix components not stated in the release post."
+  },
+  "techniques": [
+    "transformer-decoder",
+    "alibi"
+  ],
+  "primary_sources": [
+    "https://www.databricks.com/blog/mpt-7b"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created from primary sources (Phase 1 seed, batch 2)",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}
