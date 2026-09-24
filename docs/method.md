@@ -62,6 +62,15 @@ holds two kinds of record, models and datasets, in one id namespace.
   continued pretraining (Code Llama from Llama 2).
 - `merged_from`, `quantized_from`, `adapter_on`: weights combined,
   compressed, or extended without retraining the whole model.
+- `depth_upscaled_from`: the parent's layers are duplicated or
+  interleaved into a taller architecture, and *then* the whole enlarged
+  model is retrained (SOLAR from Mistral 7B; the technique's own name is
+  "depth up-scaling"). Weights genuinely descend, but the architecture
+  is restructured before training resumes, so it's neither an ordinary
+  fine-tune (architecture unchanged) nor a merge (retraining is the
+  point, not the exception). The ancestor of the later "frankenmerge"
+  genre; a later variant that only interleaves layers and skips the
+  retraining step is closer to `merged_from`.
 
 **Training data.** The child learned from a corpus.
 - `trained_on`: model → dataset. Pretraining corpora (GPT-J on the Pile)
