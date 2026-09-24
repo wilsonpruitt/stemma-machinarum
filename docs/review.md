@@ -12,9 +12,15 @@ There are two roles:
 - **Preparer** (a person or an agent session) researches each candidate
   and edits the staged JSON. The preparer writes what they found in
   `_candidate.review_notes` and never sets `reviewed`.
-- **Reviewer** (Wilson, or someone he names) reads the prepared record
-  and notes, sets `_candidate.reviewed: true`, and runs
-  `python3 scripts/promote.py <id> --by "<name>"`.
+- **Reviewer** (Wilson, or someone he names) reads each prepared record
+  and decides. In practice, run `python3 scripts/review_interactive.py`
+  rather than hand-editing JSON: it walks the queue in a safe order
+  (a candidate promotes after any staged candidate its accepted edges
+  depend on), prints a plain-English summary of each one, and on
+  approval sets `reviewed: true` and runs `promote.py` itself. `--list`
+  previews the whole queue with no prompts. Editing the JSON directly
+  and running `promote.py <id> --by "<name>"` by hand still works, for
+  a single candidate or a script-driven batch.
 
 All the rules in `method.md` apply: verify every value from a source
 fetched in the same session, quote the source's words in `note`s where

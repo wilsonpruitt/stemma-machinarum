@@ -157,10 +157,14 @@ def build_candidate(repo, info, info_status, config, config_url, walk, taken, re
     if arch["family"] == "unknown":
         flags.append("architecture family not determined from config")
 
-    # license (uploader-declared metadata)
+    # license (uploader-declared metadata). Some cards give a list
+    # (multi-license); take the first and note the rest.
     lic = card.get("license")
-    license_f = (sourced(lic, card_url, "partial", "From HF card metadata (uploader-declared); confirm against the license text.")
-                 if lic else not_recorded())
+    lic_note = "From HF card metadata (uploader-declared); confirm against the license text."
+    if isinstance(lic, list):
+        lic_note += f" Card listed multiple licenses: {lic}; using the first."
+        lic = lic[0] if lic else None
+    license_f = sourced(lic, card_url, lic_note, status="partial") if lic else not_recorded()
 
     # created date as a weak release date
     created = (info.get("createdAt") or "")[:10]
