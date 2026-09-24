@@ -3,7 +3,7 @@
 Handoff date: 2026-09-24
 Owner: Wilson Pruitt
 Working name: **Stemma Machinarum** (short form "Stemma")
-Planned home: `stemma.network` (registered at Cloudflare, 2026-09-24; not yet wired to any host) · GitHub org `stemma-machinarum` (claim if not yet done)
+Home: https://stemma.network (live 2026-09-24; Cloudflare DNS to Vercel) · GitHub org `stemma-machinarum` (claim if not yet done)
 
 ---
 
@@ -203,6 +203,7 @@ Keep **classification** (grouping by structural characters, Reuleaux-style) sepa
 1. **Hand-curated seed.** 15–20 records built directly from papers and model cards, with Wilson reviewing each. This sets the quality bar.
 2. **Ingest.** `ingest_hf.py` generates candidates for the remaining pilot models, staged for review.
 2b. **Site.** `stemma.network` hosts both doors: the Graph (records, raw JSON, `llms.txt`) and the Notebook (Track A's path, with Wilson's dated notes), cross-linked. **`docs/site-plan.md` is the score** (three rulings by Wilson, five by Fable, 2026-09-24). Phases 3 and 4 land on this site.
+   **Done 2026-09-24:** live at https://stemma.network (Vercel project `stemma`, root `site/`, git-connected: a push to `main` is a production deploy). Beyond the plan: an About page (genealogy vs. taxonomy, the two audiences), a `/records/` index, and a Phase 3 pilot at `/graph/`: the LLaMA family drawn as a manuscript stemma (time down the page, closed models hollow, contamination dashed), with a separate phone layout. Renderer: `site/src/lib/stemma-svg.ts`; its columns are hand-set for that one family (`LANES`), so new records appear on record pages automatically but not in the drawing.
 3. **Graph and export.** `export_graph.py` produces a JSON graph and GraphML, plus one simple visualization of the pilot network, with edges styled by evidence tag.
 4. **Publish v0.1.** README, `docs/method.md`, `llms.txt`, a tagged GitHub release, and a Zenodo DOI for schema and method.
 
