@@ -1,0 +1,32 @@
+{
+  "id": "refinedweb",
+  "name": "RefinedWeb",
+  "builder": "Technology Innovation Institute (TII)",
+  "release_date": {
+    "value": "2023-06-01",
+    "source": "https://arxiv.org/abs/2306.01116",
+    "status": "partial",
+    "note": "arXiv v1 date of the paper."
+  },
+  "availability": {
+    "value": "partial",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/datasets/tiiuae/falcon-refinedweb",
+    "note": "Paper: 'We publicly release an extract of 600 billion tokens' of the five-trillion-token dataset."
+  },
+  "content": {
+    "value": "Filtered, deduplicated English web text from CommonCrawl, ~5 trillion tokens.",
+    "source": "https://arxiv.org/abs/2306.01116",
+    "status": "recorded"
+  },
+  "primary_sources": [
+    "https://arxiv.org/abs/2306.01116"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created from primary sources (dataset records ruling)",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}

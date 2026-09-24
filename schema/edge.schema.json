@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://stemma.network/schema/edge.schema.json",
   "title": "Stemma Lineage Edge",
-  "description": "One line in data/edges/edges.jsonl",
+  "description": "One line in data/edges/edges.jsonl. child/parent are model or dataset ids; scripts/validate.py enforces which relation may join which kinds.",
   "type": "object",
   "properties": {
     "child": { "type": "string" },
@@ -16,7 +16,9 @@
         "quantized_from",
         "adapter_on",
         "same_architecture_retrained",
-        "successor_in_series"
+        "design_follows",
+        "successor_in_series",
+        "trained_on"
       ]
     },
     "evidence": {
@@ -29,7 +31,6 @@
       ]
     },
     "source": { "type": "string", "format": "uri" },
-    "via": { "type": "string", "description": "Intermediary through which the parent's influence reached the child (usually a dataset), with who built it." },
     "note": { "type": "string" }
   },
   "required": ["child", "parent", "relation", "evidence", "source"],

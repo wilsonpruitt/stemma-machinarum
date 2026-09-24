@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://stemma.network/schema/dataset.schema.json",
+  "title": "Stemma Dataset Record",
+  "description": "A training corpus that models are linked to by trained_on edges. A dataset built from a model's outputs or judgments is itself the child of that model (distilled_from_outputs / feedback_from). Dataset ids share one namespace with model ids.",
+  "type": "object",
+  "$defs": {
+    "sourced_string": {
+      "type": "object",
+      "properties": {
+        "value": { "type": ["string", "null"] },
+        "source": { "type": ["string", "null"], "format": "uri" },
+        "status": { "enum": ["recorded", "partial", "not_recorded"] },
+        "note": { "type": "string", "description": "Caveat that must travel with this value." }
+      },
+      "required": ["value", "status"],
+      "additionalProperties": false
+    },
+    "availability": {
+      "type": "object",
+      "description": "Whether the dataset files could be obtained, as checked on a given date.",
+      "properties": {
+        "value": { "enum": ["available", "partial", "gated", "removed", "never_released", "unknown"] },
+        "checked": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+        "source": { "type": "string", "format": "uri" },
+        "note": { "type": "string" }
+      },
+      "required": ["value", "checked", "source"],
+      "additionalProperties": false
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Stable, never-reused identifier. Lowercase, hyphenated. Must not collide with a model id.",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "name": { "type": "string" },
+    "builder": { "type": "string", "description": "Who assembled the dataset (may differ from who trained on it)." },
+    "release_date": { "$ref": "#/$defs/sourced_string" },
+    "availability": { "$ref": "#/$defs/availability" },
+    "content": { "$ref": "#/$defs/sourced_string", "description": "What is in it, in plain words: size, languages, where the text came from." },
+    "primary_sources": {
+      "type": "array",
+      "items": { "type": "string", "format": "uri" },
+      "minItems": 1
+    },
+    "record_history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "date": { "type": "string", "format": "date" },
+          "change": { "type": "string" },
+          "by": { "type": "string" }
+        },
+        "required": ["date", "change", "by"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["id", "name", "builder", "release_date", "availability", "content", "primary_sources", "record_history"],
+  "additionalProperties": false
+}

@@ -9,6 +9,11 @@
     "note": "Creation date of the developer's HF repository (may predate public release). Card: training happened in early March 2023."
   },
   "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/tiiuae/falcon-7b"
+  },
   "license": {
     "value": "Apache 2.0",
     "source": "https://huggingface.co/tiiuae/falcon-7b/blob/ec89142b67d748a1865ea4451372db8313ada0d8/README.md",
@@ -74,6 +79,11 @@
     {
       "date": "2026-09-24",
       "change": "created from primary sources (Phase 1 seed, batch 2)",
+      "by": "wilson-pruitt + claude"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "availability checked and recorded",
       "by": "wilson-pruitt + claude"
     }
   ]

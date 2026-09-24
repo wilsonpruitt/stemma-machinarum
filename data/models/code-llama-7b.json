@@ -8,6 +8,12 @@
     "status": "recorded"
   },
   "weights_status": "open",
+  "availability": {
+    "value": "gated",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/meta-llama/CodeLlama-7b-hf",
+    "note": "Meta's repo is gated (manual approval); the codellama/ transformers conversion used for the config is not gated."
+  },
   "license": {
     "value": "Released under the same custom license as Llama 2 (paper: 'released under the same custom permissive license').",
     "source": "https://arxiv.org/abs/2308.12950",
@@ -71,6 +77,11 @@
     {
       "date": "2026-09-24",
       "change": "created from primary sources (Phase 1 seed, batch 1)",
+      "by": "wilson-pruitt + claude"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "availability checked and recorded",
       "by": "wilson-pruitt + claude"
     }
   ]

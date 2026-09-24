@@ -1,0 +1,31 @@
+{
+  "id": "alpaca-52k",
+  "name": "Alpaca instruction data (52K)",
+  "builder": "Stanford CRFM (Tatsu Lab)",
+  "release_date": {
+    "value": "2023-03-13",
+    "source": "https://crfm.stanford.edu/2023/03/13/alpaca.html",
+    "status": "recorded"
+  },
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/datasets/tatsu-lab/alpaca"
+  },
+  "content": {
+    "value": "52K instruction-following examples generated self-instruct style with text-davinci-003.",
+    "source": "https://crfm.stanford.edu/2023/03/13/alpaca.html",
+    "status": "recorded"
+  },
+  "primary_sources": [
+    "https://crfm.stanford.edu/2023/03/13/alpaca.html",
+    "https://github.com/tatsu-lab/stanford_alpaca"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created from primary sources (dataset records ruling)",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}

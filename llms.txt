@@ -20,10 +20,18 @@ here's how the data is shaped and where to look.
   `{"child": ..., "parent": ..., "relation": ..., "evidence": ..., "source": ...}`.
   Every edge has an `evidence` tag (see below) and a `source` URL.
   No exceptions.
-  Relations `distilled_from_outputs` (trained on the parent's text) and
-  `feedback_from` (trained on the parent's rankings/judgments) mean no
-  weights passed; optional `via` names the intermediary dataset.
-  Definitions: docs/method.md#relations.
+  child/parent are model or dataset ids. `trained_on` links a model to a
+  dataset; `distilled_from_outputs` (the parent wrote the text) and
+  `feedback_from` (the parent graded it) usually link a dataset to the
+  closed model that generated it, so a closed ancestor is two hops up:
+  model -trained_on-> dataset -distilled_from_outputs-> model.
+  `design_follows` / `same_architecture_retrained` are declared design
+  debts with no weights passed. Definitions: docs/method.md#relations.
+- `data/datasets/<dataset-id>.json`: training corpora (builder, content,
+  release date), same sourcing rules as models.
+- Every model and dataset has `availability` (available / partial /
+  gated / removed / never_released / unknown) with the date and URL
+  checked. It describes the artifact, not API access.
 - `data/techniques/<technique-id>.json` — techniques (e.g.
   transformer-decoder, RLHF), each with a first-appearance citation and
   the models that use it.

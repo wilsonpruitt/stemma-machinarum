@@ -8,8 +8,13 @@ Rules enforced beyond plain JSON Schema:
     "recorded" (value + source both present) or status "not_recorded"/
     "partial" (value may be null, but the status must say so). A field
     can never silently omit both value and status.
-  - Model ids and edge child/parent ids referenced anywhere must
-    resolve to an actual file in data/models/.
+  - Model and dataset ids share one namespace: each is unique and
+    matches its filename. Edge child/parent ids must resolve to a file
+    in data/models/ or data/datasets/.
+  - Relations join the right kinds of record: trained_on runs from a
+    model to a dataset; distilled_from_outputs and feedback_from need a
+    model parent (the child may be a model or a dataset); every other
+    relation joins two models.
 """
 import json
 import sys
@@ -33,7 +38,7 @@ def check_sourced_fields(obj, path=""):
     """Walk a record; for any dict that looks like a sourced field
     (has a 'status' key), enforce recorded => value+source present."""
     if isinstance(obj, dict):
-        if "status" in obj and set(obj.keys()) <= {"value", "source", "status"}:
+        if "status" in obj and set(obj.keys()) <= {"value", "source", "status", "note"}:
             status = obj.get("status")
             if status == "recorded" and (obj.get("value") in (None, "") or not obj.get("source")):
                 errors.append(f"{path}: status is 'recorded' but value or source is missing")
@@ -44,23 +49,30 @@ def check_sourced_fields(obj, path=""):
             check_sourced_fields(v, f"{path}[{i}]")
 
 
-def validate_models():
-    schema = load_schema("model.schema.json")
-    model_ids = set()
-    models_dir = DATA_DIR / "models"
-    for path in sorted(models_dir.glob("*.json")):
+def validate_records(subdir, schema_name, taken):
+    """Validate every record in data/<subdir>/; return its ids.
+    `taken` holds ids already used, so models and datasets can't collide."""
+    schema = load_schema(schema_name)
+    ids = set()
+    for path in sorted((DATA_DIR / subdir).glob("*.json")):
         with open(path) as f:
             record = json.load(f)
         for err in schema.iter_errors(record):
             errors.append(f"{path.name}: {err.message} (at {'/'.join(str(p) for p in err.path)})")
         check_sourced_fields(record, path.name)
-        if record.get("id") != path.stem:
-            errors.append(f"{path.name}: id field '{record.get('id')}' does not match filename")
-        model_ids.add(record.get("id"))
-    return model_ids
+        rid = record.get("id")
+        if rid != path.stem:
+            errors.append(f"{path.name}: id field '{rid}' does not match filename")
+        if rid in taken or rid in ids:
+            errors.append(f"{subdir}/{path.name}: id '{rid}' is already used by another record")
+        ids.add(rid)
+    return ids
 
 
-def validate_edges(model_ids):
+MODEL_PARENT_ONLY = {"distilled_from_outputs", "feedback_from"}
+
+
+def validate_edges(model_ids, dataset_ids):
     schema = load_schema("edge.schema.json")
     edges_path = DATA_DIR / "edges" / "edges.jsonl"
     if not edges_path.exists():
@@ -78,10 +90,18 @@ def validate_edges(model_ids):
             errors.append(f"edges.jsonl:{lineno}: {err.message}")
         if not edge.get("source"):
             errors.append(f"edges.jsonl:{lineno}: edge has no source URL")
-        for role in ("child", "parent"):
-            ref = edge.get(role)
-            if ref and ref not in model_ids:
-                errors.append(f"edges.jsonl:{lineno}: {role} '{ref}' has no matching file in data/models/")
+        child, parent, rel = edge.get("child"), edge.get("parent"), edge.get("relation")
+        for role, ref in (("child", child), ("parent", parent)):
+            if ref and ref not in model_ids and ref not in dataset_ids:
+                errors.append(f"edges.jsonl:{lineno}: {role} '{ref}' has no matching file in data/models/ or data/datasets/")
+        if rel == "trained_on":
+            if child in dataset_ids or parent in model_ids:
+                errors.append(f"edges.jsonl:{lineno}: trained_on must run from a model (child) to a dataset (parent)")
+        elif rel in MODEL_PARENT_ONLY:
+            if parent in dataset_ids:
+                errors.append(f"edges.jsonl:{lineno}: {rel} needs a model as parent")
+        elif child in dataset_ids or parent in dataset_ids:
+            errors.append(f"edges.jsonl:{lineno}: {rel} joins two models; datasets connect only via trained_on, distilled_from_outputs, feedback_from")
 
 
 def validate_techniques():
@@ -96,8 +116,9 @@ def validate_techniques():
 
 
 def main():
-    model_ids = validate_models()
-    validate_edges(model_ids)
+    model_ids = validate_records("models", "model.schema.json", set())
+    dataset_ids = validate_records("datasets", "dataset.schema.json", model_ids)
+    validate_edges(model_ids, dataset_ids)
     validate_techniques()
 
     if errors:

@@ -17,17 +17,32 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
 
 
-def load_models():
+def load_nodes():
+    """Models and datasets share one id namespace; node_type tells them apart."""
     nodes = {}
     for path in sorted((DATA_DIR / "models").glob("*.json")):
         with open(path) as f:
             record = json.load(f)
         nodes[record["id"]] = {
             "id": record["id"],
+            "node_type": "model",
             "name": record.get("name"),
             "developer": record.get("developer"),
             "release_date": record.get("release_date", {}).get("value"),
             "weights_status": record.get("weights_status"),
+            "availability": record.get("availability", {}).get("value"),
+        }
+    for path in sorted((DATA_DIR / "datasets").glob("*.json")):
+        with open(path) as f:
+            record = json.load(f)
+        nodes[record["id"]] = {
+            "id": record["id"],
+            "node_type": "dataset",
+            "name": record.get("name"),
+            "developer": record.get("builder"),
+            "release_date": record.get("release_date", {}).get("value"),
+            "weights_status": None,
+            "availability": record.get("availability", {}).get("value"),
         }
     return nodes
 
@@ -56,14 +71,15 @@ def write_graphml(nodes, edges, out_dir: Path):
     root = ET.Element(f"{{{ns}}}graphml")
 
     for key_id, attr_name, for_ in [
+        ("d_node_type", "node_type", "node"),
         ("d_name", "name", "node"),
         ("d_developer", "developer", "node"),
         ("d_release_date", "release_date", "node"),
         ("d_weights_status", "weights_status", "node"),
+        ("d_availability", "availability", "node"),
         ("d_relation", "relation", "edge"),
         ("d_evidence", "evidence", "edge"),
         ("d_source", "source", "edge"),
-        ("d_via", "via", "edge"),
     ]:
         key = ET.SubElement(root, f"{{{ns}}}key")
         key.set("id", key_id)
@@ -78,10 +94,12 @@ def write_graphml(nodes, edges, out_dir: Path):
         node_el = ET.SubElement(graph_el, f"{{{ns}}}node")
         node_el.set("id", node["id"])
         for key_id, field in [
+            ("d_node_type", "node_type"),
             ("d_name", "name"),
             ("d_developer", "developer"),
             ("d_release_date", "release_date"),
             ("d_weights_status", "weights_status"),
+            ("d_availability", "availability"),
         ]:
             data_el = ET.SubElement(node_el, f"{{{ns}}}data")
             data_el.set("key", key_id)
@@ -96,7 +114,6 @@ def write_graphml(nodes, edges, out_dir: Path):
             ("d_relation", "relation"),
             ("d_evidence", "evidence"),
             ("d_source", "source"),
-            ("d_via", "via"),
         ]:
             data_el = ET.SubElement(edge_el, f"{{{ns}}}data")
             data_el.set("key", key_id)
@@ -115,7 +132,7 @@ def main():
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    nodes = load_models()
+    nodes = load_nodes()
     edges = load_edges()
 
     write_json(nodes, edges, out_dir)

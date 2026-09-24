@@ -1,0 +1,74 @@
+{
+  "id": "gpt-3",
+  "name": "GPT-3 (175B, 2020 paper)",
+  "developer": "OpenAI",
+  "release_date": {
+    "value": "2020-05-28",
+    "source": "https://arxiv.org/abs/2005.14165",
+    "status": "partial",
+    "note": "arXiv v1 date of the paper."
+  },
+  "weights_status": "api_only",
+  "availability": {
+    "value": "never_released",
+    "checked": "2026-09-24",
+    "source": "https://arxiv.org/abs/2005.14165",
+    "note": "Weights never released; API access status not tracked by this field."
+  },
+  "license": {
+    "value": "Proprietary; no weights released.",
+    "source": "https://arxiv.org/abs/2005.14165",
+    "status": "partial"
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "Stub specimen, recorded because five open models name GPT-3's paper as their design reference. Paper sec. 2.1: 'We use the same model and architecture as GPT-2 ... with the exception that we use alternating dense and locally banded sparse attention patterns.' The paper describes 8 sizes; values are for 175B (Table 2.1).",
+    "n_layers": {
+      "value": 96,
+      "source": "https://arxiv.org/abs/2005.14165",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 12288,
+      "source": "https://arxiv.org/abs/2005.14165",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 96,
+      "source": "https://arxiv.org/abs/2005.14165",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "positional_encoding": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "context_length": {
+      "value": 2048,
+      "source": "https://arxiv.org/abs/2005.14165",
+      "status": "recorded"
+    }
+  },
+  "training_data": {
+    "value": "300B tokens from a weighted mix of filtered Common Crawl, WebText2, Books1, Books2 and English Wikipedia.",
+    "source": "https://arxiv.org/abs/2005.14165",
+    "status": "recorded"
+  },
+  "techniques": [
+    "transformer-decoder",
+    "byte-pair-encoding"
+  ],
+  "primary_sources": [
+    "https://arxiv.org/abs/2005.14165"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created as a stub specimen to resolve design_follows edges",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}

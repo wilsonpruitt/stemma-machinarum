@@ -57,9 +57,11 @@ stemma/
 ├── schema/
 │   ├── model.schema.json
 │   ├── edge.schema.json
+│   ├── dataset.schema.json
 │   └── technique.schema.json
 ├── data/
 │   ├── models/<model-id>.json      # one specimen per file
+│   ├── datasets/<dataset-id>.json  # training corpora (added 2026-09-24)
 │   ├── edges/edges.jsonl           # one lineage edge per line
 │   └── techniques/<technique-id>.json
 ├── scripts/

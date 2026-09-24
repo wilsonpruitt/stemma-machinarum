@@ -8,6 +8,12 @@
     "status": "recorded"
   },
   "weights_status": "open",
+  "availability": {
+    "value": "gated",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/meta-llama/Llama-2-7b-chat-hf",
+    "note": "HF gate: manual approval."
+  },
   "license": {
     "value": "Llama 2 Community License Agreement (research and commercial use; licensees with >700M monthly active users on the release date must request a separate license from Meta).",
     "source": "https://github.com/meta-llama/llama/blob/main/LICENSE",
@@ -54,6 +60,11 @@
     {
       "date": "2026-09-24",
       "change": "created from primary sources (Phase 1 seed, batch 1)",
+      "by": "wilson-pruitt + claude"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "availability checked and recorded",
       "by": "wilson-pruitt + claude"
     }
   ]

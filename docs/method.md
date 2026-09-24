@@ -54,7 +54,8 @@ Every sourced field in the schema takes the shape
 
 ## Relations
 
-An edge's `relation` says *how* the parent reached the child. Two families:
+An edge's `relation` says *how* the parent reached the child. The graph
+holds two kinds of record, models and datasets, in one id namespace.
 
 **Weights descend.** The child starts from the parent's parameters.
 - `fine_tuned_from`: further training on the parent's weights, including
@@ -62,33 +63,67 @@ An edge's `relation` says *how* the parent reached the child. Two families:
 - `merged_from`, `quantized_from`, `adapter_on`: weights combined,
   compressed, or extended without retraining the whole model.
 
-**Influence without weights.** The child never touches the parent's
-parameters; the parent shaped its *training signal*. This is where closed
-models enter an open model's stemma, and where contamination is hardest to see.
-- `distilled_from_outputs`: the child trained on text the parent
-  *wrote* (Alpaca on text-davinci-003, Vicuna on ChatGPT).
-- `feedback_from`: the child learned from the parent's *judgments*
-  (rankings, scores, critiques of other text) rather than from its text
-  (Zephyr's DPO step on GPT-4's rankings). Copying a teacher and being
-  graded by one are different inheritances, so they get separate labels.
+**Training data.** The child learned from a corpus.
+- `trained_on`: model → dataset. Pretraining corpora (GPT-J on the Pile)
+  and fine-tuning sets (Zephyr on UltraChat) alike. Several models on one
+  dataset share a source text, which is not a parent–child relation
+  between the models themselves.
 
-**Series relations.** No weights or training signal pass.
+**Influence without weights.** A model shaped a *training signal* without
+passing on its parameters. This is where closed models enter an open
+model's stemma. The child here is usually a dataset: the closed model
+wrote or graded the data, and open models are then `trained_on` that
+dataset. Read the path in two steps: Zephyr → UltraChat → ChatGPT.
+- `distilled_from_outputs`: the child holds, or trained on, text the
+  parent *wrote* (Alpaca's 52K set from text-davinci-003; UltraChat from
+  ChatGPT).
+- `feedback_from`: the child holds, or trained on, the parent's
+  *judgments*: rankings, scores or critiques of other text (UltraFeedback
+  from GPT-4). Copying a teacher and being graded by one are different
+  inheritances, so they get separate labels.
+
+A dataset with no model parents is taken to be human-written or scraped
+text; the absence means only that no generating model is recorded.
+
+**Design.** No weights or training signal pass; the developer declares
+that one model's design is based on another's.
 - `successor_in_series`: the developer presents the child as the next
   version, trained from scratch (Llama 2 after Llama 1).
-- `same_architecture_retrained`: same design, new training run, not
-  presented as a successor.
+- `same_architecture_retrained`: the developer says the architecture is
+  the *same* or *almost identical*, allowing listed minor exceptions
+  (GPT-NeoX-20B and GPT-J; GPT-3 and GPT-2; GPT-Neo's "replication of
+  the GPT-3 architecture").
+- `design_follows`: the developer says the design *largely follows*, is
+  *adapted from*, or is *modeled on* the parent (OPT, Pythia, Falcon and
+  GPT-NeoX-20B on GPT-3). The wording decides between this and
+  `same_architecture_retrained`; both need the developer's own words.
+  Shared techniques alone, with no such statement, are classification,
+  not lineage (Mistral uses the LLaMA recipe but its paper only says
+  "Compared to Llama", without saying which Llama, so no edge is recorded).
 
-**`via`.** Influence-without-weights usually arrives second-hand, through
-a dataset that someone *else* built from a closed model's outputs (ShareGPT,
-UltraChat, UltraFeedback). An edge records that channel in `via`, with who
-built it. The edge still points at the model; `via` keeps the path readable
-when the same dataset feeds many children. Datasets may become nodes of
-their own later. Until then, spell the dataset name identically across
-edges so the path can be traced.
+`scripts/validate.py` enforces the kinds: `trained_on` runs model →
+dataset; `distilled_from_outputs` and `feedback_from` need a model
+parent; every other relation joins two models.
 
 Closed parents are often unversioned: "ChatGPT" named a product whose
 underlying model changed over time. Such a parent is a stub record whose
 version is `not_recorded`, not a guess at the snapshot.
+
+## Availability
+
+Every model and dataset carries `availability`: whether the artifact
+itself (weights or dataset files) could be obtained, **as checked on a
+stated date**, with the URL checked:
+
+`available` · `partial` (only a portion released) · `gated` (released
+behind an approval step) · `removed` (unreachable at its original
+address) · `never_released` · `unknown` (could not be determined; the
+note says why).
+
+It describes the artifact, not API access. `removed` records what was
+found at the original address, not why; a takedown is recorded only
+with a source for it. Availability changes over time, so re-checking
+adds a `record_history` entry, not a silent overwrite.
 
 ## Classification vs. lineage
 

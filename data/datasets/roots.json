@@ -1,0 +1,33 @@
+{
+  "id": "roots",
+  "name": "ROOTS corpus",
+  "builder": "BigScience",
+  "release_date": {
+    "value": "2023-03-07",
+    "source": "https://arxiv.org/abs/2303.03915",
+    "status": "partial",
+    "note": "arXiv v1 date of the corpus paper; the corpus was used for BLOOM in 2022."
+  },
+  "availability": {
+    "value": "gated",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/datasets/bigscience-data/roots_en_wikipedia",
+    "note": "Released as per-source subsets under bigscience-data/; one subset checked (gate: automatic approval)."
+  },
+  "content": {
+    "value": "1.6TB of text in 59 languages (46 natural, 13 programming).",
+    "source": "https://arxiv.org/abs/2303.03915",
+    "status": "recorded"
+  },
+  "primary_sources": [
+    "https://arxiv.org/abs/2303.03915",
+    "https://arxiv.org/abs/2211.05100"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created from primary sources (dataset records ruling)",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}

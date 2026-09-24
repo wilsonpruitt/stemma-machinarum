@@ -9,6 +9,11 @@
     "note": "Repo commit 'gpt-j-6b release' is 2021-06-09 UTC; the linked announcement post's URL is dated 2021-06-04. Month is certain, day is not."
   },
   "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/EleutherAI/gpt-j-6b"
+  },
   "license": {
     "value": "Apache 2.0",
     "source": "https://github.com/kingoflolz/mesh-transformer-jax",
@@ -70,6 +75,11 @@
     {
       "date": "2026-09-24",
       "change": "created from primary sources (Phase 1 seed, batch 2)",
+      "by": "wilson-pruitt + claude"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "availability checked and recorded",
       "by": "wilson-pruitt + claude"
     }
   ]

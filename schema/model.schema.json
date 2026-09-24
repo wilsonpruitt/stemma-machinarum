@@ -25,6 +25,18 @@
       },
       "required": ["value", "status"],
       "additionalProperties": false
+    },
+    "availability": {
+      "type": "object",
+      "description": "Whether the artifact itself (weights, or dataset files) could be obtained, as checked on a given date. Not a claim about API access.",
+      "properties": {
+        "value": { "enum": ["available", "partial", "gated", "removed", "never_released", "unknown"] },
+        "checked": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+        "source": { "type": "string", "format": "uri" },
+        "note": { "type": "string" }
+      },
+      "required": ["value", "checked", "source"],
+      "additionalProperties": false
     }
   },
   "properties": {
@@ -37,6 +49,7 @@
     "developer": { "type": "string" },
     "release_date": { "$ref": "#/$defs/sourced_string" },
     "weights_status": { "enum": ["open", "api_only", "closed", "unknown"] },
+    "availability": { "$ref": "#/$defs/availability" },
     "license": { "$ref": "#/$defs/sourced_string" },
     "architecture": {
       "type": "object",
@@ -81,6 +94,7 @@
     "developer",
     "release_date",
     "weights_status",
+    "availability",
     "license",
     "architecture",
     "training_data",

@@ -8,6 +8,11 @@
     "status": "recorded"
   },
   "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/openai-community/gpt2-xl"
+  },
   "license": {
     "value": "Modified MIT License",
     "source": "https://github.com/openai/gpt-2/blob/master/LICENSE",
@@ -88,6 +93,11 @@
     {
       "date": "2026-09-24",
       "change": "positional-encoding source corrected to GPT-1 paper; normalization, activation, ffn width added (narrative/exercises/01-gpt2-xl-vs-mistral-7b.md)",
+      "by": "wilson-pruitt + claude"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "availability checked and recorded",
       "by": "wilson-pruitt + claude"
     }
   ]

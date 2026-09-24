@@ -8,6 +8,12 @@
     "status": "partial"
   },
   "weights_status": "api_only",
+  "availability": {
+    "value": "never_released",
+    "checked": "2026-09-24",
+    "source": "https://developers.openai.com/api/docs/deprecations",
+    "note": "Weights never released; API access status not tracked by this field."
+  },
   "license": {
     "value": "Proprietary; API access only, subject to OpenAI's usage policies.",
     "source": "https://developers.openai.com/api/docs/deprecations",
@@ -16,18 +22,36 @@
   "architecture": {
     "family": "decoder_only",
     "note": "OpenAI never published architecture details, weights, or a training paper for text-davinci-003. It is documented only as an InstructGPT-lineage model in the GPT-3 series, tuned with reinforcement learning from human feedback. Included here as a stub specimen because Alpaca 7B's edges.jsonl entry names it as the source of distilled training data -- not because its own record is complete.",
-    "n_layers": { "value": null, "status": "not_recorded" },
-    "hidden_size": { "value": null, "status": "not_recorded" },
-    "n_heads": { "value": null, "status": "not_recorded" },
-    "vocab_size": { "value": null, "status": "not_recorded" },
-    "positional_encoding": { "value": null, "status": "not_recorded" }
+    "n_layers": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "hidden_size": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "n_heads": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "vocab_size": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "positional_encoding": {
+      "value": null,
+      "status": "not_recorded"
+    }
   },
   "training_data": {
     "value": null,
     "source": null,
     "status": "not_recorded"
   },
-  "techniques": ["instruct-gpt", "rlhf"],
+  "techniques": [
+    "instruct-gpt",
+    "rlhf"
+  ],
   "primary_sources": [
     "https://developers.openai.com/api/docs/deprecations"
   ],
@@ -36,6 +60,11 @@
       "date": "2026-09-24",
       "change": "created as a stub specimen to resolve the alpaca-7b distilled_from_outputs edge",
       "by": "wilson-pruitt"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "availability checked and recorded",
+      "by": "wilson-pruitt + claude"
     }
   ]
 }

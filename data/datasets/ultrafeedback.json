@@ -1,0 +1,33 @@
+{
+  "id": "ultrafeedback",
+  "name": "UltraFeedback",
+  "builder": "OpenBMB / Tsinghua University",
+  "release_date": {
+    "value": "2023-10-02",
+    "source": "https://arxiv.org/abs/2310.01377",
+    "status": "partial",
+    "note": "arXiv v1 date of the paper."
+  },
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/datasets/openbmb/UltraFeedback"
+  },
+  "content": {
+    "value": "Preference data: instructions answered by a pool of models, with GPT-4 employed 'to offer detailed feedback in both numerical and textual forms.'",
+    "source": "https://arxiv.org/abs/2310.01377",
+    "status": "recorded",
+    "note": "The answering models are not recorded here; only GPT-4's role as judge is."
+  },
+  "primary_sources": [
+    "https://arxiv.org/abs/2310.01377",
+    "https://github.com/thunlp/UltraFeedback"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created from primary sources (dataset records ruling)",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}

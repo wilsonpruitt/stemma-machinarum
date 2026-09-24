@@ -5,10 +5,15 @@
   "release_date": {
     "value": "2023-05-05",
     "source": "https://www.databricks.com/blog/mpt-7b",
-    "status": "recorded",
-    "note": "Original HF repo mosaicml/mpt-7b returned HTTP 401 when checked 2026-09-24 (the whole mosaicml org appears unreachable); only third-party re-uploads were found. The Internet Archive was offline, so no archived config was retrieved."
+    "status": "recorded"
   },
   "weights_status": "open",
+  "availability": {
+    "value": "removed",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/mosaicml/mpt-7b",
+    "note": "HF API returned HTTP 401 for this repo and for other mosaicml/ repos; only third-party re-uploads were found. 'removed' means unreachable at its original address, not a confirmed deletion."
+  },
   "license": {
     "value": "Apache 2.0",
     "source": "https://www.databricks.com/blog/mpt-7b",
@@ -56,6 +61,11 @@
     {
       "date": "2026-09-24",
       "change": "created from primary sources (Phase 1 seed, batch 2)",
+      "by": "wilson-pruitt + claude"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "availability checked and recorded",
       "by": "wilson-pruitt + claude"
     }
   ]

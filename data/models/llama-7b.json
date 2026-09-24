@@ -8,6 +8,12 @@
     "status": "recorded"
   },
   "weights_status": "open",
+  "availability": {
+    "value": "unknown",
+    "checked": "2026-09-24",
+    "source": "https://ai.meta.com/blog/large-language-model-llama-meta-ai/",
+    "note": "Meta distributed LLaMA 1 weights by application form; no Meta-owned HF repo exists and the form's current state was not checked. Third-party copies (e.g. huggyllama/llama-7b) are re-uploads, not verified against the originals."
+  },
   "license": {
     "value": "Non-commercial research license; gated access via application to Meta (no standalone public license-text URL located)",
     "source": "https://ai.meta.com/blog/large-language-model-llama-meta-ai/",
@@ -51,7 +57,12 @@
     "source": "https://arxiv.org/abs/2302.13971",
     "status": "recorded"
   },
-  "techniques": ["transformer-decoder", "rotary-position-embedding", "rmsnorm", "swiglu"],
+  "techniques": [
+    "transformer-decoder",
+    "rotary-position-embedding",
+    "rmsnorm",
+    "swiglu"
+  ],
   "primary_sources": [
     "https://arxiv.org/abs/2302.13971",
     "https://ai.meta.com/blog/large-language-model-llama-meta-ai/"
@@ -60,6 +71,11 @@
     {
       "date": "2026-09-24",
       "change": "created from primary sources (paper, Meta AI blog post)",
+      "by": "wilson-pruitt + claude"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "availability checked and recorded",
       "by": "wilson-pruitt + claude"
     }
   ]

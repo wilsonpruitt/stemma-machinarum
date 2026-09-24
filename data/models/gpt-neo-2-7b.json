@@ -9,6 +9,11 @@
     "note": "GitHub release v1.0 'Release Pretrained Models'."
   },
   "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/EleutherAI/gpt-neo-2.7B"
+  },
   "license": {
     "value": "MIT",
     "source": "https://huggingface.co/EleutherAI/gpt-neo-2.7B/blob/e24fa291132763e59f4a5422741b424fb5d59056/README.md",
@@ -67,6 +72,11 @@
     {
       "date": "2026-09-24",
       "change": "created from primary sources (Phase 1 seed, batch 2)",
+      "by": "wilson-pruitt + claude"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "availability checked and recorded",
       "by": "wilson-pruitt + claude"
     }
   ]

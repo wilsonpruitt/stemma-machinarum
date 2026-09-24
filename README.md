@@ -22,6 +22,7 @@ Two audiences:
 
 - `schema/` — JSON Schema for model, edge, and technique records.
 - `data/models/` — one specimen per file.
+- `data/datasets/` — training corpora, one per file; models link to them with `trained_on`.
 - `data/edges/edges.jsonl` — one lineage edge per line, each with an
   evidence tag and a source.
 - `data/techniques/` — technique records (transformer-decoder, RLHF,

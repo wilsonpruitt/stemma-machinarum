@@ -9,6 +9,11 @@
     "note": "arXiv v1 date of the paper. EleutherAI announced the weights earlier; that date was not verified in-session."
   },
   "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/EleutherAI/gpt-neox-20b"
+  },
   "license": {
     "value": "Apache 2.0",
     "source": "https://huggingface.co/EleutherAI/gpt-neox-20b/blob/c292233c833e336628618a88a648727eb3dff0a7/README.md",
@@ -68,6 +73,11 @@
     {
       "date": "2026-09-24",
       "change": "created from primary sources (Phase 1 seed, batch 2)",
+      "by": "wilson-pruitt + claude"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "availability checked and recorded",
       "by": "wilson-pruitt + claude"
     }
   ]

@@ -9,6 +9,12 @@
     "note": "arXiv v1 date of the technical report."
   },
   "weights_status": "closed",
+  "availability": {
+    "value": "never_released",
+    "checked": "2026-09-24",
+    "source": "https://arxiv.org/abs/2303.08774",
+    "note": "Weights never released; API access status not tracked by this field."
+  },
   "license": {
     "value": "Proprietary; no weights released.",
     "source": "https://arxiv.org/abs/2303.08774",
@@ -53,6 +59,11 @@
     {
       "date": "2026-09-24",
       "change": "created as a stub specimen to resolve zephyr-7b-beta feedback_from edge",
+      "by": "wilson-pruitt + claude"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "availability checked and recorded",
       "by": "wilson-pruitt + claude"
     }
   ]

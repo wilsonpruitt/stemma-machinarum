@@ -1,0 +1,32 @@
+{
+  "id": "webtext",
+  "name": "WebText",
+  "builder": "OpenAI",
+  "release_date": {
+    "value": null,
+    "status": "not_recorded"
+  },
+  "availability": {
+    "value": "partial",
+    "checked": "2026-09-24",
+    "source": "https://github.com/openai/gpt-2-output-dataset",
+    "note": "OpenAI released 250K documents from the WebText test set; the training set was not released."
+  },
+  "content": {
+    "value": "Millions of web pages linked from Reddit; the GPT-2 training corpus.",
+    "source": "https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf",
+    "status": "recorded",
+    "note": "The gpt2-xl record carries the paper's fuller description (~8M documents, outbound links with karma >= 3)."
+  },
+  "primary_sources": [
+    "https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf",
+    "https://github.com/openai/gpt-2-output-dataset"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created from primary sources (dataset records ruling)",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}

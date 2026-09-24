@@ -9,6 +9,11 @@
     "note": "Date of the paper's arXiv v1; the weights' own publication date was not confirmed."
   },
   "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/HuggingFaceH4/zephyr-7b-beta"
+  },
   "license": {
     "value": "MIT",
     "source": "https://huggingface.co/HuggingFaceH4/zephyr-7b-beta",
@@ -81,6 +86,11 @@
     {
       "date": "2026-09-24",
       "change": "note on context_length provenance",
+      "by": "wilson-pruitt + claude"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "availability checked and recorded",
       "by": "wilson-pruitt + claude"
     }
   ]

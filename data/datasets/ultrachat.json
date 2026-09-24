@@ -1,0 +1,32 @@
+{
+  "id": "ultrachat",
+  "name": "UltraChat",
+  "builder": "OpenBMB / Tsinghua University",
+  "release_date": {
+    "value": "2023-05-23",
+    "source": "https://arxiv.org/abs/2305.14233",
+    "status": "partial",
+    "note": "arXiv v1 date of the paper."
+  },
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/datasets/openbmb/UltraChat",
+    "note": "Old address stingning/ultrachat redirects here."
+  },
+  "content": {
+    "value": "Synthetic multi-turn dialogues: 'two separate ChatGPT Turbo APIs are adopted in the conversation generation, where one plays the role of the user to generate queries, and the other generates the response.'",
+    "source": "https://arxiv.org/abs/2305.14233",
+    "status": "recorded"
+  },
+  "primary_sources": [
+    "https://arxiv.org/abs/2305.14233"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created from primary sources (dataset records ruling)",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}

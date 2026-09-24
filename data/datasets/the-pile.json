@@ -1,0 +1,33 @@
+{
+  "id": "the-pile",
+  "name": "The Pile",
+  "builder": "EleutherAI",
+  "release_date": {
+    "value": "2020-12-31",
+    "source": "https://arxiv.org/abs/2101.00027",
+    "status": "partial",
+    "note": "arXiv v1 date of the paper."
+  },
+  "availability": {
+    "value": "unknown",
+    "checked": "2026-09-24",
+    "source": "https://pile.eleuther.ai/",
+    "note": "Homepage says 'The Pile is hosted by the Eye'; the-eye.eu did not respond when checked, and the HF repo EleutherAI/pile holds only a loader script pointing there. Reports that the dataset was taken down were not verified in-session."
+  },
+  "content": {
+    "value": "825 GiB of English text from 22 sources, built for training large language models.",
+    "source": "https://arxiv.org/abs/2101.00027",
+    "status": "recorded"
+  },
+  "primary_sources": [
+    "https://arxiv.org/abs/2101.00027",
+    "https://pile.eleuther.ai/"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created from primary sources (dataset records ruling)",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}

@@ -9,6 +9,11 @@
     "note": "arXiv v1 date. Card: an earlier version of the suite was released first and all models were renamed in January 2023."
   },
   "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/EleutherAI/pythia-6.9b"
+  },
   "license": {
     "value": "Apache 2.0",
     "source": "https://huggingface.co/EleutherAI/pythia-6.9b/blob/c0e3eee36dc47af0c49f361c74cfe459c09f7f23/README.md",
@@ -68,6 +73,11 @@
     {
       "date": "2026-09-24",
       "change": "created from primary sources (Phase 1 seed, batch 2)",
+      "by": "wilson-pruitt + claude"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "availability checked and recorded",
       "by": "wilson-pruitt + claude"
     }
   ]

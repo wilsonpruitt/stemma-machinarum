@@ -9,6 +9,11 @@
     "note": "arXiv v1 date of the paper."
   },
   "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/facebook/opt-6.7b"
+  },
   "license": {
     "value": "OPT-175B License Agreement: non-commercial research use only.",
     "source": "https://github.com/facebookresearch/metaseq/blob/main/projects/OPT/MODEL_LICENSE.md",
@@ -70,6 +75,11 @@
     {
       "date": "2026-09-24",
       "change": "created from primary sources (Phase 1 seed, batch 2)",
+      "by": "wilson-pruitt + claude"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "availability checked and recorded",
       "by": "wilson-pruitt + claude"
     }
   ]

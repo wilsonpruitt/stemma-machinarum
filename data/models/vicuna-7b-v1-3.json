@@ -8,6 +8,11 @@
     "status": "recorded"
   },
   "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/lmsys/vicuna-7b-v1.3"
+  },
   "license": {
     "value": "Non-commercial license (model card). Blog: subject to the LLaMA model license, OpenAI's Terms of Use for generated data, and ShareGPT's privacy practices.",
     "source": "https://huggingface.co/lmsys/vicuna-7b-v1.3",
@@ -65,6 +70,11 @@
     {
       "date": "2026-09-24",
       "change": "created from primary sources (Phase 1 seed, batch 1)",
+      "by": "wilson-pruitt + claude"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "availability checked and recorded",
       "by": "wilson-pruitt + claude"
     }
   ]
