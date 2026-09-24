@@ -62,7 +62,18 @@ def order(candidates):
 def summarize(cid, d):
     c = d["_candidate"]
     lines = [f"\n{'=' * 72}", f"{cid}   ({c['repo']})", "=" * 72]
-    lines.append(f"developer:    {d['developer']}")
+
+    undecided = [e for e in c["edges"] if e["accept"] is None]
+    if undecided:
+        lines.append("⚠ NEEDS YOUR READ -- an edge below has no decision yet. This is the")
+        lines.append("  actual judgment call; everything else here is settled.")
+    else:
+        lines.append("✓ Routine. Every edge below already has a decision, with the reasoning")
+        lines.append("  right next to it -- there's nothing here that needs weighing, just a")
+        lines.append("  read to confirm it looks right. What follows the edges (if anything)")
+        lines.append("  is FYI for later, not something to decide today.")
+
+    lines.append(f"\ndeveloper:    {d['developer']}")
     lines.append(f"release:      {d['release_date'].get('value')}  [{d['release_date']['status']}]")
     lines.append(f"license:      {d['license'].get('value')}  [{d['license']['status']}]")
     lines.append(f"availability: {d['availability']['value']}  (checked {d['availability']['checked']})")
@@ -71,19 +82,19 @@ def summarize(cid, d):
                       if isinstance(v, dict) and "value" in v and v.get("value") is not None)
     lines.append(f"architecture: {arch.get('family')}" + (f"  ({dims})" if dims else ""))
     lines.append("")
-    lines.append("edges:")
+    lines.append("edges -- the actual lineage decision, one per parent:")
     for e in c["edges"]:
-        mark = {True: "ACCEPT ", False: "reject ", None: "??????"}[e["accept"]]
+        mark = {True: "ACCEPT ", False: "reject ", None: "?? YOUR CALL ??"}[e["accept"]]
         parent = e.get("parent") or f"UNRESOLVED({e.get('parent_hf')})"
         lines.append(f"  [{mark}] -> {parent:30s} {e.get('relation') or '?':28s} [{e.get('evidence')}]")
         if e.get("note"):
             note = e["note"]
-            lines.append(f"             {note[:180]}" + ("..." if len(note) > 180 else ""))
+            lines.append(f"             {note[:220]}" + ("..." if len(note) > 220 else ""))
     if c["flags"]:
         lines.append("")
-        lines.append("flags:")
+        lines.append("for later (not blocking; nothing to decide today):")
         for f in c["flags"]:
-            lines.append(f"  ⚑ {f}")
+            lines.append(f"  • {f}")
     if c.get("review_notes"):
         lines.append("")
         lines.append(f"review notes: {c['review_notes']}")
