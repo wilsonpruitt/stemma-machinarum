@@ -189,6 +189,7 @@ Keep **classification** (grouping by structural characters, Reuleaux-style) sepa
 0. **Repo setup.** Layout, `.gitignore`, draft schemas, `validate.py` that enforces "no edge without source" and "no blank where unknown belongs."
 1. **Hand-curated seed.** 15–20 records built directly from papers and model cards, with Wilson reviewing each. This sets the quality bar.
 2. **Ingest.** `ingest_hf.py` generates candidates for the remaining pilot models, staged for review.
+2b. **Site.** `stemma.network` hosts both doors: the Graph (records, raw JSON, `llms.txt`) and the Notebook (Track A's path, with Wilson's dated notes), cross-linked. **`docs/site-plan.md` is the score** (three rulings by Wilson, five by Fable, 2026-09-24). Phases 3 and 4 land on this site.
 3. **Graph and export.** `export_graph.py` produces a JSON graph and GraphML, plus one simple visualization of the pilot network, with edges styled by evidence tag.
 4. **Publish v0.1.** README, `docs/method.md`, `llms.txt`, a tagged GitHub release, and a Zenodo DOI for schema and method.
 
@@ -218,6 +219,6 @@ Keep **classification** (grouping by structural characters, Reuleaux-style) sepa
 ## 9. Open decisions for Wilson
 
 - [ ] Code license (MIT or Apache 2.0) and data license (CC BY 4.0 is the usual choice for open data).
-- [ ] Whether narrative notebook entries are public in the repo or kept private until later.
+- [x] Whether narrative notebook entries are public in the repo or kept private until later. **Public** (Wilson, 2026-09-24; `docs/site-plan.md` ruling 1).
 - [ ] Register `stemma.foundation` defensively now, or later?
-- [ ] Which static site setup for `stemma.network` (defer until after v0.1). Domain is registered at Cloudflare; wire it to the host with DNS-only records.
+- [x] Which static site setup for `stemma.network`. **Decided, brought forward from "after v0.1": Astro, static, `site/` in this repo, git-connected to Vercel** (`docs/site-plan.md`). Domain is registered at Cloudflare; wire it with DNS-only records.
