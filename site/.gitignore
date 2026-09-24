@@ -3,3 +3,5 @@ dist/
 .astro/
 public/data/
 public/llms.txt
+.vercel
+.env*
