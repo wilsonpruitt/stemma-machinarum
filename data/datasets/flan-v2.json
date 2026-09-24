@@ -1,0 +1,35 @@
+{
+  "id": "flan-v2",
+  "name": "FLAN-v2 Collection (Flan 2022)",
+  "builder": "Longpre et al., github.com/google-research/FLAN",
+  "release_date": {
+    "value": "2023-01-31",
+    "source": "https://arxiv.org/abs/2301.13688",
+    "status": "partial",
+    "note": "arXiv v1 date of the Flan Collection paper."
+  },
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://github.com/google-research/FLAN",
+    "note": "HTTP 200 on the repo page. Only the repo page was checked, not each file. Third-party HF mirror Muennighoff/flan also exists."
+  },
+  "content": {
+    "value": "Orca 2 paper: 'the FLAN-v2 Collection [33], which consists of five sub-collections, namely, CoT, NiV2, T0, Flan 2021 and Dialogue'; Orca 2 was first finetuned 'on the train split of FLAN-v2 dataset for one epoch'. Reference [33] in that paper is Longpre et al., 'The Flan Collection: Designing Data and Methods for Effective Instruction Tuning' (arXiv 2301.13688).",
+    "source": "https://arxiv.org/abs/2311.11045",
+    "status": "recorded",
+    "note": "Recorded because orca-2-7b trained on it directly (Orca 2 paper section 4.2). Human-written task data, so no model parents recorded; the Flan Collection paper itself was not read in full."
+  },
+  "primary_sources": [
+    "https://arxiv.org/abs/2311.11045",
+    "https://arxiv.org/abs/2301.13688",
+    "https://github.com/google-research/FLAN"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created from primary sources (needed by orca-2-7b trained_on edge; panel ruling 2/3 dataset routing)",
+      "by": "wilson-pruitt + claude (Sonnet 5)"
+    }
+  ]
+}

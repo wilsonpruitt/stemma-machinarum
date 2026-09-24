@@ -1,0 +1,34 @@
+{
+  "id": "orca-1-data",
+  "name": "Orca 1 explanation-tuning data (FLAN-5M / FLAN-1M)",
+  "builder": "Microsoft Research (Orca 1 authors)",
+  "release_date": {
+    "value": "2023-06-05",
+    "source": "https://arxiv.org/abs/2306.02707",
+    "status": "partial",
+    "note": "arXiv v1 date of the Orca paper; the data itself has no separate release date."
+  },
+  "availability": {
+    "value": "unknown",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/api/datasets?author=microsoft&search=orca",
+    "note": "Neither paper says the training data was released: Orca 1 announces only a weight diff ('publicly release a diff of the model weights'), Orca 2 says 'We make Orca 2 weights publicly available'. A search of the Hugging Face microsoft org for 'orca' on 2026-09-24 returned only microsoft/orca-math-word-problems-200k and microsoft/orca-agentinstruct-1M-v1, neither of which is described as this data. Absence from a search is not proof of non-release, so recorded unknown, not never_released. OpenOrca (id openorca) is a third-party reproduction of Orca 1's recipe, not this data."
+  },
+  "content": {
+    "value": "'We generate 5 million instructions (queries augmented with system messages) referred as FLAN-5M ... We further randomly sample 1 million queries from FLAN-5M to create another split, referred as FLAN-1M. We use Azure OpenAI API to collect ChatGPT (GPT-3.5-turbo) responses to FLAN-5M, and GPT-4 responses to FLAN-1M.' Orca 2's paper calls these '5 million ChatGPT data from Orca 1' and '1 million GPT-4 data from Orca 1'.",
+    "source": "https://arxiv.org/abs/2306.02707",
+    "status": "recorded",
+    "note": "Prompts are drawn from the FLAN-v2 collection (Orca 1 paper, section on scaling tasks). Two response sets, two teachers: ChatGPT wrote the 5M responses, GPT-4 the 1M subset. The ChatGPT snapshot is not_recorded."
+  },
+  "primary_sources": [
+    "https://arxiv.org/abs/2306.02707",
+    "https://arxiv.org/abs/2311.11045"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created from primary sources (ruling: 3-tier panel (2/3 dataset routing), see session log)",
+      "by": "wilson-pruitt + claude (Sonnet 5)"
+    }
+  ]
+}

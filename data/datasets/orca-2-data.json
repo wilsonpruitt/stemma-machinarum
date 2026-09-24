@@ -1,0 +1,33 @@
+{
+  "id": "orca-2-data",
+  "name": "Orca 2 dataset (~817K)",
+  "builder": "Microsoft Research (Orca 2 authors)",
+  "release_date": {
+    "value": "2023-11-18",
+    "source": "https://arxiv.org/abs/2311.11045",
+    "status": "partial",
+    "note": "arXiv v1 date of the Orca 2 paper; the data itself has no separate release date."
+  },
+  "availability": {
+    "value": "unknown",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/api/datasets?author=microsoft&search=orca",
+    "note": "Neither paper says the training data was released: Orca 1 announces only a weight diff ('publicly release a diff of the model weights'), Orca 2 says 'We make Orca 2 weights publicly available'. A search of the Hugging Face microsoft org for 'orca' on 2026-09-24 returned only microsoft/orca-math-word-problems-200k and microsoft/orca-agentinstruct-1M-v1, neither of which is described as this data. Absence from a search is not proof of non-release, so recorded unknown, not never_released. OpenOrca (id openorca) is a third-party reproduction of Orca 1's recipe, not this data."
+  },
+  "content": {
+    "value": "'For Orca 2, we created a new dataset with ~817K training instances, which we will refer as Orca 2 dataset.' Four main sources: FLAN-v2-derived cautious-reasoning prompts (~602K), a few-shot set (55K, re-purposed from Orca 1 data), math (~160K), and fully synthetic doctor-patient conversations ('synthetically created 2000 Doctor-Patient Conversations with GPT-4'). Section 4.2 calls the combined Orca 1 GPT-4 set plus this one '~1.8 million GPT-4 data'.",
+    "source": "https://arxiv.org/abs/2311.11045",
+    "status": "recorded",
+    "note": "The paper's own labelling of this data as GPT-4 data is at section 4.2 (compute paragraph) and the progressive-learning paragraph; it does not give a per-source teacher breakdown for the four sources."
+  },
+  "primary_sources": [
+    "https://arxiv.org/abs/2311.11045"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created from primary sources (ruling: 3-tier panel (2/3 dataset routing), see session log)",
+      "by": "wilson-pruitt + claude (Sonnet 5)"
+    }
+  ]
+}
