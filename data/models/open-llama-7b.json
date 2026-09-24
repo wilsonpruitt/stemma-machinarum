@@ -1,0 +1,93 @@
+{
+  "id": "open-llama-7b",
+  "name": "open_llama_7b",
+  "identifiers": {
+    "huggingface": [
+      "openlm-research/open_llama_7b"
+    ]
+  },
+  "developer": "OpenLM Research",
+  "release_date": {
+    "value": "2023-06-07",
+    "source": "https://huggingface.co/api/models/openlm-research/open_llama_7b",
+    "status": "partial",
+    "note": "HF repo creation date; may predate or postdate public release."
+  },
+  "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/openlm-research/open_llama_7b"
+  },
+  "license": {
+    "value": "apache-2.0",
+    "source": "https://huggingface.co/openlm-research/open_llama_7b/blob/6fb184ff23774c25bf84b3628e49c8b78372c7be/README.md",
+    "status": "partial",
+    "note": "From HF card metadata (uploader-declared); confirm against the license text."
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "family read from config 'architectures': ['LlamaForCausalLM'].",
+    "n_layers": {
+      "value": 32,
+      "source": "https://huggingface.co/openlm-research/open_llama_7b/raw/6fb184ff23774c25bf84b3628e49c8b78372c7be/config.json",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 4096,
+      "source": "https://huggingface.co/openlm-research/open_llama_7b/raw/6fb184ff23774c25bf84b3628e49c8b78372c7be/config.json",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 32,
+      "source": "https://huggingface.co/openlm-research/open_llama_7b/raw/6fb184ff23774c25bf84b3628e49c8b78372c7be/config.json",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 32000,
+      "source": "https://huggingface.co/openlm-research/open_llama_7b/raw/6fb184ff23774c25bf84b3628e49c8b78372c7be/config.json",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": 2048,
+      "source": "https://huggingface.co/openlm-research/open_llama_7b/raw/6fb184ff23774c25bf84b3628e49c8b78372c7be/config.json",
+      "status": "recorded"
+    },
+    "positional_encoding": {
+      "value": null,
+      "status": "not_recorded"
+    }
+  },
+  "training_data": {
+    "value": "RedPajama-Data-1T (~1.2 trillion tokens). No Stemma dataset record yet (see flags), so no trained_on edge.",
+    "source": "https://huggingface.co/openlm-research/open_llama_7b",
+    "status": "recorded"
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/openlm-research/open_llama_7b",
+    "https://huggingface.co/openlm-research/open_llama_7b/raw/6fb184ff23774c25bf84b3628e49c8b78372c7be/config.json"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (openlm-research/open_llama_7b@6fb184ff23774c25bf84b3628e49c8b78372c7be)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer, design_follows llama-7b added; dataset edge rejected pending a RedPajama record",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer cleanup: removed 2 stale flag(s), filled training_data",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (1 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

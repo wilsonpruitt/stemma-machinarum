@@ -1,0 +1,105 @@
+{
+  "id": "codellama-7b-instruct",
+  "name": "CodeLlama-7b-Instruct-hf",
+  "identifiers": {
+    "huggingface": [
+      "codellama/CodeLlama-7b-Instruct-hf"
+    ]
+  },
+  "developer": "Meta",
+  "release_date": {
+    "value": "2023-08-24",
+    "source": "https://huggingface.co/api/models/codellama/CodeLlama-7b-Instruct-hf",
+    "status": "partial",
+    "note": "HF repo creation date; may predate or postdate public release."
+  },
+  "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/codellama/CodeLlama-7b-Instruct-hf"
+  },
+  "license": {
+    "value": "llama2",
+    "source": "https://huggingface.co/codellama/CodeLlama-7b-Instruct-hf/blob/22cb240e0292b0b5ab4c17ccd97aa3a2f799cbed/README.md",
+    "status": "partial",
+    "note": "From HF card metadata (uploader-declared); confirm against the license text."
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "family read from config 'architectures': ['LlamaForCausalLM'].",
+    "n_layers": {
+      "value": 32,
+      "source": "https://huggingface.co/codellama/CodeLlama-7b-Instruct-hf/raw/22cb240e0292b0b5ab4c17ccd97aa3a2f799cbed/config.json",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 4096,
+      "source": "https://huggingface.co/codellama/CodeLlama-7b-Instruct-hf/raw/22cb240e0292b0b5ab4c17ccd97aa3a2f799cbed/config.json",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 32,
+      "source": "https://huggingface.co/codellama/CodeLlama-7b-Instruct-hf/raw/22cb240e0292b0b5ab4c17ccd97aa3a2f799cbed/config.json",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 32016,
+      "source": "https://huggingface.co/codellama/CodeLlama-7b-Instruct-hf/raw/22cb240e0292b0b5ab4c17ccd97aa3a2f799cbed/config.json",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": 16384,
+      "source": "https://huggingface.co/codellama/CodeLlama-7b-Instruct-hf/raw/22cb240e0292b0b5ab4c17ccd97aa3a2f799cbed/config.json",
+      "status": "recorded"
+    },
+    "n_kv_heads": {
+      "value": 32,
+      "source": "https://huggingface.co/codellama/CodeLlama-7b-Instruct-hf/raw/22cb240e0292b0b5ab4c17ccd97aa3a2f799cbed/config.json",
+      "status": "recorded"
+    },
+    "positional_encoding": {
+      "value": "rotary (RoPE)",
+      "source": "https://arxiv.org/abs/2308.12950",
+      "status": "recorded",
+      "note": "Architecture unchanged from code-llama-7b (further fine-tuning, not a structural change)."
+    }
+  },
+  "training_data": {
+    "value": "Further instruction-tuning on top of Code Llama's training run (paper does not give a token count for this stage).",
+    "source": "https://arxiv.org/abs/2308.12950",
+    "status": "recorded"
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/codellama/CodeLlama-7b-Instruct-hf",
+    "https://huggingface.co/codellama/CodeLlama-7b-Instruct-hf/raw/22cb240e0292b0b5ab4c17ccd97aa3a2f799cbed/config.json"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (codellama/CodeLlama-7b-Instruct-hf@22cb240e0292b0b5ab4c17ccd97aa3a2f799cbed)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer, fine_tuned_from code-llama-7b added",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer cleanup: removed 2 stale flag(s), filled training_data",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer cleanup: positional_encoding propagated from an unchanged parent architecture",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (1 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

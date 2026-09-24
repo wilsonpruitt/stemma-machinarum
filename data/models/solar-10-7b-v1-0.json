@@ -1,0 +1,120 @@
+{
+  "id": "solar-10-7b-v1-0",
+  "name": "SOLAR-10.7B-v1.0",
+  "identifiers": {
+    "huggingface": [
+      "upstage/SOLAR-10.7B-v1.0"
+    ]
+  },
+  "developer": "Upstage",
+  "release_date": {
+    "value": "2023-12-23",
+    "source": "https://huggingface.co/upstage/SOLAR-10.7B-v1.0",
+    "status": "recorded",
+    "note": "arXiv paper (2312.15166) date."
+  },
+  "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/upstage/SOLAR-10.7B-v1.0"
+  },
+  "license": {
+    "value": "apache-2.0",
+    "source": "https://huggingface.co/upstage/SOLAR-10.7B-v1.0/blob/5a06298f374dae1fb918d73fba72c7722ce71d36/README.md",
+    "status": "partial",
+    "note": "From HF card metadata (uploader-declared); confirm against the license text."
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "family read from config 'architectures': ['LlamaForCausalLM'].",
+    "n_layers": {
+      "value": 48,
+      "source": "https://huggingface.co/upstage/SOLAR-10.7B-v1.0/raw/5a06298f374dae1fb918d73fba72c7722ce71d36/config.json",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 4096,
+      "source": "https://huggingface.co/upstage/SOLAR-10.7B-v1.0/raw/5a06298f374dae1fb918d73fba72c7722ce71d36/config.json",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 32,
+      "source": "https://huggingface.co/upstage/SOLAR-10.7B-v1.0/raw/5a06298f374dae1fb918d73fba72c7722ce71d36/config.json",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 32000,
+      "source": "https://huggingface.co/upstage/SOLAR-10.7B-v1.0/raw/5a06298f374dae1fb918d73fba72c7722ce71d36/config.json",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": 4096,
+      "source": "https://huggingface.co/upstage/SOLAR-10.7B-v1.0/raw/5a06298f374dae1fb918d73fba72c7722ce71d36/config.json",
+      "status": "recorded"
+    },
+    "n_kv_heads": {
+      "value": 8,
+      "source": "https://huggingface.co/upstage/SOLAR-10.7B-v1.0/raw/5a06298f374dae1fb918d73fba72c7722ce71d36/config.json",
+      "status": "recorded"
+    },
+    "positional_encoding": {
+      "value": "rotary (RoPE)",
+      "source": "https://huggingface.co/upstage/SOLAR-10.7B-v1.0",
+      "status": "recorded",
+      "note": "Inherited from Mistral 7B's layers (see fine_tuned_from note on the depth-up-scaling process); not independently re-verified against SOLAR's own config this session."
+    }
+  },
+  "training_data": {
+    "value": null,
+    "status": "not_recorded",
+    "note": "The continued-pretraining corpus for the depth-up-scaled model (distinct from the DUS parent, already captured in the fine_tuned_from edge note) is not disclosed in the sources read this session."
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/upstage/SOLAR-10.7B-v1.0",
+    "https://huggingface.co/upstage/SOLAR-10.7B-v1.0/raw/5a06298f374dae1fb918d73fba72c7722ce71d36/config.json"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (upstage/SOLAR-10.7B-v1.0@5a06298f374dae1fb918d73fba72c7722ce71d36)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer, release date set; DUS relationship to mistral-7b-v0-1 flagged, not resolved",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: depth_upscaled_from edge to mistral-7b-v0-1 resolved per ruling",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "ruling reversed: blind 3-tier panel (3/3 fine_tuned_from) overturned the earlier solo depth_upscaled_from call; relation type removed from schema",
+      "by": "panel: haiku+sonnet+opus, applied by claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer cleanup: removed 2 stale flag(s)",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer cleanup: training_data flag reworded to reflect a real, checked gap rather than an unfilled TODO",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer cleanup: positional_encoding propagated from an unchanged parent architecture",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (1 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

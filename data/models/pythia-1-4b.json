@@ -1,0 +1,95 @@
+{
+  "id": "pythia-1-4b",
+  "name": "pythia-1.4b",
+  "identifiers": {
+    "huggingface": [
+      "EleutherAI/pythia-1.4b"
+    ]
+  },
+  "developer": "EleutherAI",
+  "release_date": {
+    "value": "2023-02-09",
+    "source": "https://huggingface.co/api/models/EleutherAI/pythia-1.4b",
+    "status": "partial",
+    "note": "HF repo creation date; may predate or postdate public release."
+  },
+  "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/EleutherAI/pythia-1.4b"
+  },
+  "license": {
+    "value": "apache-2.0",
+    "source": "https://huggingface.co/EleutherAI/pythia-1.4b/blob/fedc38a16eea3bd36a96b906d78d11d2ce18ed79/README.md",
+    "status": "partial",
+    "note": "From HF card metadata (uploader-declared); confirm against the license text."
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "family read from config 'architectures': ['GPTNeoXForCausalLM'].",
+    "n_layers": {
+      "value": 24,
+      "source": "https://huggingface.co/EleutherAI/pythia-1.4b/raw/fedc38a16eea3bd36a96b906d78d11d2ce18ed79/config.json",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 2048,
+      "source": "https://huggingface.co/EleutherAI/pythia-1.4b/raw/fedc38a16eea3bd36a96b906d78d11d2ce18ed79/config.json",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 16,
+      "source": "https://huggingface.co/EleutherAI/pythia-1.4b/raw/fedc38a16eea3bd36a96b906d78d11d2ce18ed79/config.json",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 50304,
+      "source": "https://huggingface.co/EleutherAI/pythia-1.4b/raw/fedc38a16eea3bd36a96b906d78d11d2ce18ed79/config.json",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": 2048,
+      "source": "https://huggingface.co/EleutherAI/pythia-1.4b/raw/fedc38a16eea3bd36a96b906d78d11d2ce18ed79/config.json",
+      "status": "recorded"
+    },
+    "positional_encoding": {
+      "value": "rotary (RoPE), partial: 25% of dims",
+      "source": "https://arxiv.org/abs/2304.01373",
+      "status": "recorded",
+      "note": "Paper sec 2.3: 'We use rotary embeddings'; fraction is config rotary_pct 0.25. Same as pythia-6-9b."
+    }
+  },
+  "training_data": {
+    "value": "The Pile (300B tokens). One of 8 sizes trained on identical data in identical order (Pythia paper).",
+    "source": "https://arxiv.org/abs/2304.01373",
+    "status": "recorded"
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/EleutherAI/pythia-1.4b",
+    "https://huggingface.co/EleutherAI/pythia-1.4b/raw/fedc38a16eea3bd36a96b906d78d11d2ce18ed79/config.json"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (EleutherAI/pythia-1.4b@fedc38a16eea3bd36a96b906d78d11d2ce18ed79)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer, positional encoding set; trained_on accepted",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer cleanup: removed 3 stale flag(s), filled training_data",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (1 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

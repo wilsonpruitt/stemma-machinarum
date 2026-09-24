@@ -1,0 +1,92 @@
+{
+  "id": "stablelm-base-alpha-7b",
+  "name": "stablelm-base-alpha-7b",
+  "identifiers": {
+    "huggingface": [
+      "stabilityai/stablelm-base-alpha-7b"
+    ]
+  },
+  "developer": "Stability AI",
+  "release_date": {
+    "value": "2023-04-11",
+    "source": "https://huggingface.co/api/models/stabilityai/stablelm-base-alpha-7b",
+    "status": "partial",
+    "note": "HF repo creation date; may predate or postdate public release."
+  },
+  "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/stabilityai/stablelm-base-alpha-7b"
+  },
+  "license": {
+    "value": "CC BY-SA-4.0",
+    "source": "https://huggingface.co/stabilityai/stablelm-base-alpha-7b",
+    "status": "recorded"
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "family read from config 'architectures': ['GPTNeoXForCausalLM'].",
+    "n_layers": {
+      "value": 16,
+      "source": "https://huggingface.co/stabilityai/stablelm-base-alpha-7b/raw/1d43a3b40d7d708d8084d07dfae0c4e9fd95c04f/config.json",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 6144,
+      "source": "https://huggingface.co/stabilityai/stablelm-base-alpha-7b/raw/1d43a3b40d7d708d8084d07dfae0c4e9fd95c04f/config.json",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 48,
+      "source": "https://huggingface.co/stabilityai/stablelm-base-alpha-7b/raw/1d43a3b40d7d708d8084d07dfae0c4e9fd95c04f/config.json",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 50432,
+      "source": "https://huggingface.co/stabilityai/stablelm-base-alpha-7b/raw/1d43a3b40d7d708d8084d07dfae0c4e9fd95c04f/config.json",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": 4096,
+      "source": "https://huggingface.co/stabilityai/stablelm-base-alpha-7b",
+      "status": "recorded"
+    },
+    "positional_encoding": {
+      "value": null,
+      "status": "not_recorded"
+    }
+  },
+  "training_data": {
+    "value": "~1.5T tokens: 'a new experimental dataset built atop The Pile', described as roughly 3x the size of the Pile itself.",
+    "source": "https://huggingface.co/stabilityai/stablelm-base-alpha-7b",
+    "status": "recorded"
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/stabilityai/stablelm-base-alpha-7b",
+    "https://huggingface.co/stabilityai/stablelm-base-alpha-7b/raw/1d43a3b40d7d708d8084d07dfae0c4e9fd95c04f/config.json"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (stabilityai/stablelm-base-alpha-7b@1d43a3b40d7d708d8084d07dfae0c4e9fd95c04f)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer, license, training_data filled; layer count flagged for reconciliation",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer cleanup: removed 2 stale flag(s)",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (0 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

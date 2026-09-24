@@ -1,0 +1,110 @@
+{
+  "id": "mistral-7b-instruct-v0-1-gptq",
+  "name": "Mistral-7B-Instruct-v0.1-GPTQ",
+  "identifiers": {
+    "huggingface": [
+      "TheBloke/Mistral-7B-Instruct-v0.1-GPTQ"
+    ]
+  },
+  "developer": "TheBloke",
+  "release_date": {
+    "value": "2023-09-28",
+    "source": "https://huggingface.co/api/models/TheBloke/Mistral-7B-Instruct-v0.1-GPTQ",
+    "status": "partial",
+    "note": "HF repo creation date; may predate or postdate public release."
+  },
+  "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.1-GPTQ"
+  },
+  "license": {
+    "value": "apache-2.0",
+    "source": "https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.1-GPTQ/blob/6ae1e4ae2cfbaf107c705ed722ec243b4f88014d/README.md",
+    "status": "partial",
+    "note": "From HF card metadata (uploader-declared); confirm against the license text."
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "family read from config 'architectures': ['MistralForCausalLM'].",
+    "n_layers": {
+      "value": 32,
+      "source": "https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.1-GPTQ/raw/6ae1e4ae2cfbaf107c705ed722ec243b4f88014d/config.json",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 4096,
+      "source": "https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.1-GPTQ/raw/6ae1e4ae2cfbaf107c705ed722ec243b4f88014d/config.json",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 32,
+      "source": "https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.1-GPTQ/raw/6ae1e4ae2cfbaf107c705ed722ec243b4f88014d/config.json",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 32000,
+      "source": "https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.1-GPTQ/raw/6ae1e4ae2cfbaf107c705ed722ec243b4f88014d/config.json",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": 32768,
+      "source": "https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.1-GPTQ/raw/6ae1e4ae2cfbaf107c705ed722ec243b4f88014d/config.json",
+      "status": "recorded"
+    },
+    "n_kv_heads": {
+      "value": 8,
+      "source": "https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.1-GPTQ/raw/6ae1e4ae2cfbaf107c705ed722ec243b4f88014d/config.json",
+      "status": "recorded"
+    },
+    "positional_encoding": {
+      "value": "rotary (RoPE)",
+      "source": "https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.1-GPTQ",
+      "status": "recorded",
+      "note": "Architecture unchanged; quantization changes weight precision, not the positional scheme."
+    }
+  },
+  "training_data": {
+    "value": "Not applicable: a GPTQ quantization of mistral-7b-instruct-v0-1's existing weights. No new training occurs.",
+    "source": "https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.1-GPTQ",
+    "status": "recorded"
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.1-GPTQ",
+    "https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.1-GPTQ/raw/6ae1e4ae2cfbaf107c705ed722ec243b4f88014d/config.json"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (TheBloke/Mistral-7B-Instruct-v0.1-GPTQ@6ae1e4ae2cfbaf107c705ed722ec243b4f88014d)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer set, quantized_from accepted",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer cleanup: removed 2 stale flag(s)",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer cleanup: training_data filled",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer cleanup: positional_encoding propagated from an unchanged parent architecture",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (1 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

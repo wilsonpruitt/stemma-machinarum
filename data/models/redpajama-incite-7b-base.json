@@ -1,0 +1,93 @@
+{
+  "id": "redpajama-incite-7b-base",
+  "name": "RedPajama-INCITE-7B-Base",
+  "identifiers": {
+    "huggingface": [
+      "togethercomputer/RedPajama-INCITE-7B-Base"
+    ]
+  },
+  "developer": "Together Computer (with Ontocord.ai, ETH DS3Lab, Stanford CRFM, Université de Montréal)",
+  "release_date": {
+    "value": "2023-05-04",
+    "source": "https://huggingface.co/api/models/togethercomputer/RedPajama-INCITE-7B-Base",
+    "status": "partial",
+    "note": "HF repo creation date; may predate or postdate public release."
+  },
+  "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/togethercomputer/RedPajama-INCITE-7B-Base"
+  },
+  "license": {
+    "value": "apache-2.0",
+    "source": "https://huggingface.co/togethercomputer/RedPajama-INCITE-7B-Base/blob/78f7e482443971f4873ba3239f0ac810a367833b/README.md",
+    "status": "partial",
+    "note": "From HF card metadata (uploader-declared); confirm against the license text."
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "Card/tags: GPT-NeoX architecture. Config was not independently checked for rotary_pct/positional encoding this session.",
+    "n_layers": {
+      "value": 32,
+      "source": "https://huggingface.co/togethercomputer/RedPajama-INCITE-7B-Base/raw/78f7e482443971f4873ba3239f0ac810a367833b/config.json",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 4096,
+      "source": "https://huggingface.co/togethercomputer/RedPajama-INCITE-7B-Base/raw/78f7e482443971f4873ba3239f0ac810a367833b/config.json",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 32,
+      "source": "https://huggingface.co/togethercomputer/RedPajama-INCITE-7B-Base/raw/78f7e482443971f4873ba3239f0ac810a367833b/config.json",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 50432,
+      "source": "https://huggingface.co/togethercomputer/RedPajama-INCITE-7B-Base/raw/78f7e482443971f4873ba3239f0ac810a367833b/config.json",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": 2048,
+      "source": "https://huggingface.co/togethercomputer/RedPajama-INCITE-7B-Base/raw/78f7e482443971f4873ba3239f0ac810a367833b/config.json",
+      "status": "recorded"
+    },
+    "positional_encoding": {
+      "value": null,
+      "status": "not_recorded"
+    }
+  },
+  "training_data": {
+    "value": "RedPajama-Data-1T (~1 trillion tokens), a reproduction of the LLaMA training mix. No Stemma dataset record yet (see flags), so no trained_on edge.",
+    "source": "https://huggingface.co/togethercomputer/RedPajama-INCITE-7B-Base",
+    "status": "recorded"
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/togethercomputer/RedPajama-INCITE-7B-Base",
+    "https://huggingface.co/togethercomputer/RedPajama-INCITE-7B-Base/raw/78f7e482443971f4873ba3239f0ac810a367833b/config.json"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (togethercomputer/RedPajama-INCITE-7B-Base@78f7e482443971f4873ba3239f0ac810a367833b)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer set; dataset edge rejected pending a RedPajama record",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer cleanup: removed 2 stale flag(s), filled training_data",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (0 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

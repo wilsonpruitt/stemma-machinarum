@@ -1,0 +1,97 @@
+{
+  "id": "vicuna-13b-v1-5",
+  "name": "vicuna-13b-v1.5",
+  "identifiers": {
+    "huggingface": [
+      "lmsys/vicuna-13b-v1.5"
+    ]
+  },
+  "developer": "LMSYS",
+  "release_date": {
+    "value": "2023-08-01",
+    "source": "https://github.com/lm-sys/FastChat/blob/main/docs/vicuna_weights_version.md",
+    "status": "recorded"
+  },
+  "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/lmsys/vicuna-13b-v1.5"
+  },
+  "license": {
+    "value": "llama2",
+    "source": "https://huggingface.co/lmsys/vicuna-13b-v1.5/blob/c8327bf999adbd2efe2e75f6509fa01436100dc2/README.md",
+    "status": "partial",
+    "note": "From HF card metadata (uploader-declared); confirm against the license text."
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "family read from config 'architectures': ['LlamaForCausalLM'].",
+    "n_layers": {
+      "value": 40,
+      "source": "https://huggingface.co/lmsys/vicuna-13b-v1.5/raw/c8327bf999adbd2efe2e75f6509fa01436100dc2/config.json",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 5120,
+      "source": "https://huggingface.co/lmsys/vicuna-13b-v1.5/raw/c8327bf999adbd2efe2e75f6509fa01436100dc2/config.json",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 40,
+      "source": "https://huggingface.co/lmsys/vicuna-13b-v1.5/raw/c8327bf999adbd2efe2e75f6509fa01436100dc2/config.json",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 32000,
+      "source": "https://huggingface.co/lmsys/vicuna-13b-v1.5/raw/c8327bf999adbd2efe2e75f6509fa01436100dc2/config.json",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": 4096,
+      "source": "https://huggingface.co/lmsys/vicuna-13b-v1.5/raw/c8327bf999adbd2efe2e75f6509fa01436100dc2/config.json",
+      "status": "recorded"
+    },
+    "n_kv_heads": {
+      "value": 40,
+      "source": "https://huggingface.co/lmsys/vicuna-13b-v1.5/raw/c8327bf999adbd2efe2e75f6509fa01436100dc2/config.json",
+      "status": "recorded"
+    },
+    "positional_encoding": {
+      "value": null,
+      "status": "not_recorded"
+    }
+  },
+  "training_data": {
+    "value": "~125K ShareGPT conversations (see the shargpt-vicuna trained_on edge); listed here for completeness since the base model's own pretraining data is Llama 2's undisclosed mix.",
+    "source": "https://github.com/lm-sys/FastChat/blob/main/docs/vicuna_weights_version.md",
+    "status": "recorded"
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/lmsys/vicuna-13b-v1.5",
+    "https://huggingface.co/lmsys/vicuna-13b-v1.5/raw/c8327bf999adbd2efe2e75f6509fa01436100dc2/config.json"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (lmsys/vicuna-13b-v1.5@c8327bf999adbd2efe2e75f6509fa01436100dc2)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer, release date, fine_tuned_from llama-2-13b, trained_on sharegpt-vicuna added",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer cleanup: removed 3 stale flag(s), filled training_data",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (2 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

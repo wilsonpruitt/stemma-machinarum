@@ -1,0 +1,97 @@
+{
+  "id": "xgen-7b-8k-base",
+  "name": "xgen-7b-8k-base",
+  "identifiers": {
+    "huggingface": [
+      "Salesforce/xgen-7b-8k-base"
+    ]
+  },
+  "developer": "Salesforce AI Research",
+  "release_date": {
+    "value": "2023-09-07",
+    "source": "https://huggingface.co/Salesforce/xgen-7b-8k-base",
+    "status": "recorded"
+  },
+  "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/Salesforce/xgen-7b-8k-base"
+  },
+  "license": {
+    "value": "apache-2.0",
+    "source": "https://huggingface.co/Salesforce/xgen-7b-8k-base/blob/14ca1dadca23f5fb99d99c90b1638ecff2a52f9e/README.md",
+    "status": "partial",
+    "note": "From HF card metadata (uploader-declared); confirm against the license text."
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "family read from config 'architectures': ['LlamaForCausalLM'].",
+    "n_layers": {
+      "value": 32,
+      "source": "https://huggingface.co/Salesforce/xgen-7b-8k-base/raw/14ca1dadca23f5fb99d99c90b1638ecff2a52f9e/config.json",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 4096,
+      "source": "https://huggingface.co/Salesforce/xgen-7b-8k-base/raw/14ca1dadca23f5fb99d99c90b1638ecff2a52f9e/config.json",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 32,
+      "source": "https://huggingface.co/Salesforce/xgen-7b-8k-base/raw/14ca1dadca23f5fb99d99c90b1638ecff2a52f9e/config.json",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 51200,
+      "source": "https://huggingface.co/Salesforce/xgen-7b-8k-base/raw/14ca1dadca23f5fb99d99c90b1638ecff2a52f9e/config.json",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": 8192,
+      "source": "https://huggingface.co/Salesforce/xgen-7b-8k-base/raw/14ca1dadca23f5fb99d99c90b1638ecff2a52f9e/config.json",
+      "status": "recorded"
+    },
+    "positional_encoding": {
+      "value": null,
+      "status": "not_recorded"
+    }
+  },
+  "training_data": {
+    "value": null,
+    "status": "not_recorded",
+    "note": "Salesforce's paper/card do not disclose the pretraining corpus composition."
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/Salesforce/xgen-7b-8k-base",
+    "https://huggingface.co/Salesforce/xgen-7b-8k-base/raw/14ca1dadca23f5fb99d99c90b1638ecff2a52f9e/config.json"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (Salesforce/xgen-7b-8k-base@14ca1dadca23f5fb99d99c90b1638ecff2a52f9e)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer, release date set",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer cleanup: removed 2 stale flag(s)",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer cleanup: training_data flag reworded to reflect a real, checked gap rather than an unfilled TODO",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (0 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

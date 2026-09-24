@@ -1,0 +1,94 @@
+{
+  "id": "bloomz-7b1",
+  "name": "bloomz-7b1",
+  "identifiers": {
+    "huggingface": [
+      "bigscience/bloomz-7b1"
+    ]
+  },
+  "developer": "BigScience",
+  "release_date": {
+    "value": "2022-09-27",
+    "source": "https://huggingface.co/api/models/bigscience/bloomz-7b1",
+    "status": "partial",
+    "note": "HF repo creation date; may predate or postdate public release."
+  },
+  "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/bigscience/bloomz-7b1"
+  },
+  "license": {
+    "value": "bigscience-bloom-rail-1.0",
+    "source": "https://huggingface.co/bigscience/bloomz-7b1/blob/fa72440b228d7f42a42ec3681cf09735ad14822f/README.md",
+    "status": "partial",
+    "note": "From HF card metadata (uploader-declared); confirm against the license text."
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "family read from config 'architectures': ['BloomForCausalLM'].",
+    "n_layers": {
+      "value": 30,
+      "source": "https://huggingface.co/bigscience/bloomz-7b1/raw/fa72440b228d7f42a42ec3681cf09735ad14822f/config.json",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "n_heads": {
+      "value": 32,
+      "source": "https://huggingface.co/bigscience/bloomz-7b1/raw/fa72440b228d7f42a42ec3681cf09735ad14822f/config.json",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 250880,
+      "source": "https://huggingface.co/bigscience/bloomz-7b1/raw/fa72440b228d7f42a42ec3681cf09735ad14822f/config.json",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": 2048,
+      "source": "https://huggingface.co/bigscience/bloomz-7b1/raw/fa72440b228d7f42a42ec3681cf09735ad14822f/config.json",
+      "status": "recorded"
+    },
+    "positional_encoding": {
+      "value": "ALiBi (attention bias by distance; no position embeddings)",
+      "source": "https://arxiv.org/abs/2211.05100",
+      "status": "recorded",
+      "note": "Card: 'Architecture: Same as bloom-7b1'."
+    }
+  },
+  "training_data": {
+    "value": "xP3: a crosslingual task/instruction mixture across 46 languages, built by BigScience for multitask fine-tuning. 4.19B fine-tuning tokens over 1000 steps.",
+    "source": "https://huggingface.co/bigscience/bloomz-7b1",
+    "status": "recorded"
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/bigscience/bloomz-7b1",
+    "https://huggingface.co/bigscience/bloomz-7b1/raw/fa72440b228d7f42a42ec3681cf09735ad14822f/config.json"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (bigscience/bloomz-7b1@fa72440b228d7f42a42ec3681cf09735ad14822f)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer, positional encoding, fine_tuned_from bloom-7b1 added, training_data filled",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer cleanup: removed 2 stale flag(s)",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (1 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

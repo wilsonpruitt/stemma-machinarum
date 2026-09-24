@@ -1,0 +1,100 @@
+{
+  "id": "gpt-neo-1-3b",
+  "name": "gpt-neo-1.3B",
+  "identifiers": {
+    "huggingface": [
+      "EleutherAI/gpt-neo-1.3B"
+    ]
+  },
+  "developer": "EleutherAI",
+  "release_date": {
+    "value": "2022-03-02",
+    "source": "https://huggingface.co/api/models/EleutherAI/gpt-neo-1.3B",
+    "status": "partial",
+    "note": "HF repo creation date; may predate or postdate public release."
+  },
+  "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/EleutherAI/gpt-neo-1.3B"
+  },
+  "license": {
+    "value": "mit",
+    "source": "https://huggingface.co/EleutherAI/gpt-neo-1.3B/blob/dbe59a7f4a88d01d1ba9798d78dbe3fe038792c8/README.md",
+    "status": "partial",
+    "note": "From HF card metadata (uploader-declared); confirm against the license text."
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "family read from config 'architectures': ['GPTNeoForCausalLM'].",
+    "n_layers": {
+      "value": 24,
+      "source": "https://huggingface.co/EleutherAI/gpt-neo-1.3B/raw/dbe59a7f4a88d01d1ba9798d78dbe3fe038792c8/config.json",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 2048,
+      "source": "https://huggingface.co/EleutherAI/gpt-neo-1.3B/raw/dbe59a7f4a88d01d1ba9798d78dbe3fe038792c8/config.json",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 16,
+      "source": "https://huggingface.co/EleutherAI/gpt-neo-1.3B/raw/dbe59a7f4a88d01d1ba9798d78dbe3fe038792c8/config.json",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 50257,
+      "source": "https://huggingface.co/EleutherAI/gpt-neo-1.3B/raw/dbe59a7f4a88d01d1ba9798d78dbe3fe038792c8/config.json",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": 2048,
+      "source": "https://huggingface.co/EleutherAI/gpt-neo-1.3B/raw/dbe59a7f4a88d01d1ba9798d78dbe3fe038792c8/config.json",
+      "status": "recorded"
+    },
+    "positional_encoding": {
+      "value": "learned_absolute",
+      "source": "https://github.com/huggingface/transformers/blob/v4.34.0/src/transformers/models/gpt_neo/modeling_gpt_neo.py",
+      "status": "recorded",
+      "note": "Code: wpe = nn.Embedding(max_position_embeddings, ...), same as gpt-neo-2-7b."
+    },
+    "activation": {
+      "value": "GELU (tanh approximation, config 'gelu_new')",
+      "source": "https://huggingface.co/EleutherAI/gpt-neo-1.3B/raw/dbe59a7f4a88d01d1ba9798d78dbe3fe038792c8/config.json",
+      "status": "recorded"
+    }
+  },
+  "training_data": {
+    "value": "The Pile, an 825 GiB curated English text corpus (EleutherAI). Same training recipe as the 2.7B model.",
+    "source": "https://huggingface.co/EleutherAI/gpt-neo-1.3B",
+    "status": "recorded"
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/EleutherAI/gpt-neo-1.3B",
+    "https://huggingface.co/EleutherAI/gpt-neo-1.3B/raw/dbe59a7f4a88d01d1ba9798d78dbe3fe038792c8/config.json"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (EleutherAI/gpt-neo-1.3B@dbe59a7f4a88d01d1ba9798d78dbe3fe038792c8)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer, positional encoding, activation set; trained_on accepted",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer cleanup: removed 2 stale flag(s), filled training_data",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (1 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

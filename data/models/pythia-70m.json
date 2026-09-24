@@ -1,0 +1,95 @@
+{
+  "id": "pythia-70m",
+  "name": "pythia-70m",
+  "identifiers": {
+    "huggingface": [
+      "EleutherAI/pythia-70m"
+    ]
+  },
+  "developer": "EleutherAI",
+  "release_date": {
+    "value": "2023-02-13",
+    "source": "https://huggingface.co/api/models/EleutherAI/pythia-70m",
+    "status": "partial",
+    "note": "HF repo creation date; may predate or postdate public release."
+  },
+  "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/EleutherAI/pythia-70m"
+  },
+  "license": {
+    "value": "apache-2.0",
+    "source": "https://huggingface.co/EleutherAI/pythia-70m/blob/a39f36b100fe8a5377810d56c3f4789b9c53ac42/README.md",
+    "status": "partial",
+    "note": "From HF card metadata (uploader-declared); confirm against the license text."
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "family read from config 'architectures': ['GPTNeoXForCausalLM'].",
+    "n_layers": {
+      "value": 6,
+      "source": "https://huggingface.co/EleutherAI/pythia-70m/raw/a39f36b100fe8a5377810d56c3f4789b9c53ac42/config.json",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 512,
+      "source": "https://huggingface.co/EleutherAI/pythia-70m/raw/a39f36b100fe8a5377810d56c3f4789b9c53ac42/config.json",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 8,
+      "source": "https://huggingface.co/EleutherAI/pythia-70m/raw/a39f36b100fe8a5377810d56c3f4789b9c53ac42/config.json",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 50304,
+      "source": "https://huggingface.co/EleutherAI/pythia-70m/raw/a39f36b100fe8a5377810d56c3f4789b9c53ac42/config.json",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": 2048,
+      "source": "https://huggingface.co/EleutherAI/pythia-70m/raw/a39f36b100fe8a5377810d56c3f4789b9c53ac42/config.json",
+      "status": "recorded"
+    },
+    "positional_encoding": {
+      "value": "rotary (RoPE), partial: 25% of dims",
+      "source": "https://arxiv.org/abs/2304.01373",
+      "status": "recorded",
+      "note": "Paper sec 2.3: 'We use rotary embeddings'; fraction is config rotary_pct 0.25. Same as pythia-6-9b."
+    }
+  },
+  "training_data": {
+    "value": "The Pile (300B tokens), or its near-deduplicated variant for the 'deduped' branch. One of 8 sizes trained on identical data in identical order (Pythia paper).",
+    "source": "https://arxiv.org/abs/2304.01373",
+    "status": "recorded"
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/EleutherAI/pythia-70m",
+    "https://huggingface.co/EleutherAI/pythia-70m/raw/a39f36b100fe8a5377810d56c3f4789b9c53ac42/config.json"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (EleutherAI/pythia-70m@a39f36b100fe8a5377810d56c3f4789b9c53ac42)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer, positional encoding set; trained_on accepted",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer cleanup: removed 3 stale flag(s), filled training_data",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (1 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

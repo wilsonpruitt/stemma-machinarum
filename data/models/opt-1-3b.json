@@ -1,0 +1,95 @@
+{
+  "id": "opt-1-3b",
+  "name": "opt-1.3b",
+  "identifiers": {
+    "huggingface": [
+      "facebook/opt-1.3b"
+    ]
+  },
+  "developer": "Meta AI",
+  "release_date": {
+    "value": "2022-05-11",
+    "source": "https://huggingface.co/api/models/facebook/opt-1.3b",
+    "status": "partial",
+    "note": "HF repo creation date; may predate or postdate public release."
+  },
+  "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/facebook/opt-1.3b"
+  },
+  "license": {
+    "value": "other",
+    "source": "https://huggingface.co/facebook/opt-1.3b/blob/3f5c25d0bc631cb57ac65913f76e22c2dfb61d62/README.md",
+    "status": "partial",
+    "note": "From HF card metadata (uploader-declared); confirm against the license text."
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "family read from config 'architectures': ['OPTForCausalLM'].",
+    "n_layers": {
+      "value": 24,
+      "source": "https://huggingface.co/facebook/opt-1.3b/raw/3f5c25d0bc631cb57ac65913f76e22c2dfb61d62/config.json",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 2048,
+      "source": "https://huggingface.co/facebook/opt-1.3b/raw/3f5c25d0bc631cb57ac65913f76e22c2dfb61d62/config.json",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 32,
+      "source": "https://huggingface.co/facebook/opt-1.3b/raw/3f5c25d0bc631cb57ac65913f76e22c2dfb61d62/config.json",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 50272,
+      "source": "https://huggingface.co/facebook/opt-1.3b/raw/3f5c25d0bc631cb57ac65913f76e22c2dfb61d62/config.json",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": 2048,
+      "source": "https://huggingface.co/facebook/opt-1.3b/raw/3f5c25d0bc631cb57ac65913f76e22c2dfb61d62/config.json",
+      "status": "recorded"
+    },
+    "positional_encoding": {
+      "value": "learned_absolute",
+      "source": "https://github.com/huggingface/transformers/blob/v4.34.0/src/transformers/models/opt/modeling_opt.py",
+      "status": "recorded",
+      "note": "Code: OPTLearnedPositionalEmbedding. Same as opt-6-7b."
+    }
+  },
+  "training_data": {
+    "value": "~180B tokens: RoBERTa corpus subsets, a subset of the Pile, and PushShift.io Reddit. Same recipe as the 6.7B model.",
+    "source": "https://arxiv.org/abs/2205.01068",
+    "status": "recorded"
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/facebook/opt-1.3b",
+    "https://huggingface.co/facebook/opt-1.3b/raw/3f5c25d0bc631cb57ac65913f76e22c2dfb61d62/config.json"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (facebook/opt-1.3b@3f5c25d0bc631cb57ac65913f76e22c2dfb61d62)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer, positional encoding, trained_on set (from paper, matches opt-6-7b)",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer cleanup: removed 2 stale flag(s), filled training_data",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (1 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "id": "zephyr-7b-alpha",
+  "name": "zephyr-7b-alpha",
+  "identifiers": {
+    "huggingface": [
+      "HuggingFaceH4/zephyr-7b-alpha"
+    ]
+  },
+  "developer": "Hugging Face (H4 team)",
+  "release_date": {
+    "value": "2023-10-09",
+    "source": "https://huggingface.co/api/models/HuggingFaceH4/zephyr-7b-alpha",
+    "status": "partial",
+    "note": "HF repo creation date; may predate or postdate public release."
+  },
+  "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/HuggingFaceH4/zephyr-7b-alpha"
+  },
+  "license": {
+    "value": "mit",
+    "source": "https://huggingface.co/HuggingFaceH4/zephyr-7b-alpha/blob/014792bbb59d04ced3b5a9b8b4dfc926655d958f/README.md",
+    "status": "partial",
+    "note": "From HF card metadata (uploader-declared); confirm against the license text."
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "family read from config 'architectures': ['MistralForCausalLM'].",
+    "n_layers": {
+      "value": 32,
+      "source": "https://huggingface.co/HuggingFaceH4/zephyr-7b-alpha/raw/014792bbb59d04ced3b5a9b8b4dfc926655d958f/config.json",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 4096,
+      "source": "https://huggingface.co/HuggingFaceH4/zephyr-7b-alpha/raw/014792bbb59d04ced3b5a9b8b4dfc926655d958f/config.json",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 32,
+      "source": "https://huggingface.co/HuggingFaceH4/zephyr-7b-alpha/raw/014792bbb59d04ced3b5a9b8b4dfc926655d958f/config.json",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 32000,
+      "source": "https://huggingface.co/HuggingFaceH4/zephyr-7b-alpha/raw/014792bbb59d04ced3b5a9b8b4dfc926655d958f/config.json",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": 32768,
+      "source": "https://huggingface.co/HuggingFaceH4/zephyr-7b-alpha/raw/014792bbb59d04ced3b5a9b8b4dfc926655d958f/config.json",
+      "status": "recorded"
+    },
+    "n_kv_heads": {
+      "value": 8,
+      "source": "https://huggingface.co/HuggingFaceH4/zephyr-7b-alpha/raw/014792bbb59d04ced3b5a9b8b4dfc926655d958f/config.json",
+      "status": "recorded"
+    },
+    "positional_encoding": {
+      "value": "rotary (RoPE)",
+      "source": "https://huggingface.co/HuggingFaceH4/zephyr-7b-alpha",
+      "status": "recorded",
+      "note": "Architecture unchanged from mistral-7b-v0-1 (instruction fine-tune)."
+    }
+  },
+  "training_data": {
+    "value": "Filtered UltraChat (SFT) and UltraFeedback (DPO) -- see the trained_on edges below, which carry the sourced detail; this field is a pointer, not a duplicate description.",
+    "source": "https://huggingface.co/HuggingFaceH4/zephyr-7b-alpha",
+    "status": "partial"
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/HuggingFaceH4/zephyr-7b-alpha",
+    "https://huggingface.co/HuggingFaceH4/zephyr-7b-alpha/raw/014792bbb59d04ced3b5a9b8b4dfc926655d958f/config.json"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (HuggingFaceH4/zephyr-7b-alpha@014792bbb59d04ced3b5a9b8b4dfc926655d958f)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer, fine_tuned_from mistral-7b-v0-1, trained_on ultrachat + ultrafeedback added -- same pattern as zephyr-7b-beta",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: deduplicated edges (ingest had already resolved these three)",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer cleanup: removed 1 stale flag(s)",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer cleanup: training_data filled",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer cleanup: positional_encoding propagated from an unchanged parent architecture",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (3 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

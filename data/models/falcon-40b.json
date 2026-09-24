@@ -1,0 +1,99 @@
+{
+  "id": "falcon-40b",
+  "name": "falcon-40b",
+  "identifiers": {
+    "huggingface": [
+      "tiiuae/falcon-40b"
+    ]
+  },
+  "developer": "Technology Innovation Institute (TII)",
+  "release_date": {
+    "value": "2023-05-24",
+    "source": "https://huggingface.co/api/models/tiiuae/falcon-40b",
+    "status": "partial",
+    "note": "HF repo creation date; may predate or postdate public release."
+  },
+  "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/tiiuae/falcon-40b"
+  },
+  "license": {
+    "value": "apache-2.0",
+    "source": "https://huggingface.co/tiiuae/falcon-40b/blob/05ab2ee8d6b593bdbab17d728de5c028a7a94d83/README.md",
+    "status": "partial",
+    "note": "From HF card metadata (uploader-declared); confirm against the license text."
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "family read from config 'architectures': ['FalconForCausalLM'].",
+    "n_layers": {
+      "value": 60,
+      "source": "https://huggingface.co/tiiuae/falcon-40b/raw/05ab2ee8d6b593bdbab17d728de5c028a7a94d83/config.json",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 8192,
+      "source": "https://huggingface.co/tiiuae/falcon-40b/raw/05ab2ee8d6b593bdbab17d728de5c028a7a94d83/config.json",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 128,
+      "source": "https://huggingface.co/tiiuae/falcon-40b/raw/05ab2ee8d6b593bdbab17d728de5c028a7a94d83/config.json",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 65024,
+      "source": "https://huggingface.co/tiiuae/falcon-40b/raw/05ab2ee8d6b593bdbab17d728de5c028a7a94d83/config.json",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "positional_encoding": {
+      "value": "rotary (RoPE)",
+      "source": "https://huggingface.co/tiiuae/falcon-40b",
+      "status": "recorded",
+      "note": "Same design as falcon-7b (card: 'broadly adapted from the GPT-3 paper')."
+    }
+  },
+  "training_data": {
+    "value": "1,500B tokens: RefinedWeb (filtered, deduplicated web crawl) plus curated corpora. Same recipe as the 7B model.",
+    "source": "https://huggingface.co/tiiuae/falcon-40b",
+    "status": "recorded"
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/tiiuae/falcon-40b",
+    "https://huggingface.co/tiiuae/falcon-40b/raw/05ab2ee8d6b593bdbab17d728de5c028a7a94d83/config.json"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (tiiuae/falcon-40b@05ab2ee8d6b593bdbab17d728de5c028a7a94d83)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer, positional encoding, trained_on accepted, design_follows proposed (needs confirmation)",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: design_follows edge independently verified against the 40B card text",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer cleanup: removed 3 stale flag(s), filled training_data",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (2 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

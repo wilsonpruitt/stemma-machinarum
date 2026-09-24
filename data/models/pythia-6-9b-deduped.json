@@ -1,0 +1,95 @@
+{
+  "id": "pythia-6-9b-deduped",
+  "name": "pythia-6.9b-deduped",
+  "identifiers": {
+    "huggingface": [
+      "EleutherAI/pythia-6.9b-deduped"
+    ]
+  },
+  "developer": "EleutherAI",
+  "release_date": {
+    "value": "2023-02-25",
+    "source": "https://huggingface.co/api/models/EleutherAI/pythia-6.9b-deduped",
+    "status": "partial",
+    "note": "HF repo creation date; may predate or postdate public release."
+  },
+  "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/EleutherAI/pythia-6.9b-deduped"
+  },
+  "license": {
+    "value": "apache-2.0",
+    "source": "https://huggingface.co/EleutherAI/pythia-6.9b-deduped/blob/372b1c08d9b5b0fc18ce86bbf294930e26e66ed5/README.md",
+    "status": "partial",
+    "note": "From HF card metadata (uploader-declared); confirm against the license text."
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "family read from config 'architectures': ['GPTNeoXForCausalLM'].",
+    "n_layers": {
+      "value": 32,
+      "source": "https://huggingface.co/EleutherAI/pythia-6.9b-deduped/raw/372b1c08d9b5b0fc18ce86bbf294930e26e66ed5/config.json",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 4096,
+      "source": "https://huggingface.co/EleutherAI/pythia-6.9b-deduped/raw/372b1c08d9b5b0fc18ce86bbf294930e26e66ed5/config.json",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 32,
+      "source": "https://huggingface.co/EleutherAI/pythia-6.9b-deduped/raw/372b1c08d9b5b0fc18ce86bbf294930e26e66ed5/config.json",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 50432,
+      "source": "https://huggingface.co/EleutherAI/pythia-6.9b-deduped/raw/372b1c08d9b5b0fc18ce86bbf294930e26e66ed5/config.json",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": 2048,
+      "source": "https://huggingface.co/EleutherAI/pythia-6.9b-deduped/raw/372b1c08d9b5b0fc18ce86bbf294930e26e66ed5/config.json",
+      "status": "recorded"
+    },
+    "positional_encoding": {
+      "value": "rotary (RoPE), partial: 25% of dims",
+      "source": "https://arxiv.org/abs/2304.01373",
+      "status": "recorded",
+      "note": "Same as pythia-6-9b."
+    }
+  },
+  "training_data": {
+    "value": "Near-deduplicated Pile (~207B tokens); the deduplicated sibling of the pythia-6.9b record. Dataset has no Stemma record yet (see flags).",
+    "source": "https://arxiv.org/abs/2304.01373",
+    "status": "recorded"
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/EleutherAI/pythia-6.9b-deduped",
+    "https://huggingface.co/EleutherAI/pythia-6.9b-deduped/raw/372b1c08d9b5b0fc18ce86bbf294930e26e66ed5/config.json"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (EleutherAI/pythia-6.9b-deduped@372b1c08d9b5b0fc18ce86bbf294930e26e66ed5)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer, positional encoding set; dataset edge rejected pending a the-pile-deduplicated record",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer cleanup: removed 3 stale flag(s), filled training_data",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (0 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "id": "llama-2-70b",
+  "name": "Llama-2-70b-hf",
+  "identifiers": {
+    "huggingface": [
+      "meta-llama/Llama-2-70b-hf"
+    ]
+  },
+  "developer": "Meta",
+  "release_date": {
+    "value": "2023-07-18",
+    "source": "https://ai.meta.com/blog/llama-2/",
+    "status": "recorded"
+  },
+  "weights_status": "open",
+  "availability": {
+    "value": "gated",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/meta-llama/Llama-2-70b-hf",
+    "note": "HF gate: manual."
+  },
+  "license": {
+    "value": "Llama 2 Community License Agreement (research and commercial use; licensees with >700M monthly active users on the release date must request a separate license from Meta).",
+    "source": "https://github.com/meta-llama/llama/blob/main/LICENSE",
+    "status": "recorded"
+  },
+  "architecture": {
+    "family": "unknown",
+    "n_layers": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "hidden_size": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "n_heads": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "vocab_size": {
+      "value": 32000,
+      "source": "https://arxiv.org/abs/2307.09288",
+      "status": "recorded",
+      "note": "Paper: 'The total vocabulary size is 32k tokens.'"
+    },
+    "context_length": {
+      "value": 4096,
+      "source": "https://arxiv.org/abs/2307.09288",
+      "status": "recorded",
+      "note": "Table 1: '4k'."
+    },
+    "positional_encoding": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "note": "Meta's HF config is gated (not fetched this session). Paper does not publish per-size layer/hidden/head counts for Llama 2 (unlike Llama 1's paper); same situation as the already-recorded llama-2-7b."
+  },
+  "training_data": {
+    "value": "2.0T tokens, 'a new mix of data from publicly available sources' (paper does not disclose sources). Same recipe as the 7B model.",
+    "source": "https://arxiv.org/abs/2307.09288",
+    "status": "recorded"
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/meta-llama/Llama-2-70b-hf"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (meta-llama/Llama-2-70b-hf@3aba440b59558f995867ba6e1f58f21d0336b5bb)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer, license, release date, vocab/context from paper, successor_in_series to llama-7b added",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer cleanup: removed 2 stale flag(s), filled training_data",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (1 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

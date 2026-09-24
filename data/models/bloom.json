@@ -1,0 +1,92 @@
+{
+  "id": "bloom",
+  "name": "bloom",
+  "identifiers": {
+    "huggingface": [
+      "bigscience/bloom"
+    ]
+  },
+  "developer": "BigScience",
+  "release_date": {
+    "value": "2022-05-19",
+    "source": "https://huggingface.co/api/models/bigscience/bloom",
+    "status": "partial",
+    "note": "HF repo creation date; may predate or postdate public release."
+  },
+  "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/bigscience/bloom"
+  },
+  "license": {
+    "value": "bigscience-bloom-rail-1.0",
+    "source": "https://huggingface.co/bigscience/bloom/blob/7f10a99ce7c08f03c7719a586cb2cbda1433ac05/README.md",
+    "status": "partial",
+    "note": "From HF card metadata (uploader-declared); confirm against the license text."
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "family read from config 'architectures': ['BloomForCausalLM'].",
+    "n_layers": {
+      "value": 70,
+      "source": "https://huggingface.co/bigscience/bloom/raw/7f10a99ce7c08f03c7719a586cb2cbda1433ac05/config.json",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "n_heads": {
+      "value": 112,
+      "source": "https://huggingface.co/bigscience/bloom/raw/7f10a99ce7c08f03c7719a586cb2cbda1433ac05/config.json",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 250880,
+      "source": "https://huggingface.co/bigscience/bloom/raw/7f10a99ce7c08f03c7719a586cb2cbda1433ac05/config.json",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "positional_encoding": {
+      "value": "ALiBi (attention bias by distance; no position embeddings)",
+      "source": "https://arxiv.org/abs/2211.05100",
+      "status": "recorded"
+    }
+  },
+  "training_data": {
+    "value": "ROOTS corpus: 46 natural and 13 programming languages, ~1.5TB / 350B unique tokens. Same recipe as the 7.1B model.",
+    "source": "https://arxiv.org/abs/2211.05100",
+    "status": "recorded"
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/bigscience/bloom",
+    "https://huggingface.co/bigscience/bloom/raw/7f10a99ce7c08f03c7719a586cb2cbda1433ac05/config.json"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (bigscience/bloom@7f10a99ce7c08f03c7719a586cb2cbda1433ac05)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer, positional encoding, trained_on set (matches bloom-7b1)",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer cleanup: removed 2 stale flag(s), filled training_data",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (1 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

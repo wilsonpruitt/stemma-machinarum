@@ -1,0 +1,94 @@
+{
+  "id": "mpt-7b-instruct",
+  "name": "mpt-7b-instruct",
+  "identifiers": {
+    "huggingface": [
+      "mosaicml/mpt-7b-instruct"
+    ]
+  },
+  "developer": "MosaicML",
+  "release_date": {
+    "value": "2023-05-05",
+    "source": "https://www.databricks.com/blog/mpt-7b",
+    "status": "recorded",
+    "note": "HF API returned 401 for this repo (mosaicml/ org unreachable, same as mpt-7b); dated from the MosaicML/Databricks release post."
+  },
+  "weights_status": "unknown",
+  "availability": {
+    "value": "removed",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/mosaicml/mpt-7b-instruct",
+    "note": "HF API returned HTTP 401."
+  },
+  "license": {
+    "value": "CC-By-SA-3.0",
+    "source": "https://www.databricks.com/blog/mpt-7b",
+    "status": "recorded",
+    "note": "Note: this differs from mpt-7b's own Apache-2.0 license -- the Dolly/HH-derived fine-tuning data carries a different license than the base model."
+  },
+  "architecture": {
+    "family": "unknown",
+    "n_layers": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "hidden_size": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "n_heads": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "vocab_size": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "context_length": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "positional_encoding": {
+      "value": "ALiBi (no position embeddings)",
+      "source": "https://www.databricks.com/blog/mpt-7b",
+      "status": "recorded",
+      "note": "Architecture unchanged from mpt-7b (instruction fine-tune)."
+    }
+  },
+  "training_data": {
+    "value": "A dataset derived from databricks-dolly-15k and Anthropic's Helpful and Harmless (HH) datasets.",
+    "source": "https://www.databricks.com/blog/mpt-7b",
+    "status": "recorded"
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/mosaicml/mpt-7b-instruct"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (mosaicml/mpt-7b-instruct@None)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer, release date, license, fine_tuned_from mpt-7b, training_data all set from primary source (HF repo unreachable)",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer cleanup: removed 2 stale flag(s)",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer cleanup: positional_encoding propagated from an unchanged parent architecture",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (1 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

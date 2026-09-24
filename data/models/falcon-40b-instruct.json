@@ -1,0 +1,104 @@
+{
+  "id": "falcon-40b-instruct",
+  "name": "falcon-40b-instruct",
+  "identifiers": {
+    "huggingface": [
+      "tiiuae/falcon-40b-instruct"
+    ]
+  },
+  "developer": "Technology Innovation Institute (TII)",
+  "release_date": {
+    "value": "2023-05-25",
+    "source": "https://huggingface.co/api/models/tiiuae/falcon-40b-instruct",
+    "status": "partial",
+    "note": "HF repo creation date; may predate or postdate public release."
+  },
+  "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/tiiuae/falcon-40b-instruct"
+  },
+  "license": {
+    "value": "apache-2.0",
+    "source": "https://huggingface.co/tiiuae/falcon-40b-instruct/blob/ecb78d97ac356d098e79f0db222c9ce7c5d9ee5f/README.md",
+    "status": "partial",
+    "note": "From HF card metadata (uploader-declared); confirm against the license text."
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "family read from config 'architectures': ['FalconForCausalLM'].",
+    "n_layers": {
+      "value": 60,
+      "source": "https://huggingface.co/tiiuae/falcon-40b-instruct/raw/ecb78d97ac356d098e79f0db222c9ce7c5d9ee5f/config.json",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 8192,
+      "source": "https://huggingface.co/tiiuae/falcon-40b-instruct/raw/ecb78d97ac356d098e79f0db222c9ce7c5d9ee5f/config.json",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 128,
+      "source": "https://huggingface.co/tiiuae/falcon-40b-instruct/raw/ecb78d97ac356d098e79f0db222c9ce7c5d9ee5f/config.json",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 65024,
+      "source": "https://huggingface.co/tiiuae/falcon-40b-instruct/raw/ecb78d97ac356d098e79f0db222c9ce7c5d9ee5f/config.json",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "positional_encoding": {
+      "value": "rotary (RoPE)",
+      "source": "https://huggingface.co/tiiuae/falcon-40b-instruct",
+      "status": "recorded",
+      "note": "Architecture unchanged from falcon-40b (instruction fine-tune)."
+    }
+  },
+  "training_data": {
+    "value": "150M tokens from Baize mixed with 5% RefinedWeb data.",
+    "source": "https://huggingface.co/tiiuae/falcon-40b-instruct",
+    "status": "recorded"
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/tiiuae/falcon-40b-instruct",
+    "https://huggingface.co/tiiuae/falcon-40b-instruct/raw/ecb78d97ac356d098e79f0db222c9ce7c5d9ee5f/config.json"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (tiiuae/falcon-40b-instruct@ecb78d97ac356d098e79f0db222c9ce7c5d9ee5f)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer, fine_tuned_from falcon-40b, trained_on refinedweb, training_data filled",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: deduplicated refinedweb edge (ingest had already resolved it)",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer cleanup: removed 3 stale flag(s)",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer cleanup: positional_encoding propagated from an unchanged parent architecture",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (2 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

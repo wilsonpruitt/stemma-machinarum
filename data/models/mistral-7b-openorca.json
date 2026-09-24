@@ -1,0 +1,110 @@
+{
+  "id": "mistral-7b-openorca",
+  "name": "Mistral-7B-OpenOrca",
+  "identifiers": {
+    "huggingface": [
+      "Open-Orca/Mistral-7B-OpenOrca"
+    ]
+  },
+  "developer": "Open-Orca",
+  "release_date": {
+    "value": "2023-09-29",
+    "source": "https://huggingface.co/api/models/Open-Orca/Mistral-7B-OpenOrca",
+    "status": "partial",
+    "note": "HF repo creation date; may predate or postdate public release."
+  },
+  "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/Open-Orca/Mistral-7B-OpenOrca"
+  },
+  "license": {
+    "value": "apache-2.0",
+    "source": "https://huggingface.co/Open-Orca/Mistral-7B-OpenOrca/blob/4a37328cef00f524d3791b1c0cc559a3cc6af14d/README.md",
+    "status": "partial",
+    "note": "From HF card metadata (uploader-declared); confirm against the license text."
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "family read from config 'architectures': ['MistralForCausalLM'].",
+    "n_layers": {
+      "value": 32,
+      "source": "https://huggingface.co/Open-Orca/Mistral-7B-OpenOrca/raw/4a37328cef00f524d3791b1c0cc559a3cc6af14d/config.json",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 4096,
+      "source": "https://huggingface.co/Open-Orca/Mistral-7B-OpenOrca/raw/4a37328cef00f524d3791b1c0cc559a3cc6af14d/config.json",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 32,
+      "source": "https://huggingface.co/Open-Orca/Mistral-7B-OpenOrca/raw/4a37328cef00f524d3791b1c0cc559a3cc6af14d/config.json",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 32002,
+      "source": "https://huggingface.co/Open-Orca/Mistral-7B-OpenOrca/raw/4a37328cef00f524d3791b1c0cc559a3cc6af14d/config.json",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": 32768,
+      "source": "https://huggingface.co/Open-Orca/Mistral-7B-OpenOrca/raw/4a37328cef00f524d3791b1c0cc559a3cc6af14d/config.json",
+      "status": "recorded"
+    },
+    "n_kv_heads": {
+      "value": 8,
+      "source": "https://huggingface.co/Open-Orca/Mistral-7B-OpenOrca/raw/4a37328cef00f524d3791b1c0cc559a3cc6af14d/config.json",
+      "status": "recorded"
+    },
+    "positional_encoding": {
+      "value": "rotary (RoPE)",
+      "source": "https://huggingface.co/Open-Orca/Mistral-7B-OpenOrca",
+      "status": "recorded",
+      "note": "Architecture unchanged from mistral-7b-v0-1 (instruction fine-tune)."
+    }
+  },
+  "training_data": {
+    "value": "A curated filtered subset of the OpenOrca dataset (GPT-4/GPT-3.5-augmented FLAN data). No Stemma dataset record for OpenOrca yet (see flags), so this is text-only, not a trained_on edge.",
+    "source": "https://huggingface.co/Open-Orca/Mistral-7B-OpenOrca",
+    "status": "partial"
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/Open-Orca/Mistral-7B-OpenOrca",
+    "https://huggingface.co/Open-Orca/Mistral-7B-OpenOrca/raw/4a37328cef00f524d3791b1c0cc559a3cc6af14d/config.json"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (Open-Orca/Mistral-7B-OpenOrca@4a37328cef00f524d3791b1c0cc559a3cc6af14d)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer, fine_tuned_from mistral-7b-v0-1 added; dataset link left for a future OpenOrca record",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer cleanup: removed 2 stale flag(s)",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer cleanup: training_data filled",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer cleanup: positional_encoding propagated from an unchanged parent architecture",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (1 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

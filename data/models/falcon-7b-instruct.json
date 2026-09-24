@@ -1,0 +1,110 @@
+{
+  "id": "falcon-7b-instruct",
+  "name": "falcon-7b-instruct",
+  "identifiers": {
+    "huggingface": [
+      "tiiuae/falcon-7b-instruct"
+    ]
+  },
+  "developer": "Technology Innovation Institute (TII)",
+  "release_date": {
+    "value": "2023-04-25",
+    "source": "https://huggingface.co/api/models/tiiuae/falcon-7b-instruct",
+    "status": "partial",
+    "note": "HF repo creation date; may predate or postdate public release."
+  },
+  "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/tiiuae/falcon-7b-instruct"
+  },
+  "license": {
+    "value": "apache-2.0",
+    "source": "https://huggingface.co/tiiuae/falcon-7b-instruct/blob/8782b5c5d8c9290412416618f36a133653e85285/README.md",
+    "status": "partial",
+    "note": "From HF card metadata (uploader-declared); confirm against the license text."
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "family read from config 'architectures': ['FalconForCausalLM'].",
+    "n_layers": {
+      "value": 32,
+      "source": "https://huggingface.co/tiiuae/falcon-7b-instruct/raw/8782b5c5d8c9290412416618f36a133653e85285/config.json",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 4544,
+      "source": "https://huggingface.co/tiiuae/falcon-7b-instruct/raw/8782b5c5d8c9290412416618f36a133653e85285/config.json",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 71,
+      "source": "https://huggingface.co/tiiuae/falcon-7b-instruct/raw/8782b5c5d8c9290412416618f36a133653e85285/config.json",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 65024,
+      "source": "https://huggingface.co/tiiuae/falcon-7b-instruct/raw/8782b5c5d8c9290412416618f36a133653e85285/config.json",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "n_kv_heads": {
+      "value": 1,
+      "source": "https://huggingface.co/tiiuae/falcon-7b-instruct/raw/8782b5c5d8c9290412416618f36a133653e85285/config.json",
+      "status": "recorded",
+      "note": "config multi_query: true"
+    },
+    "positional_encoding": {
+      "value": "rotary (RoPE)",
+      "source": "https://huggingface.co/tiiuae/falcon-7b-instruct",
+      "status": "recorded",
+      "note": "Architecture unchanged from falcon-7b (instruction fine-tune)."
+    }
+  },
+  "training_data": {
+    "value": "250M tokens: Baize (65%, chat), GPT4All (25%, instruct), GPTeacher (5%, instruct), RefinedWeb-English (5%, web).",
+    "source": "https://huggingface.co/tiiuae/falcon-7b-instruct",
+    "status": "recorded"
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/tiiuae/falcon-7b-instruct",
+    "https://huggingface.co/tiiuae/falcon-7b-instruct/raw/8782b5c5d8c9290412416618f36a133653e85285/config.json"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (tiiuae/falcon-7b-instruct@8782b5c5d8c9290412416618f36a133653e85285)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer, fine_tuned_from falcon-7b, trained_on refinedweb, training_data filled",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: deduplicated refinedweb edge (ingest had already resolved it)",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer cleanup: removed 2 stale flag(s)",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer cleanup: positional_encoding propagated from an unchanged parent architecture",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (2 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

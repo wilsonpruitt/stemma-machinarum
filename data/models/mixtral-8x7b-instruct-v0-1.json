@@ -1,0 +1,97 @@
+{
+  "id": "mixtral-8x7b-instruct-v0-1",
+  "name": "Mixtral-8x7B-Instruct-v0.1",
+  "identifiers": {
+    "huggingface": [
+      "mistralai/Mixtral-8x7B-Instruct-v0.1"
+    ]
+  },
+  "developer": "Mistral AI",
+  "release_date": {
+    "value": "2023-12-11",
+    "source": "https://mistral.ai/news/mixtral-of-experts",
+    "status": "recorded"
+  },
+  "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1"
+  },
+  "license": {
+    "value": "apache-2.0",
+    "source": "https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1/blob/eba92302a2861cdc0098cc54bc9f17cb2c47eb61/README.md",
+    "status": "partial",
+    "note": "From HF card metadata (uploader-declared); confirm against the license text."
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "family read from config 'architectures': ['MixtralForCausalLM'].",
+    "n_layers": {
+      "value": 32,
+      "source": "https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1/raw/eba92302a2861cdc0098cc54bc9f17cb2c47eb61/config.json",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 4096,
+      "source": "https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1/raw/eba92302a2861cdc0098cc54bc9f17cb2c47eb61/config.json",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 32,
+      "source": "https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1/raw/eba92302a2861cdc0098cc54bc9f17cb2c47eb61/config.json",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 32000,
+      "source": "https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1/raw/eba92302a2861cdc0098cc54bc9f17cb2c47eb61/config.json",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": 32768,
+      "source": "https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1/raw/eba92302a2861cdc0098cc54bc9f17cb2c47eb61/config.json",
+      "status": "recorded"
+    },
+    "n_kv_heads": {
+      "value": 8,
+      "source": "https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1/raw/eba92302a2861cdc0098cc54bc9f17cb2c47eb61/config.json",
+      "status": "recorded"
+    },
+    "positional_encoding": {
+      "value": null,
+      "status": "not_recorded"
+    }
+  },
+  "training_data": {
+    "value": "Instruction-tuned on top of Mixtral 8x7B; the card does not name the fine-tuning data.",
+    "source": "https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1",
+    "status": "recorded"
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1",
+    "https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1/raw/eba92302a2861cdc0098cc54bc9f17cb2c47eb61/config.json"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (mistralai/Mixtral-8x7B-Instruct-v0.1@eba92302a2861cdc0098cc54bc9f17cb2c47eb61)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer, release date, evidence upgraded to declared",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer cleanup: removed 3 stale flag(s), filled training_data",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (1 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

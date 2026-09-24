@@ -1,0 +1,93 @@
+{
+  "id": "dolly-v2-12b",
+  "name": "dolly-v2-12b",
+  "identifiers": {
+    "huggingface": [
+      "databricks/dolly-v2-12b"
+    ]
+  },
+  "developer": "Databricks",
+  "release_date": {
+    "value": "2023-04-12",
+    "source": "http://web.archive.org/web/20230602091912/https://www.databricks.com/blog/2023/04/12/dolly-first-open-commercially-viable-instruction-tuned-llm",
+    "status": "recorded",
+    "note": "HF API returned 401 for this repo (and for the whole databricks/ org, like mosaicml/); dated from Databricks' own blog post via the Internet Archive."
+  },
+  "weights_status": "unknown",
+  "availability": {
+    "value": "removed",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/databricks/dolly-v2-12b",
+    "note": "HF API returned HTTP 401."
+  },
+  "license": {
+    "value": "Apache 2.0",
+    "source": "https://raw.githubusercontent.com/databrickslabs/dolly/master/LICENSE",
+    "status": "recorded"
+  },
+  "architecture": {
+    "family": "unknown",
+    "n_layers": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "hidden_size": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "n_heads": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "vocab_size": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "context_length": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "positional_encoding": {
+      "value": "rotary (RoPE), partial: 25% of dims",
+      "source": "https://arxiv.org/abs/2304.01373",
+      "status": "recorded",
+      "note": "Architecture unchanged from pythia-12b (instruction fine-tune); fraction is config rotary_pct 0.25, per Pythia's own paper."
+    }
+  },
+  "training_data": {
+    "value": "databricks-dolly-15k: 15,000 human-generated prompt/response pairs, crowdsourced among Databricks employees March-April 2023 (CC BY-SA 3.0).",
+    "source": "http://web.archive.org/web/20230602091912/https://www.databricks.com/blog/2023/04/12/dolly-first-open-commercially-viable-instruction-tuned-llm",
+    "status": "recorded"
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/databricks/dolly-v2-12b"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (databricks/dolly-v2-12b@None)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer, release date, license, fine_tuned_from pythia-12b, training_data all set from archived primary source (HF repo unreachable)",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer cleanup: removed 2 stale flag(s)",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer cleanup: positional_encoding propagated from an unchanged parent architecture",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (1 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

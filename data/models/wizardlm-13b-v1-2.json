@@ -1,0 +1,106 @@
+{
+  "id": "wizardlm-13b-v1-2",
+  "name": "WizardLM-13B-V1.2",
+  "identifiers": {
+    "huggingface": [
+      "WizardLMTeam/WizardLM-13B-V1.2"
+    ]
+  },
+  "developer": "WizardLM Team (Microsoft Research collaboration)",
+  "release_date": {
+    "value": "2023-07-25",
+    "source": "https://huggingface.co/api/models/WizardLMTeam/WizardLM-13B-V1.2",
+    "status": "partial",
+    "note": "HF repo creation date; may predate or postdate public release."
+  },
+  "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/WizardLMTeam/WizardLM-13B-V1.2"
+  },
+  "license": {
+    "value": "llama2",
+    "source": "https://huggingface.co/WizardLMTeam/WizardLM-13B-V1.2/blob/cf5f40382559f19e13874e45b39575171ca46ef8/README.md",
+    "status": "partial",
+    "note": "From HF card metadata (uploader-declared); confirm against the license text."
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "family read from config 'architectures': ['LlamaForCausalLM'].",
+    "n_layers": {
+      "value": 40,
+      "source": "https://huggingface.co/WizardLMTeam/WizardLM-13B-V1.2/raw/cf5f40382559f19e13874e45b39575171ca46ef8/config.json",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 5120,
+      "source": "https://huggingface.co/WizardLMTeam/WizardLM-13B-V1.2/raw/cf5f40382559f19e13874e45b39575171ca46ef8/config.json",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 40,
+      "source": "https://huggingface.co/WizardLMTeam/WizardLM-13B-V1.2/raw/cf5f40382559f19e13874e45b39575171ca46ef8/config.json",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 32000,
+      "source": "https://huggingface.co/WizardLMTeam/WizardLM-13B-V1.2/raw/cf5f40382559f19e13874e45b39575171ca46ef8/config.json",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": 4096,
+      "source": "https://huggingface.co/WizardLMTeam/WizardLM-13B-V1.2/raw/cf5f40382559f19e13874e45b39575171ca46ef8/config.json",
+      "status": "recorded"
+    },
+    "n_kv_heads": {
+      "value": 40,
+      "source": "https://huggingface.co/WizardLMTeam/WizardLM-13B-V1.2/raw/cf5f40382559f19e13874e45b39575171ca46ef8/config.json",
+      "status": "recorded"
+    },
+    "positional_encoding": {
+      "value": null,
+      "status": "not_recorded"
+    }
+  },
+  "training_data": {
+    "value": "Evol-Instruct: instructions iteratively rewritten/elaborated by an LLM from a seed instruction set, per the WizardLM paper series. No single resolvable dataset id.",
+    "source": "https://huggingface.co/WizardLMTeam/WizardLM-13B-V1.2",
+    "status": "partial"
+  },
+  "techniques": [
+    "instruction-tuning",
+    "evol-instruct"
+  ],
+  "primary_sources": [
+    "https://huggingface.co/WizardLMTeam/WizardLM-13B-V1.2",
+    "https://huggingface.co/WizardLMTeam/WizardLM-13B-V1.2/raw/cf5f40382559f19e13874e45b39575171ca46ef8/config.json"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (WizardLMTeam/WizardLM-13B-V1.2@cf5f40382559f19e13874e45b39575171ca46ef8)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer, fine_tuned_from llama-2-13b added",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer cleanup: removed 3 stale flag(s)",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer cleanup: training_data filled",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (1 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

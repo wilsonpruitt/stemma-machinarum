@@ -1,0 +1,98 @@
+{
+  "id": "nous-hermes-llama-2-7b",
+  "name": "Nous-Hermes-llama-2-7b",
+  "identifiers": {
+    "huggingface": [
+      "NousResearch/Nous-Hermes-llama-2-7b"
+    ]
+  },
+  "developer": "Nous Research",
+  "release_date": {
+    "value": "2023-07-25",
+    "source": "https://huggingface.co/api/models/NousResearch/Nous-Hermes-llama-2-7b",
+    "status": "partial",
+    "note": "HF repo creation date; may predate or postdate public release."
+  },
+  "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/NousResearch/Nous-Hermes-llama-2-7b"
+  },
+  "license": {
+    "value": "mit",
+    "source": "https://huggingface.co/NousResearch/Nous-Hermes-llama-2-7b/blob/cbd525ad0d5012e470c7696d5905345dc082e432/README.md",
+    "status": "partial",
+    "note": "From HF card metadata (uploader-declared); confirm against the license text. Card listed license as a single-item list ['mit']."
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "family read from config 'architectures': ['LlamaForCausalLM'].",
+    "n_layers": {
+      "value": 32,
+      "source": "https://huggingface.co/NousResearch/Nous-Hermes-llama-2-7b/raw/cbd525ad0d5012e470c7696d5905345dc082e432/config.json",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 4096,
+      "source": "https://huggingface.co/NousResearch/Nous-Hermes-llama-2-7b/raw/cbd525ad0d5012e470c7696d5905345dc082e432/config.json",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 32,
+      "source": "https://huggingface.co/NousResearch/Nous-Hermes-llama-2-7b/raw/cbd525ad0d5012e470c7696d5905345dc082e432/config.json",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 32000,
+      "source": "https://huggingface.co/NousResearch/Nous-Hermes-llama-2-7b/raw/cbd525ad0d5012e470c7696d5905345dc082e432/config.json",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": 4096,
+      "source": "https://huggingface.co/NousResearch/Nous-Hermes-llama-2-7b/raw/cbd525ad0d5012e470c7696d5905345dc082e432/config.json",
+      "status": "recorded"
+    },
+    "n_kv_heads": {
+      "value": 32,
+      "source": "https://huggingface.co/NousResearch/Nous-Hermes-llama-2-7b/raw/cbd525ad0d5012e470c7696d5905345dc082e432/config.json",
+      "status": "recorded"
+    },
+    "positional_encoding": {
+      "value": null,
+      "status": "not_recorded"
+    }
+  },
+  "training_data": {
+    "value": "Over 300,000 instructions from synthetic GPT-4 outputs across multiple sources (GPTeacher, Nous Instruct, GPT4-LLM, Unnatural Instructions, Airoboros, Camel-AI, CodeAlpaca, others).",
+    "source": "https://huggingface.co/NousResearch/Nous-Hermes-llama-2-7b",
+    "status": "recorded"
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/NousResearch/Nous-Hermes-llama-2-7b",
+    "https://huggingface.co/NousResearch/Nous-Hermes-llama-2-7b/raw/cbd525ad0d5012e470c7696d5905345dc082e432/config.json"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (NousResearch/Nous-Hermes-llama-2-7b@cbd525ad0d5012e470c7696d5905345dc082e432)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer, fine_tuned_from llama-2-7b added, training_data filled",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer cleanup: removed 2 stale flag(s)",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (1 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

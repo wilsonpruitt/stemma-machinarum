@@ -1,0 +1,93 @@
+{
+  "id": "mixtral-8x7b-v0-1",
+  "name": "Mixtral-8x7B-v0.1",
+  "identifiers": {
+    "huggingface": [
+      "mistralai/Mixtral-8x7B-v0.1"
+    ]
+  },
+  "developer": "Mistral AI",
+  "release_date": {
+    "value": "2023-12-11",
+    "source": "https://mistral.ai/news/mixtral-of-experts",
+    "status": "recorded"
+  },
+  "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/mistralai/Mixtral-8x7B-v0.1"
+  },
+  "license": {
+    "value": "Apache 2.0",
+    "source": "https://mistral.ai/news/mixtral-of-experts",
+    "status": "recorded"
+  },
+  "architecture": {
+    "family": "decoder_only_moe",
+    "note": "Sparse mixture-of-experts. Paper: 'Mixtral has the same architecture as Mistral 7B, with the difference that each layer is composed of 8 feedforward blocks (i.e. experts).' A router selects 2 of 8 experts per token per layer. 46.7B total parameters, 12.9B active per token. Pretrained from scratch, not fine-tuned from Mistral 7B weights (Mistral AI release post).",
+    "n_experts": {
+      "value": 8,
+      "source": "https://arxiv.org/abs/2310.06825",
+      "status": "recorded"
+    },
+    "n_experts_per_tok": {
+      "value": 2,
+      "source": "https://arxiv.org/abs/2310.06825",
+      "status": "recorded"
+    },
+    "n_layers": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "hidden_size": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "n_heads": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "vocab_size": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "positional_encoding": {
+      "value": null,
+      "status": "not_recorded",
+      "note": "Config not fetched this session; likely rotary as in Mistral 7B, per the 'same architecture' claim, but not independently confirmed."
+    }
+  },
+  "training_data": {
+    "value": "Pretrained from scratch; neither the paper nor the release post discloses the training corpus.",
+    "source": "https://mistral.ai/news/mixtral-of-experts",
+    "status": "recorded"
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/mistralai/Mixtral-8x7B-v0.1",
+    "https://huggingface.co/mistralai/Mixtral-8x7B-v0.1/raw/fc7ac94680e38d7348cfa806e51218e6273104b0/config.json"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (mistralai/Mixtral-8x7B-v0.1@fc7ac94680e38d7348cfa806e51218e6273104b0)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer, architecture (MoE, from paper), license, release date, same_architecture_retrained to mistral-7b-v0-1 added",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer cleanup: removed 2 stale flag(s), filled training_data",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (1 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}
