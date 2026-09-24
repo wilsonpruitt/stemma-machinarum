@@ -1,0 +1,39 @@
+{
+  "id": "starcoderdata",
+  "name": "StarCoderData",
+  "identifiers": {
+    "huggingface": [
+      "bigcode/starcoderdata"
+    ]
+  },
+  "builder": "BigCode",
+  "release_date": {
+    "value": "2023-03-30",
+    "source": "https://huggingface.co/api/datasets/bigcode/starcoderdata",
+    "status": "partial",
+    "note": "HF dataset repo creation date, not the builder's own release announcement."
+  },
+  "availability": {
+    "value": "gated",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/datasets/bigcode/starcoderdata",
+    "note": "HF API reports gated: auto (approval step); the card text could not be read without accepting terms."
+  },
+  "content": {
+    "value": "TinyLlama paper: 'the training data of StarCoder ... contains code data in 86 programming languages. In addition to code, it also includes GitHub issues and text-code pairs that involve natural languages.' StarCoder paper: StarCoderBase trained on 1 trillion tokens from The Stack v1.2 (permissively licensed code, 44 opt-outs at processing time).",
+    "source": "https://arxiv.org/abs/2401.02385",
+    "status": "partial",
+    "note": "Primary card was gated; description rests on the TinyLlama and StarCoder papers."
+  },
+  "primary_sources": [
+    "https://arxiv.org/abs/2305.06161",
+    "https://huggingface.co/datasets/bigcode/starcoderdata"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created from primary sources (tranche 2 dataset records)",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}

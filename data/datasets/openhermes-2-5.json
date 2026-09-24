@@ -1,0 +1,37 @@
+{
+  "id": "openhermes-2-5",
+  "name": "OpenHermes 2.5",
+  "identifiers": {
+    "huggingface": [
+      "teknium/OpenHermes-2.5"
+    ]
+  },
+  "builder": "Teknium (individual)",
+  "release_date": {
+    "value": "2023-11-12",
+    "source": "https://huggingface.co/api/datasets/teknium/OpenHermes-2.5",
+    "status": "partial",
+    "note": "HF dataset repo creation date, not the builder's own release announcement."
+  },
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/datasets/teknium/OpenHermes-2.5"
+  },
+  "content": {
+    "value": "Card: 'a continuation of the Open Hermes 1 dataset ... reaching 1M, primarily synthetically generated instruction and chat samples', compiled from many open datasets and custom synthetic sets (Airoboros 2.2, CamelAI, LMSYS Chatbot Arena GPT-4 only, Evol Instruct, GPT4-LLM, GPTeacher, MetaMath, SlimOrca, Platypus, ShareGPT GPT-4 only, and others). The card's tags are: synthetic, GPT-4, Distillation, Compilation.",
+    "source": "https://huggingface.co/datasets/teknium/OpenHermes-2.5",
+    "status": "recorded",
+    "note": "One source on the card is listed as 'I have lost the source page for this dataset'."
+  },
+  "primary_sources": [
+    "https://huggingface.co/datasets/teknium/OpenHermes-2.5"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created from primary sources (tranche 2 dataset records)",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}

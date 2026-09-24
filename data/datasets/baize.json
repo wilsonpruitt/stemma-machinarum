@@ -1,0 +1,35 @@
+{
+  "id": "baize",
+  "name": "Baize self-chat data",
+  "identifiers": {},
+  "builder": "UC San Diego / Sun Yat-sen University (Baize authors)",
+  "release_date": {
+    "value": "2023-04-03",
+    "source": "https://arxiv.org/abs/2304.01196",
+    "status": "partial",
+    "note": "arXiv v1 date of the Baize paper."
+  },
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://github.com/project-baize/baize-chatbot/tree/main/data",
+    "note": "Data lives in the project's GitHub repo, not on Hugging Face; the repo data folder returned HTTP 200. No HF dataset repo id was confirmed (project-baize/baize-chatbot is not a dataset)."
+  },
+  "content": {
+    "value": "Paper: dialogues produced by having ChatGPT chat with itself ('self-chat') from seed questions from Quora and Stack Overflow; 'we collect a total of 111.5k dialogues through self-chat, using ∼55k questions' for the v1 family. Repo README lists 54K/57K/47K dialogs from Quora, StackOverflow and MedQuAD questions. Falcon-7B/40B-instruct's card lists Baize as part of their fine-tuning mix.",
+    "source": "https://arxiv.org/abs/2304.01196",
+    "status": "recorded",
+    "note": "Counts are the paper's and the README's; the released files were not counted."
+  },
+  "primary_sources": [
+    "https://arxiv.org/abs/2304.01196",
+    "https://github.com/project-baize/baize-chatbot"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created from primary sources (tranche 2 dataset records)",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}

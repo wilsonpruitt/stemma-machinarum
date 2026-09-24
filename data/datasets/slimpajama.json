@@ -1,0 +1,37 @@
+{
+  "id": "slimpajama",
+  "name": "SlimPajama",
+  "identifiers": {
+    "huggingface": [
+      "cerebras/SlimPajama-627B"
+    ]
+  },
+  "builder": "Cerebras",
+  "release_date": {
+    "value": null,
+    "status": "not_recorded"
+  },
+  "availability": {
+    "value": "removed",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/api/datasets/cerebras/SlimPajama-627B",
+    "note": "HF API returned HTTP 401 for cerebras/SlimPajama-627B when checked. 'removed' means unreachable at its original address, not a confirmed deletion; DKYoon/SlimPajama-6B (a third-party 6B sample) was reachable."
+  },
+  "content": {
+    "value": "Derived from RedPajama by cleaning and deduplication, recorded in prose because Stemma has no dataset-to-dataset edge (parent: `redpajama-data-1t`). TinyLlama paper: 'derived from RedPajama ... underwent additional cleaning and deduplication ... SlimPajama retains only 50% of the original tokens from RedPajama.'",
+    "source": "https://arxiv.org/abs/2401.02385",
+    "status": "partial",
+    "note": "Secondary description: the Cerebras announcement text could not be extracted this session, so the builder's own wording and date are not recorded."
+  },
+  "primary_sources": [
+    "https://arxiv.org/abs/2401.02385",
+    "https://www.cerebras.ai/blog/slimpajama-a-627b-token-cleaned-and-deduplicated-version-of-redpajama"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created from primary sources (tranche 2 dataset records)",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}

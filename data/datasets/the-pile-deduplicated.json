@@ -1,0 +1,39 @@
+{
+  "id": "the-pile-deduplicated",
+  "name": "The Pile (deduplicated)",
+  "identifiers": {
+    "huggingface": [
+      "EleutherAI/the_pile_deduplicated"
+    ]
+  },
+  "builder": "EleutherAI",
+  "release_date": {
+    "value": "2022-12-02",
+    "source": "https://huggingface.co/api/datasets/EleutherAI/the_pile_deduplicated",
+    "status": "partial",
+    "note": "HF dataset repo creation date; the dedup copy was used for Pythia (paper arXiv 2304.01373), so an earlier internal date is possible."
+  },
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/datasets/EleutherAI/the_pile_deduplicated",
+    "note": "HF repo holds 1650 parquet files."
+  },
+  "content": {
+    "value": "A copy of the Pile after near-deduplication. Pythia paper: 'a copy of the Pile after applying near-deduplication with MinHashLSH and a threshold of 0.87 ... After deduplication, the deduplicated Pile is approximately 207B tokens in size'. Derivation from the Pile is recorded here in prose because Stemma has no dataset-to-dataset edge; the parent is the record `the-pile`.",
+    "source": "https://arxiv.org/abs/2304.01373",
+    "status": "recorded"
+  },
+  "primary_sources": [
+    "https://huggingface.co/datasets/EleutherAI/the_pile_deduplicated",
+    "https://arxiv.org/abs/2304.01373",
+    "https://github.com/EleutherAI/pythia"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created from primary sources (tranche 2 dataset records)",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}

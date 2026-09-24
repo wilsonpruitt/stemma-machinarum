@@ -1,0 +1,38 @@
+{
+  "id": "oig",
+  "name": "Open Instruction Generalist (OIG)",
+  "identifiers": {
+    "huggingface": [
+      "laion/OIG"
+    ]
+  },
+  "builder": "LAION",
+  "release_date": {
+    "value": "2023-03-05",
+    "source": "https://huggingface.co/api/datasets/laion/OIG",
+    "status": "partial",
+    "note": "HF dataset repo creation date, not the builder's own release announcement."
+  },
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/datasets/laion/OIG",
+    "note": "Card advises downloading the individual jsonl files rather than using load_dataset."
+  },
+  "content": {
+    "value": "Card: 'a large instruction dataset of medium quality along with a smaller high quality instruction dataset (OIG-small-chip2)'; 'OIG is currently at 44M' instructions. The card does not say which parts were model-generated, so no model-parent edge is recorded.",
+    "source": "https://huggingface.co/datasets/laion/OIG",
+    "status": "partial",
+    "note": "The card describes a growing collection; the size is as of the card text read on this date."
+  },
+  "primary_sources": [
+    "https://huggingface.co/datasets/laion/OIG"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created from primary sources (tranche 2 dataset records)",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}

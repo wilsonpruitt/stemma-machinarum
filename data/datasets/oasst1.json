@@ -1,0 +1,37 @@
+{
+  "id": "oasst1",
+  "name": "OpenAssistant Conversations (OASST1)",
+  "identifiers": {
+    "huggingface": [
+      "OpenAssistant/oasst1"
+    ]
+  },
+  "builder": "LAION / Open-Assistant volunteers",
+  "release_date": {
+    "value": "2023-04-14",
+    "source": "https://arxiv.org/abs/2304.07327",
+    "status": "partial",
+    "note": "arXiv v1 date of the paper."
+  },
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/datasets/OpenAssistant/oasst1"
+  },
+  "content": {
+    "value": "Card: 'a human-generated, human-annotated assistant-style conversation corpus consisting of 161,443 messages in 35 different languages, annotated with 461,292 quality ratings, resulting in over 10,000 fully annotated conversation trees', from over 13,500 volunteers.",
+    "source": "https://huggingface.co/datasets/OpenAssistant/oasst1",
+    "status": "recorded"
+  },
+  "primary_sources": [
+    "https://huggingface.co/datasets/OpenAssistant/oasst1",
+    "https://arxiv.org/abs/2304.07327"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created from primary sources (tranche 2 dataset records)",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}

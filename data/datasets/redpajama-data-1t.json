@@ -1,0 +1,39 @@
+{
+  "id": "redpajama-data-1t",
+  "name": "RedPajama-Data-1T",
+  "identifiers": {
+    "huggingface": [
+      "togethercomputer/RedPajama-Data-1T"
+    ]
+  },
+  "builder": "Together Computer",
+  "release_date": {
+    "value": "2023-04-17",
+    "source": "https://huggingface.co/api/datasets/togethercomputer/RedPajama-Data-1T",
+    "status": "partial",
+    "note": "HF dataset repo creation date, not the builder's own release announcement."
+  },
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/datasets/togethercomputer/RedPajama-Data-1T",
+    "note": "Card lists 2084 jsonl files and download URLs; a 1B-token sample and recreation scripts are linked."
+  },
+  "content": {
+    "value": "Card: 'RedPajama is a clean-room, fully open-source implementation of the LLaMa dataset.' Token counts on the card: CommonCrawl 878B, C4 175B, GitHub 59B, ArXiv 28B, Wikipedia 24B, StackExchange 20B; total 1.2 trillion. Primarily English. The card says it 'was created to follow the LLaMa paper as closely as possible to try to reproduce its recipe.'",
+    "source": "https://huggingface.co/datasets/togethercomputer/RedPajama-Data-1T",
+    "status": "recorded",
+    "note": "The 'Data-1T' name and the 1.2T total on the card differ; both are the card's."
+  },
+  "primary_sources": [
+    "https://huggingface.co/datasets/togethercomputer/RedPajama-Data-1T",
+    "https://github.com/togethercomputer/RedPajama-Data"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created from primary sources (tranche 2 dataset records)",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}

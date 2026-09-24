@@ -1,0 +1,37 @@
+{
+  "id": "xp3",
+  "name": "xP3",
+  "identifiers": {
+    "huggingface": [
+      "bigscience/xP3"
+    ]
+  },
+  "builder": "BigScience",
+  "release_date": {
+    "value": "2022-11-03",
+    "source": "https://arxiv.org/abs/2211.01786",
+    "status": "partial",
+    "note": "arXiv v1 date of the paper (Crosslingual Generalization through Multitask Finetuning); HF repo created 2022-10-10."
+  },
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/datasets/bigscience/xP3"
+  },
+  "content": {
+    "value": "Card: 'xP3 (Crosslingual Public Pool of Prompts) is a collection of prompts & datasets across 46 of languages & 16 NLP tasks. It is used for the training of BLOOMZ and mT0'. The card table lists the training mixture as 13 training tasks in 46 languages with English prompts.",
+    "source": "https://huggingface.co/datasets/bigscience/xP3",
+    "status": "recorded"
+  },
+  "primary_sources": [
+    "https://huggingface.co/datasets/bigscience/xP3",
+    "https://arxiv.org/abs/2211.01786"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created from primary sources (tranche 2 dataset records)",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}

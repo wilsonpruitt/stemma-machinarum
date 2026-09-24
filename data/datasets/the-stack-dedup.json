@@ -1,0 +1,39 @@
+{
+  "id": "the-stack-dedup",
+  "name": "The Stack (near-deduplicated)",
+  "identifiers": {
+    "huggingface": [
+      "bigcode/the-stack-dedup"
+    ]
+  },
+  "builder": "BigCode",
+  "release_date": {
+    "value": "2022-10-06",
+    "source": "https://huggingface.co/api/datasets/bigcode/the-stack-dedup",
+    "status": "partial",
+    "note": "HF dataset repo creation date, not the builder's own release announcement."
+  },
+  "availability": {
+    "value": "gated",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/datasets/bigcode/the-stack-dedup",
+    "note": "HF API reports gated: auto (approval step)."
+  },
+  "content": {
+    "value": "StarCoder paper: The Stack is 'a publicly available pre-training dataset for Code LLMs with a transparent data governance framework ... 6.4 TB of permissively licensed source code in 384 programming languages'; StarCoder used v1.2 after near-deduplication. Whether the HF repo the-stack-dedup is exactly the v1.2 dedup used is not checked (card gated).",
+    "source": "https://arxiv.org/abs/2305.06161",
+    "status": "partial"
+  },
+  "primary_sources": [
+    "https://arxiv.org/abs/2305.06161",
+    "https://arxiv.org/abs/2211.15533",
+    "https://huggingface.co/datasets/bigcode/the-stack-dedup"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created from primary sources (tranche 2 dataset records)",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}

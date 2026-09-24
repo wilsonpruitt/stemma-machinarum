@@ -1,0 +1,37 @@
+{
+  "id": "gpt4all",
+  "name": "GPT4All prompt generations",
+  "identifiers": {
+    "huggingface": [
+      "nomic-ai/gpt4all_prompt_generations"
+    ]
+  },
+  "builder": "Nomic AI",
+  "release_date": {
+    "value": "2023-03-27",
+    "source": "https://huggingface.co/api/datasets/nomic-ai/gpt4all_prompt_generations",
+    "status": "partial",
+    "note": "HF dataset repo creation date, not the builder's own release announcement."
+  },
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/datasets/nomic-ai/gpt4all_prompt_generations"
+  },
+  "content": {
+    "value": "Technical report: 'roughly one million prompt-response pairs using the GPT-3.5-Turbo OpenAI API between March 20, 2023 and March 26th, 2023', prompts drawn from LAION OIG (unified chip2), Stack Overflow questions, and Bigscience/P3; P3 was later dropped, leaving a final subset of 437,605 prompt-generation pairs used to train the first release.",
+    "source": "https://s3.amazonaws.com/static.nomic.ai/gpt4all/2023_GPT4All_Technical_Report.pdf",
+    "status": "recorded"
+  },
+  "primary_sources": [
+    "https://huggingface.co/datasets/nomic-ai/gpt4all_prompt_generations",
+    "https://s3.amazonaws.com/static.nomic.ai/gpt4all/2023_GPT4All_Technical_Report.pdf"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created from primary sources (tranche 2 dataset records)",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}

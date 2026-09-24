@@ -1,0 +1,37 @@
+{
+  "id": "openorca",
+  "name": "OpenOrca",
+  "identifiers": {
+    "huggingface": [
+      "Open-Orca/OpenOrca"
+    ]
+  },
+  "builder": "Open-Orca (community group)",
+  "release_date": {
+    "value": "2023-06-15",
+    "source": "https://huggingface.co/api/datasets/Open-Orca/OpenOrca",
+    "status": "partial",
+    "note": "HF dataset repo creation date, not the builder's own release announcement."
+  },
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/datasets/Open-Orca/OpenOrca"
+  },
+  "content": {
+    "value": "Card: 'a collection of augmented FLAN Collection data ... Currently ~1M GPT-4 completions, and ~3.2M GPT-3.5 completions', tabularized to align with the distributions in the Orca paper (arXiv 2306.02707). The card calls it 'a partial completion of the full intended dataset'.",
+    "source": "https://huggingface.co/datasets/Open-Orca/OpenOrca",
+    "status": "recorded"
+  },
+  "primary_sources": [
+    "https://huggingface.co/datasets/Open-Orca/OpenOrca",
+    "https://arxiv.org/abs/2306.02707"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created from primary sources (tranche 2 dataset records)",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}

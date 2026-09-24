@@ -1,0 +1,37 @@
+{
+  "id": "alpaca-cleaned",
+  "name": "Alpaca-Cleaned",
+  "identifiers": {
+    "huggingface": [
+      "yahma/alpaca-cleaned"
+    ]
+  },
+  "builder": "gururise / yahma (community)",
+  "release_date": {
+    "value": "2023-03-24",
+    "source": "https://huggingface.co/api/datasets/yahma/alpaca-cleaned",
+    "status": "partial",
+    "note": "HF dataset repo creation date, not the builder's own release announcement."
+  },
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/datasets/yahma/alpaca-cleaned"
+  },
+  "content": {
+    "value": "Card: 'a cleaned version of the original Alpaca Dataset released by Stanford', fixing hallucinations, empty outputs and similar issues. Derivation from `alpaca-52k` is recorded in prose (no dataset-to-dataset edge). The card refers to the original outputs as GPT3's.",
+    "source": "https://huggingface.co/datasets/yahma/alpaca-cleaned",
+    "status": "recorded"
+  },
+  "primary_sources": [
+    "https://huggingface.co/datasets/yahma/alpaca-cleaned",
+    "https://github.com/gururise/AlpacaDataCleaned"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created from primary sources (tranche 2 dataset records)",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}

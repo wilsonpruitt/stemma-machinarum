@@ -1,0 +1,37 @@
+{
+  "id": "gpt4all-j-prompt-generations",
+  "name": "GPT4All-J prompt generations",
+  "identifiers": {
+    "huggingface": [
+      "nomic-ai/gpt4all-j-prompt-generations"
+    ]
+  },
+  "builder": "Nomic AI",
+  "release_date": {
+    "value": "2023-04-10",
+    "source": "https://huggingface.co/api/datasets/nomic-ai/gpt4all-j-prompt-generations",
+    "status": "partial",
+    "note": "HF dataset repo creation date, not the builder's own release announcement."
+  },
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/datasets/nomic-ai/gpt4all-j-prompt-generations"
+  },
+  "content": {
+    "value": "Card: dataset used to train GPT4All-J and GPT4All-J-LoRA; versions v1.0 (original), v1.1-breezy (instances of 'AI language model' removed), v1.2-jazzy (also 'I'm sorry, I can't answer...' removed), v1.3-groovy (v1.2 with ShareGPT and Dolly added, ~8% semantic duplicates removed). Metadata lists 808,812 examples. The card does not say how the responses were generated, so no model-parent edge is recorded.",
+    "source": "https://huggingface.co/datasets/nomic-ai/gpt4all-j-prompt-generations",
+    "status": "partial",
+    "note": "Origin of the generated text is not stated in the sources read; not_recorded."
+  },
+  "primary_sources": [
+    "https://huggingface.co/datasets/nomic-ai/gpt4all-j-prompt-generations"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created from primary sources (tranche 2 dataset records)",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}

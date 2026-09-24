@@ -1,0 +1,36 @@
+{
+  "id": "redpajama-data-instruct",
+  "name": "RedPajama-Data-Instruct",
+  "identifiers": {
+    "huggingface": [
+      "togethercomputer/RedPajama-Data-Instruct"
+    ]
+  },
+  "builder": "Together Computer",
+  "release_date": {
+    "value": "2023-06-05",
+    "source": "https://huggingface.co/api/datasets/togethercomputer/RedPajama-Data-Instruct",
+    "status": "partial",
+    "note": "HF dataset repo creation date, not the builder's own release announcement."
+  },
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/datasets/togethercomputer/RedPajama-Data-Instruct"
+  },
+  "content": {
+    "value": "Card: 'curated from a diverse collection of NLP tasks from both P3 (BigScience) and Natural Instruction (AI2)', decontaminated against HELM: 'we filtered out 137 tasks and 5.2M instances (out of 1069 tasks and 93.3M instances)'.",
+    "source": "https://huggingface.co/datasets/togethercomputer/RedPajama-Data-Instruct",
+    "status": "recorded"
+  },
+  "primary_sources": [
+    "https://huggingface.co/datasets/togethercomputer/RedPajama-Data-Instruct"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created from primary sources (tranche 2 dataset records)",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}
