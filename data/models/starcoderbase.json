@@ -1,0 +1,96 @@
+{
+  "id": "starcoderbase",
+  "name": "StarCoderBase",
+  "identifiers": {
+    "huggingface": [
+      "bigcode/starcoderbase"
+    ]
+  },
+  "developer": "BigCode project (open scientific collaboration led jointly by Hugging Face and ServiceNow Research)",
+  "release_date": {
+    "value": "2023-05-04",
+    "source": "https://huggingface.co/blog/starcoder",
+    "status": "recorded",
+    "note": "BigCode/Hugging Face release post 'StarCoder: A State-of-the-Art LLM for Code', published May 4, 2023. HF repo created 2023-05-03; paper arXiv 2305.06161 (v1 May 2023)."
+  },
+  "weights_status": "open",
+  "availability": {
+    "value": "gated",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/bigcode/starcoderbase",
+    "note": "HF gate: auto."
+  },
+  "license": {
+    "value": "BigCode OpenRAIL-M v1",
+    "source": "https://huggingface.co/bigcode/starcoderbase/blob/88ec5781ad071a9d9e925cd28f327dea22eb5188/README.md",
+    "status": "recorded",
+    "note": "Card metadata `license: bigcode-openrail-m`; paper: 'We release StarCoder under an OpenRAIL-M license agreement'; release post: 'publicly available under an improved version of the OpenRAIL license'. Applies to the weights, with use restrictions; license text at bigcode-project.org/docs/pages/bigcode-openrail/ opened but not read in full."
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "Config.json is gated (not retrievable). Values from the StarCoder paper Table 11 and section 5.2; the paper states multi-query attention (a single shared key/value head by definition; the paper gives no count) and 'learned absolute positional embeddings'.",
+    "n_layers": {
+      "value": 40,
+      "source": "https://arxiv.org/abs/2305.06161",
+      "status": "recorded",
+      "note": "Paper Table 11 'Num. of hidden layers'."
+    },
+    "hidden_size": {
+      "value": 6144,
+      "source": "https://arxiv.org/abs/2305.06161",
+      "status": "recorded",
+      "note": "Paper Table 11."
+    },
+    "n_heads": {
+      "value": 48,
+      "source": "https://arxiv.org/abs/2305.06161",
+      "status": "recorded",
+      "note": "Paper Table 11 'Num. of attention heads'."
+    },
+    "vocab_size": {
+      "value": 49152,
+      "source": "https://arxiv.org/abs/2305.06161",
+      "status": "recorded",
+      "note": "Paper sec. 5.1: 'vocabulary size of 49,152 tokens—including the sentinel tokens'. WizardCoder's HF config shows 49,153 (one added token)."
+    },
+    "positional_encoding": {
+      "value": "learned absolute",
+      "source": "https://arxiv.org/abs/2305.06161",
+      "status": "recorded",
+      "note": "Paper sec. 5.2: 'decoder-only Transformer with Multi-Query-Attention, and learned absolute positional embeddings'."
+    },
+    "context_length": {
+      "value": 8192,
+      "source": "https://arxiv.org/abs/2305.06161",
+      "status": "recorded",
+      "note": "Paper Table 11 'Max. position embeddings' 8192; card: 'a context window of 8192 tokens'."
+    }
+  },
+  "training_data": {
+    "value": "1 trillion tokens from 80+ programming languages, GitHub issues, Git commits and Jupyter notebooks, drawn from The Stack v1.2 (permissively licensed code, opt-out requests excluded).",
+    "source": "https://arxiv.org/abs/2305.06161",
+    "status": "recorded",
+    "note": "Paper: 'We trained StarCoderBase on 1 trillion tokens sourced from 80+ programming languages, GitHub issues, Git commits, and Jupyter notebooks.' Card: 'trained on 80+ programming languages from The Stack (v1.2), with opt-out requests excluded'."
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/bigcode/starcoderbase"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (bigcode/starcoderbase@88ec5781ad071a9d9e925cd28f327dea22eb5188)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer, release date (blog), license, architecture (paper), training data, 2 edges (trained_on starcoderdata; the-stack-dedup rejected); sources: card, arXiv 2305.06161, release post, dataset API",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (1 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

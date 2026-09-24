@@ -1,0 +1,92 @@
+{
+  "id": "gpt-jt-6b-v1",
+  "name": "GPT-JT-6B-v1",
+  "identifiers": {
+    "huggingface": [
+      "togethercomputer/GPT-JT-6B-v1"
+    ]
+  },
+  "developer": "Together Computer",
+  "release_date": {
+    "value": "2022-11-29",
+    "source": "https://www.together.ai/blog/releasing-v1-of-gpt-jt-powered-by-open-source-ai",
+    "status": "recorded",
+    "note": "Together release post, 'Published 11/29/2022'. The HF repo's first commit is earlier (2022-11-24, HF API); the post is the developer's release announcement."
+  },
+  "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/togethercomputer/GPT-JT-6B-v1"
+  },
+  "license": {
+    "value": "apache-2.0",
+    "source": "https://huggingface.co/togethercomputer/GPT-JT-6B-v1/blob/f34aa35f906895602c1f86f5685e598afdea8051/README.md",
+    "status": "recorded",
+    "note": "Card: 'License: Apache License 2.0'. Uploader is the developer."
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "family read from config 'architectures': ['GPTJForCausalLM'].",
+    "n_layers": {
+      "value": 28,
+      "source": "https://huggingface.co/togethercomputer/GPT-JT-6B-v1/raw/f34aa35f906895602c1f86f5685e598afdea8051/config.json",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 4096,
+      "source": "https://huggingface.co/togethercomputer/GPT-JT-6B-v1/raw/f34aa35f906895602c1f86f5685e598afdea8051/config.json",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 16,
+      "source": "https://huggingface.co/togethercomputer/GPT-JT-6B-v1/raw/f34aa35f906895602c1f86f5685e598afdea8051/config.json",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 50400,
+      "source": "https://huggingface.co/togethercomputer/GPT-JT-6B-v1/raw/f34aa35f906895602c1f86f5685e598afdea8051/config.json",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": 2048,
+      "source": "https://huggingface.co/togethercomputer/GPT-JT-6B-v1/raw/f34aa35f906895602c1f86f5685e598afdea8051/config.json",
+      "status": "recorded"
+    },
+    "positional_encoding": {
+      "value": "rotary (RoPE), partial: 64 of 256 dims per head",
+      "source": "https://huggingface.co/EleutherAI/gpt-j-6b/blob/47e169305d2e8376be1d31e765533382721b2cc1/README.md",
+      "status": "recorded",
+      "note": "Propagated from gpt-j-6b (GPT-JT is 'a fork of' GPT-J with the same config). The UL2 prefix-mask objective changes the attention mask used in training, not the position encoding."
+    }
+  },
+  "training_data": {
+    "value": "3.53B fine-tuning tokens in two stages: 2.62B tokens with the UL2 loss on the Pile, then 0.92B tokens mixing 5% Chain-of-Thought, 20% P3, 20% Natural Instructions and 55% the Pile.",
+    "source": "https://huggingface.co/togethercomputer/GPT-JT-6B-v1/blob/f34aa35f906895602c1f86f5685e598afdea8051/README.md",
+    "status": "recorded"
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/togethercomputer/GPT-JT-6B-v1",
+    "https://huggingface.co/togethercomputer/GPT-JT-6B-v1/raw/f34aa35f906895602c1f86f5685e598afdea8051/config.json",
+    "https://huggingface.co/togethercomputer/GPT-JT-6B-v1/blob/f34aa35f906895602c1f86f5685e598afdea8051/README.md",
+    "https://www.together.ai/blog/releasing-v1-of-gpt-jt-powered-by-open-source-ai"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (togethercomputer/GPT-JT-6B-v1@f34aa35f906895602c1f86f5685e598afdea8051)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer, release date (blog), license, positional encoding (propagated from gpt-j-6b), training data, 2 edges accepted + 3 rejected; sources: card, Together blog",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (2 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

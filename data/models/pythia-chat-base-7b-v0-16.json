@@ -1,0 +1,93 @@
+{
+  "id": "pythia-chat-base-7b-v0-16",
+  "name": "Pythia-Chat-Base-7B-v0.16",
+  "identifiers": {
+    "huggingface": [
+      "togethercomputer/Pythia-Chat-Base-7B-v0.16"
+    ]
+  },
+  "developer": "Together Computer (with LAION and Ontocord.ai)",
+  "release_date": {
+    "value": "2023-03-22",
+    "source": "https://huggingface.co/api/models/togethercomputer/Pythia-Chat-Base-7B-v0.16",
+    "status": "partial",
+    "note": "HF repo creation date; the card gives a version (v0.16) but no release date."
+  },
+  "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/togethercomputer/Pythia-Chat-Base-7B-v0.16"
+  },
+  "license": {
+    "value": "apache-2.0",
+    "source": "https://huggingface.co/togethercomputer/Pythia-Chat-Base-7B-v0.16/blob/97aa918c383820e1a69f042801091d7deb996c20/README.md",
+    "status": "recorded",
+    "note": "Card: 'License: Apache 2.0'. Uploader is the developer."
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "family read from config 'architectures': ['GPTNeoXForCausalLM'].",
+    "n_layers": {
+      "value": 32,
+      "source": "https://huggingface.co/togethercomputer/Pythia-Chat-Base-7B-v0.16/raw/97aa918c383820e1a69f042801091d7deb996c20/config.json",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 4096,
+      "source": "https://huggingface.co/togethercomputer/Pythia-Chat-Base-7B-v0.16/raw/97aa918c383820e1a69f042801091d7deb996c20/config.json",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 32,
+      "source": "https://huggingface.co/togethercomputer/Pythia-Chat-Base-7B-v0.16/raw/97aa918c383820e1a69f042801091d7deb996c20/config.json",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 50432,
+      "source": "https://huggingface.co/togethercomputer/Pythia-Chat-Base-7B-v0.16/raw/97aa918c383820e1a69f042801091d7deb996c20/config.json",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": 2048,
+      "source": "https://huggingface.co/togethercomputer/Pythia-Chat-Base-7B-v0.16/raw/97aa918c383820e1a69f042801091d7deb996c20/config.json",
+      "status": "recorded"
+    },
+    "positional_encoding": {
+      "value": "rotary (RoPE), partial: 25% of dims",
+      "source": "https://arxiv.org/abs/2304.01373",
+      "status": "recorded",
+      "note": "Propagated from pythia-6-9b-deduped, the base per the OpenChatKit README; config matches (32 layers, hidden 4096)."
+    }
+  },
+  "training_data": {
+    "value": "OIG-43M: 'a collection of 43 million high-quality instructions', curated by Together with LAION and Ontocord.ai (OpenChatKit models 'were trained on the OIG-43M training dataset'); plus 'a small amount of feedback data' (unspecified) in a further fine-tuning step.",
+    "source": "https://huggingface.co/togethercomputer/Pythia-Chat-Base-7B-v0.16/blob/97aa918c383820e1a69f042801091d7deb996c20/README.md",
+    "status": "recorded",
+    "note": "The feedback data is described only as 'a small amount'; its source is not_recorded."
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/togethercomputer/Pythia-Chat-Base-7B-v0.16",
+    "https://huggingface.co/togethercomputer/Pythia-Chat-Base-7B-v0.16/raw/97aa918c383820e1a69f042801091d7deb996c20/config.json",
+    "https://huggingface.co/togethercomputer/Pythia-Chat-Base-7B-v0.16/blob/97aa918c383820e1a69f042801091d7deb996c20/README.md",
+    "https://github.com/togethercomputer/OpenChatKit/blob/main/README.md"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (togethercomputer/Pythia-Chat-Base-7B-v0.16@97aa918c383820e1a69f042801091d7deb996c20)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer, license, positional encoding (propagated from pythia-6-9b-deduped), training data, 2 edges prepared; sources: card, OpenChatKit README",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (2 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "id": "guanaco-7b",
+  "name": "guanaco-7b",
+  "identifiers": {
+    "huggingface": [
+      "timdettmers/guanaco-7b"
+    ]
+  },
+  "developer": "Tim Dettmers, Artidoro Pagnoni, Ari Holtzman, Luke Zettlemoyer (QLoRA authors; repo uploaded by timdettmers)",
+  "release_date": {
+    "value": "2023-05-22",
+    "source": "https://huggingface.co/api/models/timdettmers/guanaco-7b",
+    "status": "partial",
+    "note": "HF repo creation date (2023-05-22). The QLoRA paper (arXiv 2305.14314) is dated 2023-05-23."
+  },
+  "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/timdettmers/guanaco-7b"
+  },
+  "license": {
+    "value": "Apache-2.0 (adapter weights only); use also requires the LLaMA license",
+    "source": "https://huggingface.co/timdettmers/guanaco-7b/blob/cad9de16fb306d5bb1feb901333fe0aa7bd700d8/README.md",
+    "status": "recorded",
+    "note": "Card: 'Guanaco adapter weights are available under Apache 2 license. Note the use of the Guanaco adapter weights, requires access to the LLaMA model weighs. Guanaco is based on LLaMA and therefore should be used according to the LLaMA license.'"
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "n_layers": {
+      "value": 32,
+      "source": "https://arxiv.org/abs/2302.13971",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 4096,
+      "source": "https://arxiv.org/abs/2302.13971",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 32,
+      "source": "https://arxiv.org/abs/2302.13971",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 32000,
+      "source": "https://arxiv.org/abs/2302.13971",
+      "status": "recorded"
+    },
+    "positional_encoding": {
+      "value": "rotary (RoPE)",
+      "source": "https://arxiv.org/abs/2302.13971",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": 2048,
+      "source": "https://arxiv.org/abs/2302.13971",
+      "status": "recorded"
+    },
+    "note": "Propagated from llama-7b: the card says Guanaco is 'obtained through 4-bit QLoRA tuning of LLaMA base models' and its usage example loads huggyllama/llama-7b with this adapter. The adapter changes no architecture field."
+  },
+  "training_data": {
+    "value": "OASST1 (OpenAssistant Conversations), per the card: 'obtained through 4-bit QLoRA tuning of LLaMA base models on the OASST1 dataset'.",
+    "source": "https://huggingface.co/timdettmers/guanaco-7b/blob/cad9de16fb306d5bb1feb901333fe0aa7bd700d8/README.md",
+    "status": "recorded"
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/timdettmers/guanaco-7b"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (timdettmers/guanaco-7b@cad9de16fb306d5bb1feb901333fe0aa7bd700d8)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer, license (Apache-2.0 adapter, card), architecture (propagated from llama-7b), training data (OASST1), 2 edges; sources: card, adapter_config.json, arXiv 2305.14314",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (2 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

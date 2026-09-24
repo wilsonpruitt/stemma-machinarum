@@ -1,0 +1,89 @@
+{
+  "id": "openorcaxopenchat-preview2-13b",
+  "name": "OpenOrcaxOpenChat-Preview2-13B",
+  "identifiers": {
+    "huggingface": [
+      "Open-Orca/OpenOrcaxOpenChat-Preview2-13B"
+    ]
+  },
+  "developer": "Open-Orca (AlignmentLab.ai); OpenChat contributed the training packing algorithm",
+  "release_date": {
+    "value": "2023-07-31",
+    "source": "https://huggingface.co/api/models/Open-Orca/OpenOrcaxOpenChat-Preview2-13B",
+    "status": "partial",
+    "note": "HF repo creation date; may predate or postdate public release."
+  },
+  "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/Open-Orca/OpenOrcaxOpenChat-Preview2-13B"
+  },
+  "license": {
+    "value": "llama2",
+    "source": "https://huggingface.co/Open-Orca/OpenOrcaxOpenChat-Preview2-13B/blob/49d50e4348c4f454302e997fc39841f035738604/README.md",
+    "status": "partial",
+    "note": "From HF card metadata (`license: llama2`); the Llama 2 Community License applies to the base. Confirm against the license text."
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "family from config 'architectures'. Positional encoding left not_recorded, matching llama-2-13b.",
+    "n_layers": {
+      "value": 40,
+      "source": "https://huggingface.co/Open-Orca/OpenOrcaxOpenChat-Preview2-13B/raw/49d50e4348c4f454302e997fc39841f035738604/config.json",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 5120,
+      "source": "https://huggingface.co/Open-Orca/OpenOrcaxOpenChat-Preview2-13B/raw/49d50e4348c4f454302e997fc39841f035738604/config.json",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 40,
+      "source": "https://huggingface.co/Open-Orca/OpenOrcaxOpenChat-Preview2-13B/raw/49d50e4348c4f454302e997fc39841f035738604/config.json",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 32002,
+      "source": "https://huggingface.co/Open-Orca/OpenOrcaxOpenChat-Preview2-13B/raw/49d50e4348c4f454302e997fc39841f035738604/config.json",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": 4096,
+      "source": "https://huggingface.co/Open-Orca/OpenOrcaxOpenChat-Preview2-13B/raw/49d50e4348c4f454302e997fc39841f035738604/config.json",
+      "status": "recorded"
+    },
+    "positional_encoding": {
+      "value": null,
+      "status": "not_recorded"
+    }
+  },
+  "training_data": {
+    "value": "A curated filtered subset of most of the GPT-4 augmented completions in OpenOrca; packed with OpenChat's MultiPack sampler.",
+    "source": "https://huggingface.co/Open-Orca/OpenOrcaxOpenChat-Preview2-13B/blob/49d50e4348c4f454302e997fc39841f035738604/README.md",
+    "status": "recorded",
+    "note": "Card: 'This second preview release is trained on a curated filtered subset of most of our GPT-4 augmented data.' The exact subset size is not stated."
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/Open-Orca/OpenOrcaxOpenChat-Preview2-13B",
+    "https://huggingface.co/Open-Orca/OpenOrcaxOpenChat-Preview2-13B/raw/49d50e4348c4f454302e997fc39841f035738604/config.json"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (Open-Orca/OpenOrcaxOpenChat-Preview2-13B@49d50e4348c4f454302e997fc39841f035738604)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer, license note, training data, 2 edges (fine_tuned_from llama-2-13b, trained_on openorca); sources: card",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (2 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

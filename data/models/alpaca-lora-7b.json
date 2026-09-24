@@ -1,0 +1,89 @@
+{
+  "id": "alpaca-lora-7b",
+  "name": "alpaca-lora-7b",
+  "identifiers": {
+    "huggingface": [
+      "tloen/alpaca-lora-7b"
+    ]
+  },
+  "developer": "tloen (Alpaca-LoRA project; individual developer, name not_recorded on the sources read)",
+  "release_date": {
+    "value": "2023-03-14",
+    "source": "https://huggingface.co/api/models/tloen/alpaca-lora-7b",
+    "status": "partial",
+    "note": "HF repo creation date; may predate or postdate public release."
+  },
+  "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/tloen/alpaca-lora-7b"
+  },
+  "license": {
+    "value": "mit",
+    "source": "https://huggingface.co/tloen/alpaca-lora-7b/blob/12103d6baae1b320aa60631b38acb6ea094a0539/README.md",
+    "status": "partial",
+    "note": "From HF card metadata (`license: mit`); covers the adapter only. The card does not address the LLaMA base license. GitHub LICENSE not checked."
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "n_layers": {
+      "value": 32,
+      "source": "https://arxiv.org/abs/2302.13971",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 4096,
+      "source": "https://arxiv.org/abs/2302.13971",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 32,
+      "source": "https://arxiv.org/abs/2302.13971",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 32000,
+      "source": "https://arxiv.org/abs/2302.13971",
+      "status": "recorded"
+    },
+    "positional_encoding": {
+      "value": "rotary (RoPE)",
+      "source": "https://arxiv.org/abs/2302.13971",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": 2048,
+      "source": "https://arxiv.org/abs/2302.13971",
+      "status": "recorded"
+    },
+    "note": "Propagated from llama-7b: the card says \"a low-rank adapter for LLaMA-7b\" and adapter_config.json names a LLaMA-7B checkpoint (decapoda-research/llama-7b-hf, a third-party re-upload) as base. The adapter changes no architecture field."
+  },
+  "training_data": {
+    "value": "Stanford Alpaca instruction data, per the card's metadata as the cleaned version yahma/alpaca-cleaned. Card prose: 'fit on the Stanford Alpaca dataset'.",
+    "source": "https://huggingface.co/tloen/alpaca-lora-7b/blob/12103d6baae1b320aa60631b38acb6ea094a0539/README.md",
+    "status": "partial",
+    "note": "Card metadata lists yahma/alpaca-cleaned and the project README's training command uses --data_path 'yahma/alpaca-cleaned'; the card prose links the original Stanford Alpaca repo. The two differ (cleaned vs original 52K); the card does not settle which this checkpoint saw. The HF repo dates from 2023-03-14, possibly before the cleaned set existed."
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/tloen/alpaca-lora-7b"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (tloen/alpaca-lora-7b@12103d6baae1b320aa60631b38acb6ea094a0539)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer, architecture (propagated from llama-7b, adapter-only), training data (partial), 2 edges (adapter_on, trained_on); sources: card, adapter_config.json, alpaca-lora README",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (2 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

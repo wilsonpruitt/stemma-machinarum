@@ -1,0 +1,95 @@
+{
+  "id": "starling-rm-7b-alpha",
+  "name": "Starling-RM-7B-alpha",
+  "identifiers": {
+    "huggingface": [
+      "berkeley-nest/Starling-RM-7B-alpha"
+    ]
+  },
+  "developer": "Banghua Zhu, Evan Frick, Tianhao Wu, Hanlin Zhu and Jiantao Jiao (Berkeley NEST; card 'Developed by')",
+  "release_date": {
+    "value": "2023-11-25",
+    "source": "https://huggingface.co/api/models/berkeley-nest/Starling-RM-7B-alpha",
+    "status": "partial",
+    "note": "HF repo creation date; may predate or postdate public release."
+  },
+  "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/berkeley-nest/Starling-RM-7B-alpha"
+  },
+  "license": {
+    "value": "Apache-2.0 per card metadata, 'under the condition that the model is not used to compete with OpenAI'",
+    "source": "https://huggingface.co/berkeley-nest/Starling-RM-7B-alpha/blob/6c6b4d5627834fe010d2c001632de2b94db81d66/README.md",
+    "status": "partial",
+    "note": "Card: 'License: Apache-2.0 license under the condition that the model is not used to compete with OpenAI'. The policy card's License section adds non-commercial and distillation-licence language; this card was not seen to say so. Reviewer confirm."
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "n_layers": {
+      "value": 32,
+      "source": "https://huggingface.co/berkeley-nest/Starling-RM-7B-alpha/raw/6c6b4d5627834fe010d2c001632de2b94db81d66/config.json",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 4096,
+      "source": "https://huggingface.co/berkeley-nest/Starling-RM-7B-alpha/raw/6c6b4d5627834fe010d2c001632de2b94db81d66/config.json",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 32,
+      "source": "https://huggingface.co/berkeley-nest/Starling-RM-7B-alpha/raw/6c6b4d5627834fe010d2c001632de2b94db81d66/config.json",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 32000,
+      "source": "https://huggingface.co/berkeley-nest/Starling-RM-7B-alpha/raw/6c6b4d5627834fe010d2c001632de2b94db81d66/config.json",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": 4096,
+      "source": "https://huggingface.co/berkeley-nest/Starling-RM-7B-alpha/raw/6c6b4d5627834fe010d2c001632de2b94db81d66/config.json",
+      "status": "recorded"
+    },
+    "n_kv_heads": {
+      "value": 32,
+      "source": "https://huggingface.co/berkeley-nest/Starling-RM-7B-alpha/raw/6c6b4d5627834fe010d2c001632de2b94db81d66/config.json",
+      "status": "recorded"
+    },
+    "positional_encoding": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "note": "Card: 'we remove the last layer of Llama2-7B Chat, and concatenate a linear layer that outputs scalar for any pair of input prompt and response.' So a Llama 2 decoder backbone with a scalar reward head in place of the language-model head; HF config 'architectures' did not resolve to a family, and the head is not counted in the dims below."
+  },
+  "training_data": {
+    "value": "Nectar (GPT-4-ranked 7-wise comparisons), with the K-wise maximum likelihood estimator.",
+    "source": "https://huggingface.co/berkeley-nest/Starling-RM-7B-alpha/blob/6c6b4d5627834fe010d2c001632de2b94db81d66/README.md",
+    "status": "recorded",
+    "note": "Card: 'We train the reward model with preference dataset berkeley-nest/Nectar, with the K-wise maximum likelihood estimator proposed in [this paper]'; 'since the preference dataset ... is based on GPT-4 preference, the reward model is likely to be biased towards GPT-4's own preference'."
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/berkeley-nest/Starling-RM-7B-alpha",
+    "https://starling.cs.berkeley.edu/",
+    "https://huggingface.co/berkeley-nest/Starling-RM-7B-alpha/raw/6c6b4d5627834fe010d2c001632de2b94db81d66/config.json"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (berkeley-nest/Starling-RM-7B-alpha@6c6b4d5627834fe010d2c001632de2b94db81d66)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "ruling: 3-tier panel (3/3, feedback_from via reward-model record), see session log: record created as the reward-model node; developer, license, architecture family, training data, 2 edges filled from card and blog",
+      "by": "wilson-pruitt + claude (Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (2 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

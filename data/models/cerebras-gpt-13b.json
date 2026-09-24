@@ -1,0 +1,94 @@
+{
+  "id": "cerebras-gpt-13b",
+  "name": "Cerebras-GPT 13B",
+  "identifiers": {
+    "huggingface": [
+      "cerebras/Cerebras-GPT-13B"
+    ]
+  },
+  "developer": "Cerebras Systems (Nolan Dey, Gurpreet Gosal, Zhiming (Charles) Chen, Hemant Khachane, William Marshall, Ribhu Pathria, Marvin Tom, Joel Hestness; trained on the Cerebras Wafer-Scale Cluster)",
+  "release_date": {
+    "value": "2023-03-28",
+    "source": "https://www.cerebras.net/blog/cerebras-gpt-a-family-of-open-compute-efficient-large-language-models/",
+    "status": "recorded",
+    "note": "Cerebras blog post dated Mar 28 2023; paper arXiv 2304.03208 v1 is dated 6 Apr 2023."
+  },
+  "weights_status": "unknown",
+  "availability": {
+    "value": "removed",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/cerebras/Cerebras-GPT-13B",
+    "note": "HF API returned HTTP 401."
+  },
+  "license": {
+    "value": "Apache-2.0",
+    "source": "https://www.cerebras.net/blog/cerebras-gpt-a-family-of-open-compute-efficient-large-language-models/",
+    "status": "recorded",
+    "note": "Blog: 'All models, weights, and checkpoints are available on Hugging Face and GitHub under the Apache 2.0 license.' HF repo unreachable (HTTP 401) so the card was not read."
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "HF config not retrieved (repo unreachable: HTTP 401). Values from paper Table 1 (13B row: d_model 5120, n_layers 40, d_head 128, d_ffn 20480) and section 2.1. n_heads is derived (5120 / 128 = 40); the paper gives d_head, not the head count. Positional encoding is not stated in the sections read.",
+    "n_layers": {
+      "value": 40,
+      "source": "https://arxiv.org/abs/2304.03208",
+      "status": "recorded",
+      "note": "Paper Table 1."
+    },
+    "hidden_size": {
+      "value": 5120,
+      "source": "https://arxiv.org/abs/2304.03208",
+      "status": "recorded",
+      "note": "Paper Table 1 d_model."
+    },
+    "n_heads": {
+      "value": 40,
+      "source": "https://arxiv.org/abs/2304.03208",
+      "status": "recorded",
+      "note": "Derived: d_model 5120 / d_head 128; paper Table 1 does not list the count directly."
+    },
+    "vocab_size": {
+      "value": 50257,
+      "source": "https://arxiv.org/abs/2304.03208",
+      "status": "recorded",
+      "note": "Paper sec. 2.2: GPT-2 BPE vocabulary of size 50257."
+    },
+    "context_length": {
+      "value": 2048,
+      "source": "https://arxiv.org/abs/2304.03208",
+      "status": "recorded",
+      "note": "Paper sec. 2.1: 'maximum sequence length of 2048 tokens'."
+    },
+    "positional_encoding": {
+      "value": null,
+      "status": "not_recorded"
+    }
+  },
+  "training_data": {
+    "value": "The Pile (Gao et al., 2020), no deduplication; 257.1B tokens (about 20 tokens per parameter, Chinchilla-optimal).",
+    "source": "https://arxiv.org/abs/2304.03208",
+    "status": "recorded",
+    "note": "Paper: 'We train Cerebras-GPT models on the Eleuther Pile dataset following DeepMind Chinchilla scaling rules'; 'We do not perform deduplication of Pile'; Table 1 total tokens 257.1B for 13B."
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/cerebras/Cerebras-GPT-13B"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (cerebras/Cerebras-GPT-13B@None)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer, release date (blog), license (blog), architecture (paper), training data, 2 edges (trained_on the-pile; design_follows gpt-3); sources: arXiv 2304.03208, Cerebras blog",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (2 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

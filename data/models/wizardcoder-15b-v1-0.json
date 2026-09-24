@@ -1,0 +1,97 @@
+{
+  "id": "wizardcoder-15b-v1-0",
+  "name": "WizardCoder-15B-V1.0",
+  "identifiers": {
+    "huggingface": [
+      "WizardLMTeam/WizardCoder-15B-V1.0"
+    ]
+  },
+  "developer": "Ziyang Luo (HKBU), Can Xu, Pu Zhao, Qingfeng Sun, Xiubo Geng, Wenxiang Hu, Chongyang Tao, Jing Ma, Qingwei Lin, Daxin Jiang (Microsoft) — WizardLM team; HF org WizardLMTeam",
+  "release_date": {
+    "value": "2023-06-14",
+    "source": "https://huggingface.co/api/models/WizardLMTeam/WizardCoder-15B-V1.0",
+    "status": "partial",
+    "note": "HF repo creation date (2023-06-14). The WizardCoder paper (arXiv 2306.08568) was first posted in June 2023 (v2 read: 27 May 2025); card date of release not stated."
+  },
+  "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/WizardLMTeam/WizardCoder-15B-V1.0"
+  },
+  "license": {
+    "value": "bigscience-openrail-m (as written on the card; StarCoder itself is BigCode OpenRAIL-M)",
+    "source": "https://huggingface.co/WizardLMTeam/WizardCoder-15B-V1.0/blob/9c177589dec389eac2c8de51cbc371d45e47984e/README.md",
+    "status": "partial",
+    "note": "Card metadata: `license: bigscience-openrail-m`. The base StarCoder is under bigcode-openrail-m (the BigScience RAIL family is a different license line). Discrepancy not resolved; reviewer check."
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "family read from config 'architectures': ['GPTBigCodeForCausalLM']. Config vocab_size 49,153 vs 49,152 in the StarCoder paper (one added token).",
+    "n_layers": {
+      "value": 40,
+      "source": "https://huggingface.co/WizardLMTeam/WizardCoder-15B-V1.0/raw/9c177589dec389eac2c8de51cbc371d45e47984e/config.json",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 6144,
+      "source": "https://huggingface.co/WizardLMTeam/WizardCoder-15B-V1.0/raw/9c177589dec389eac2c8de51cbc371d45e47984e/config.json",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 48,
+      "source": "https://huggingface.co/WizardLMTeam/WizardCoder-15B-V1.0/raw/9c177589dec389eac2c8de51cbc371d45e47984e/config.json",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 49153,
+      "source": "https://huggingface.co/WizardLMTeam/WizardCoder-15B-V1.0/raw/9c177589dec389eac2c8de51cbc371d45e47984e/config.json",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": 8192,
+      "source": "https://huggingface.co/WizardLMTeam/WizardCoder-15B-V1.0/raw/9c177589dec389eac2c8de51cbc371d45e47984e/config.json",
+      "status": "recorded"
+    },
+    "n_kv_heads": {
+      "value": 1,
+      "source": "https://huggingface.co/WizardLMTeam/WizardCoder-15B-V1.0/raw/9c177589dec389eac2c8de51cbc371d45e47984e/config.json",
+      "status": "recorded",
+      "note": "config multi_query: true"
+    },
+    "positional_encoding": {
+      "value": "learned absolute",
+      "source": "https://arxiv.org/abs/2305.06161",
+      "status": "recorded",
+      "note": "Architecture unchanged from starcoder (fine-tune of StarCoder-15B; config: GPTBigCodeForCausalLM, 40 layers, hidden 6144, 48 heads, multi-query). Value from the StarCoder paper sec. 5.2."
+    }
+  },
+  "training_data": {
+    "value": "Code Evol-Instruct: about 78k code instructions, Code Alpaca (~20k) evolved with gpt-3.5-turbo; StarCoder-15B fine-tuned on it.",
+    "source": "https://arxiv.org/abs/2306.08568",
+    "status": "recorded",
+    "note": "Card: 'WizardCoder-15B-v1.0 trained with 78k evolved code instructions'. Paper: Code Alpaca 'evolved' and StarCoder fine-tuned on the resulting data (see the code-evol-instruct record for the paper's wording on gpt-3.5-turbo)."
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/WizardLMTeam/WizardCoder-15B-V1.0",
+    "https://huggingface.co/WizardLMTeam/WizardCoder-15B-V1.0/raw/9c177589dec389eac2c8de51cbc371d45e47984e/config.json"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (WizardLMTeam/WizardCoder-15B-V1.0@9c177589dec389eac2c8de51cbc371d45e47984e)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer, license (partial), positional encoding (from StarCoder paper), training data, 2 edges; sources: card, arXiv 2306.08568",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (2 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "id": "tulu-2-dpo-7b",
+  "name": "Tulu 2 DPO 7B",
+  "identifiers": {
+    "huggingface": [
+      "allenai/tulu-2-dpo-7b"
+    ]
+  },
+  "developer": "Allen Institute for AI (Ai2) and University of Washington (paper authors Ivison, Wang, et al.)",
+  "release_date": {
+    "value": "2023-11-13",
+    "source": "https://huggingface.co/api/models/allenai/tulu-2-dpo-7b",
+    "status": "partial",
+    "note": "HF repo creation date (2023-11-13); paper arXiv 2311.10702 dated Nov 2023 (v2 20 Nov)."
+  },
+  "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/allenai/tulu-2-dpo-7b"
+  },
+  "license": {
+    "value": "AI2 ImpACT Low-risk license (card); base weights also subject to the Llama 2 Community License",
+    "source": "https://huggingface.co/allenai/tulu-2-dpo-7b/blob/b57ef95260b6d4e726adf64518af038e5673f126/README.md",
+    "status": "partial",
+    "note": "Card metadata: `license: other`, `license_name: ai2-impact-license-low-risk`, link allenai.org/impact-license; card text 'License: AI2 ImpACT Low-risk license'. License page text could not be read this session (JavaScript-rendered)."
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "family read from config 'architectures': ['LlamaForCausalLM'].",
+    "n_layers": {
+      "value": 32,
+      "source": "https://huggingface.co/allenai/tulu-2-dpo-7b/raw/b57ef95260b6d4e726adf64518af038e5673f126/config.json",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 4096,
+      "source": "https://huggingface.co/allenai/tulu-2-dpo-7b/raw/b57ef95260b6d4e726adf64518af038e5673f126/config.json",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 32,
+      "source": "https://huggingface.co/allenai/tulu-2-dpo-7b/raw/b57ef95260b6d4e726adf64518af038e5673f126/config.json",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 32000,
+      "source": "https://huggingface.co/allenai/tulu-2-dpo-7b/raw/b57ef95260b6d4e726adf64518af038e5673f126/config.json",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": 8192,
+      "source": "https://huggingface.co/allenai/tulu-2-dpo-7b/raw/b57ef95260b6d4e726adf64518af038e5673f126/config.json",
+      "status": "recorded",
+      "note": "Config value; see tulu-2-7b."
+    },
+    "n_kv_heads": {
+      "value": 32,
+      "source": "https://huggingface.co/allenai/tulu-2-dpo-7b/raw/b57ef95260b6d4e726adf64518af038e5673f126/config.json",
+      "status": "recorded"
+    },
+    "positional_encoding": {
+      "value": "rotary (RoPE)",
+      "source": "https://arxiv.org/abs/2307.09288",
+      "status": "recorded",
+      "note": "Architecture unchanged from llama-2-7b (fine-tune, not a structural change)."
+    }
+  },
+  "training_data": {
+    "value": "Tulu V2 mix SFT (see tulu-2-7b) followed by DPO on a filtered, binarized UltraFeedback (HuggingFaceH4/ultrafeedback_binarized), following the Zephyr-Beta recipe.",
+    "source": "https://arxiv.org/abs/2311.10702",
+    "status": "recorded",
+    "note": "Paper (arXiv 2311.10702, section 2.2): 'For DPO training, we follow the Zephyr-Beta approach: we train on a filtered and binarized form of UltraFeedback for three epochs', learning rate 5e-7. Card: 'DPO Recipe: The DPO recipe is from the Zephyr Beta model'."
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/allenai/tulu-2-dpo-7b",
+    "https://huggingface.co/allenai/tulu-2-dpo-7b/raw/b57ef95260b6d4e726adf64518af038e5673f126/config.json"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (allenai/tulu-2-dpo-7b@b57ef95260b6d4e726adf64518af038e5673f126)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer, license (partial), training data, positional encoding (propagated), 4 edges (fine_tuned_from tulu-2-7b, trained_on ultrafeedback; 2 rejected); sources: card, arXiv 2311.10702",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (2 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

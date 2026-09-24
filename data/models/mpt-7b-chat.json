@@ -1,0 +1,94 @@
+{
+  "id": "mpt-7b-chat",
+  "name": "MPT-7B-Chat",
+  "identifiers": {
+    "huggingface": [
+      "mosaicml/mpt-7b-chat"
+    ]
+  },
+  "developer": "MosaicML",
+  "release_date": {
+    "value": "2023-05-05",
+    "source": "https://www.databricks.com/blog/mpt-7b",
+    "status": "recorded",
+    "note": "Release post (MosaicML/Databricks blog) and the archived card ('Model Date May 5, 2023'). HF API returned 401 for this repo (mosaicml/ org unreachable, same as mpt-7b)."
+  },
+  "weights_status": "unknown",
+  "availability": {
+    "value": "removed",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/mosaicml/mpt-7b-chat",
+    "note": "HF API returned HTTP 401. Card read from an Internet Archive snapshot dated 2023-07-18."
+  },
+  "license": {
+    "value": "CC-By-NC-SA-4.0",
+    "source": "https://www.databricks.com/blog/mpt-7b",
+    "status": "recorded",
+    "note": "Blog: 'CC-By-NC-SA-4.0 (non-commercial use only)'; the archived card says the same. Differs from mpt-7b's Apache-2.0."
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "n_layers": {
+      "value": 32,
+      "source": "http://web.archive.org/web/20230718105903/https://huggingface.co/mosaicml/mpt-7b-chat",
+      "status": "recorded",
+      "note": "Archived card architecture table: n_layers 32, n_heads 32, d_model 4096, vocab size 50432, sequence length 2048."
+    },
+    "hidden_size": {
+      "value": 4096,
+      "source": "http://web.archive.org/web/20230718105903/https://huggingface.co/mosaicml/mpt-7b-chat",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 32,
+      "source": "http://web.archive.org/web/20230718105903/https://huggingface.co/mosaicml/mpt-7b-chat",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 50432,
+      "source": "http://web.archive.org/web/20230718105903/https://huggingface.co/mosaicml/mpt-7b-chat",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": 2048,
+      "source": "http://web.archive.org/web/20230718105903/https://huggingface.co/mosaicml/mpt-7b-chat",
+      "status": "recorded"
+    },
+    "positional_encoding": {
+      "value": "ALiBi (no position embeddings)",
+      "source": "https://www.databricks.com/blog/mpt-7b",
+      "status": "recorded",
+      "note": "Blog: MPT 'replaces positional embeddings with ALiBi'. Same as mpt-7b-instruct's record."
+    },
+    "note": "Archived card: 'follows a modified decoder-only transformer architecture'."
+  },
+  "training_data": {
+    "value": "MPT-7B finetuned on the ShareGPT-Vicuna, HC3, Alpaca, HH-RLHF and Evol-Instruct datasets.",
+    "source": "http://web.archive.org/web/20230718105903/https://huggingface.co/mosaicml/mpt-7b-chat",
+    "status": "recorded",
+    "note": "Archived card: 'It was built by finetuning MPT-7B on the ShareGPT-Vicuna, HC3, Alpaca, HH-RLHF, and Evol-Instruct datasets.' Training run: 8.2 hours on 8 A100-80GB, then 6.7 hours on 32 A100-40GB."
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/mosaicml/mpt-7b-chat",
+    "http://web.archive.org/web/20230718105903/https://huggingface.co/mosaicml/mpt-7b-chat",
+    "https://www.databricks.com/blog/mpt-7b"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (mosaicml/mpt-7b-chat@None)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer, release date, license, architecture (from archived card), training data, 3 edges prepared; sources: archived card 2023-07-18, MosaicML/Databricks blog",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (3 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "id": "redpajama-incite-7b-instruct",
+  "name": "RedPajama-INCITE-7B-Instruct",
+  "identifiers": {
+    "huggingface": [
+      "togethercomputer/RedPajama-INCITE-7B-Instruct"
+    ]
+  },
+  "developer": "Together Computer (with Ontocord.ai, ETH DS3Lab, AAI CERC, Université de Montréal, MILA, Stanford CRFM, Stanford Hazy Research, LAION)",
+  "release_date": {
+    "value": "2023-05-05",
+    "source": "https://www.together.ai/blog/redpajama-models-v1",
+    "status": "recorded",
+    "note": "Together post dated May 5, 2023: the release included '3B and 7B' models, the 7B labelled an early preview (800B of a planned 1T tokens at the time). The repo's first commit is the same day."
+  },
+  "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/togethercomputer/RedPajama-INCITE-7B-Instruct"
+  },
+  "license": {
+    "value": "apache-2.0",
+    "source": "https://huggingface.co/togethercomputer/RedPajama-INCITE-7B-Instruct/blob/7f36397b9985a3f981cdb618f8fec1c565ca5927/README.md",
+    "status": "recorded",
+    "note": "Card: 'License: Apache 2.0'. Uploader is the developer."
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "family read from config 'architectures': ['GPTNeoXForCausalLM'].",
+    "n_layers": {
+      "value": 32,
+      "source": "https://huggingface.co/togethercomputer/RedPajama-INCITE-7B-Instruct/raw/7f36397b9985a3f981cdb618f8fec1c565ca5927/config.json",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 4096,
+      "source": "https://huggingface.co/togethercomputer/RedPajama-INCITE-7B-Instruct/raw/7f36397b9985a3f981cdb618f8fec1c565ca5927/config.json",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 32,
+      "source": "https://huggingface.co/togethercomputer/RedPajama-INCITE-7B-Instruct/raw/7f36397b9985a3f981cdb618f8fec1c565ca5927/config.json",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 50432,
+      "source": "https://huggingface.co/togethercomputer/RedPajama-INCITE-7B-Instruct/raw/7f36397b9985a3f981cdb618f8fec1c565ca5927/config.json",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": 2048,
+      "source": "https://huggingface.co/togethercomputer/RedPajama-INCITE-7B-Instruct/raw/7f36397b9985a3f981cdb618f8fec1c565ca5927/config.json",
+      "status": "recorded"
+    },
+    "positional_encoding": {
+      "value": null,
+      "status": "not_recorded",
+      "note": "Card does not state it; config hints are not evidence. Also not_recorded on the base record."
+    }
+  },
+  "training_data": {
+    "value": "Fine-tuned 'for few-shot applications on the data of GPT-JT, with exclusion of tasks that overlap with the HELM core scenarios'; 1B tokens, learning rate 1e-5 (card). The card's 'Training Data' line points to RedPajama-Data-1T, which is the base model's pretraining corpus, not this fine-tuning set.",
+    "source": "https://huggingface.co/togethercomputer/RedPajama-INCITE-7B-Instruct/blob/7f36397b9985a3f981cdb618f8fec1c565ca5927/README.md",
+    "status": "recorded"
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/togethercomputer/RedPajama-INCITE-7B-Instruct",
+    "https://huggingface.co/togethercomputer/RedPajama-INCITE-7B-Instruct/raw/7f36397b9985a3f981cdb618f8fec1c565ca5927/config.json",
+    "https://huggingface.co/togethercomputer/RedPajama-INCITE-7B-Instruct/blob/7f36397b9985a3f981cdb618f8fec1c565ca5927/README.md",
+    "https://www.together.ai/blog/redpajama-models-v1"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (togethercomputer/RedPajama-INCITE-7B-Instruct@7f36397b9985a3f981cdb618f8fec1c565ca5927)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer, release date (blog), license, training data, 2 edges accepted + 1 rejected; sources: card, Together blog",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (2 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

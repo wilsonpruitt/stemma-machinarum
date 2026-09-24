@@ -1,0 +1,96 @@
+{
+  "id": "tinyllama-1-1b-intermediate-step-1431k-3t",
+  "name": "TinyLlama-1.1B (intermediate-step-1431k-3T)",
+  "identifiers": {
+    "huggingface": [
+      "TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T"
+    ]
+  },
+  "developer": "TinyLlama project (Peiyuan Zhang, Guangtao Zeng, Tianduo Wang, Wei Lu; StatNLP Research Group, Singapore University of Technology and Design; paper authors)",
+  "release_date": {
+    "value": "2023-12-28",
+    "source": "https://huggingface.co/api/models/TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T",
+    "status": "partial",
+    "note": "HF repo creation date (2023-12-28) for this checkpoint. Card: training started 2023-09-01. Paper (arXiv 2401.02385) dated January 2024 (v2 read: 4 Jun 2024)."
+  },
+  "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T"
+  },
+  "license": {
+    "value": "Apache-2.0",
+    "source": "https://huggingface.co/TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T/blob/59f6f375b26bde864a6ca194a9a3044570490064/README.md",
+    "status": "recorded",
+    "note": "Card metadata `license: apache-2.0`. License file text not separately read."
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "family read from config 'architectures': ['LlamaForCausalLM'].",
+    "n_layers": {
+      "value": 22,
+      "source": "https://huggingface.co/TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T/raw/59f6f375b26bde864a6ca194a9a3044570490064/config.json",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 2048,
+      "source": "https://huggingface.co/TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T/raw/59f6f375b26bde864a6ca194a9a3044570490064/config.json",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 32,
+      "source": "https://huggingface.co/TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T/raw/59f6f375b26bde864a6ca194a9a3044570490064/config.json",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 32000,
+      "source": "https://huggingface.co/TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T/raw/59f6f375b26bde864a6ca194a9a3044570490064/config.json",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": 2048,
+      "source": "https://huggingface.co/TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T/raw/59f6f375b26bde864a6ca194a9a3044570490064/config.json",
+      "status": "recorded"
+    },
+    "n_kv_heads": {
+      "value": 4,
+      "source": "https://huggingface.co/TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T/raw/59f6f375b26bde864a6ca194a9a3044570490064/config.json",
+      "status": "recorded"
+    },
+    "positional_encoding": {
+      "value": "rotary (RoPE)",
+      "source": "https://arxiv.org/abs/2401.02385",
+      "status": "recorded",
+      "note": "Paper: 'We use Rotary Positional Embedding (RoPE)'. Paper also lists RMSNorm (pre-norm), SwiGLU, grouped-query attention (32 query heads, 4 key-value heads: matches config n_kv_heads 4), FlashAttention-2."
+    }
+  },
+  "training_data": {
+    "value": "Up to 3 trillion tokens: SlimPajama (with its GitHub subset removed) plus code from the StarCoder training data (starcoderdata); about three epochs.",
+    "source": "https://arxiv.org/abs/2401.02385",
+    "status": "recorded",
+    "note": "Paper: 'primary sources: SlimPajama and the training data of StarCoder'; 'we remove the GitHub subset from SlimPajama and only sample code-related data from the StarCoder training dataset to avoid duplication'; 'approximately three epochs, cumulatively processing 3 trillion tokens'."
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T",
+    "https://huggingface.co/TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T/raw/59f6f375b26bde864a6ca194a9a3044570490064/config.json"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T@59f6f375b26bde864a6ca194a9a3044570490064)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer, license, positional encoding (paper), training data, 3 edges (same_architecture_retrained llama-2-7b; trained_on slimpajama, starcoderdata); sources: card, arXiv 2401.02385",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (3 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "id": "openchat-3-5",
+  "name": "OpenChat 3.5",
+  "identifiers": {
+    "huggingface": [
+      "openchat/openchat_3.5"
+    ]
+  },
+  "developer": "OpenChat team (paper: Guan Wang, Sijie Cheng, Xianyuan Zhan, Xiangang Li, Sen Song, Yang Liu; Tsinghua University, Shanghai AI Laboratory, 01.AI); HF uploader imone",
+  "release_date": {
+    "value": "2023-11-01",
+    "source": "https://github.com/imoneoi/openchat/blob/master/README.md",
+    "status": "recorded",
+    "note": "OpenChat GitHub README changelog: '[2023/11/01] We released the OpenChat-3.5-7B model'. HF repo created 2023-10-30."
+  },
+  "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/openchat/openchat_3.5"
+  },
+  "license": {
+    "value": "Apache-2.0",
+    "source": "https://huggingface.co/openchat/openchat_3.5/blob/0fc98e324280bc4bf5d2c30ecf7b97b84fb8a19b/README.md",
+    "status": "recorded",
+    "note": "Card text: 'Our OpenChat 3.5 code and models are distributed under the Apache License 2.0.' (also card metadata). License file text not separately read."
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "family read from config 'architectures': ['MistralForCausalLM'].",
+    "n_layers": {
+      "value": 32,
+      "source": "https://huggingface.co/openchat/openchat_3.5/raw/0fc98e324280bc4bf5d2c30ecf7b97b84fb8a19b/config.json",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 4096,
+      "source": "https://huggingface.co/openchat/openchat_3.5/raw/0fc98e324280bc4bf5d2c30ecf7b97b84fb8a19b/config.json",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 32,
+      "source": "https://huggingface.co/openchat/openchat_3.5/raw/0fc98e324280bc4bf5d2c30ecf7b97b84fb8a19b/config.json",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 32002,
+      "source": "https://huggingface.co/openchat/openchat_3.5/raw/0fc98e324280bc4bf5d2c30ecf7b97b84fb8a19b/config.json",
+      "status": "recorded",
+      "note": "32,002 vs 32,000 for Mistral-7B-v0.1: the config's `_name_or_path` is imone/Mistral_7B_with_EOT_token, a Mistral 7B variant with an added end-of-turn token."
+    },
+    "context_length": {
+      "value": 8192,
+      "source": "https://huggingface.co/openchat/openchat_3.5/raw/0fc98e324280bc4bf5d2c30ecf7b97b84fb8a19b/config.json",
+      "status": "recorded"
+    },
+    "n_kv_heads": {
+      "value": 8,
+      "source": "https://huggingface.co/openchat/openchat_3.5/raw/0fc98e324280bc4bf5d2c30ecf7b97b84fb8a19b/config.json",
+      "status": "recorded"
+    },
+    "positional_encoding": {
+      "value": "rotary (RoPE)",
+      "source": "https://github.com/mistralai/mistral-src/blob/c18d5b9166ffa16ce58827346ed56a28d2876e7e/one_file_ref.py",
+      "status": "recorded",
+      "note": "Architecture unchanged from mistral-7b-v0-1 (fine-tune, not a structural change)."
+    }
+  },
+  "training_data": {
+    "value": "A collection of publicly available instruction data with a custom processing pipeline, trained with C-RLFT (class-conditioned data sources, no preference labels). Notable subsets named on the card: OpenChat ShareGPT, OpenOrca with FLAN answers, Capybara (Pure-Dove, Verified-Camel, LessWrong-Amplify-Instruct), GOAT, Glaive, MetaMathQA, MathInstruct, OpenAssistant top-1.",
+    "source": "https://huggingface.co/openchat/openchat_3.5/blob/0fc98e324280bc4bf5d2c30ecf7b97b84fb8a19b/README.md",
+    "status": "partial",
+    "note": "Card 'Dataset Details': 'trained with C-RLFT on a collection of publicly available high-quality instruction data ... notable subsets included here'. The list is not stated to be complete."
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/openchat/openchat_3.5",
+    "https://huggingface.co/openchat/openchat_3.5/raw/0fc98e324280bc4bf5d2c30ecf7b97b84fb8a19b/config.json"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (openchat/openchat_3.5@0fc98e324280bc4bf5d2c30ecf7b97b84fb8a19b)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer, release date (README), license, training data (partial), positional encoding (propagated), 5 edge entries (fine_tuned_from mistral, trained_on openorca; rest rejected); sources: card, config.json, arXiv 2309.11235, OpenChat README",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (2 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

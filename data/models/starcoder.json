@@ -1,0 +1,96 @@
+{
+  "id": "starcoder",
+  "name": "StarCoder",
+  "identifiers": {
+    "huggingface": [
+      "bigcode/starcoder"
+    ]
+  },
+  "developer": "BigCode project (open scientific collaboration led jointly by Hugging Face and ServiceNow Research)",
+  "release_date": {
+    "value": "2023-05-04",
+    "source": "https://huggingface.co/blog/starcoder",
+    "status": "recorded",
+    "note": "Release post published May 4, 2023 announces StarCoder and StarCoderBase together. HF repo created 2023-04-24 (access-gated, likely pre-release)."
+  },
+  "weights_status": "open",
+  "availability": {
+    "value": "gated",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/bigcode/starcoder",
+    "note": "HF gate: auto."
+  },
+  "license": {
+    "value": "BigCode OpenRAIL-M v1",
+    "source": "https://huggingface.co/bigcode/starcoder/blob/827cd7721231872c152e3faef5cae1b22964ed58/README.md",
+    "status": "recorded",
+    "note": "Card metadata `license: bigcode-openrail-m`; paper: 'We release StarCoder under an OpenRAIL-M license agreement'."
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "Config.json is gated (not retrievable). Values from the StarCoder paper Table 11 and section 5.2; the paper states multi-query attention (a single shared key/value head by definition; the paper gives no count) and 'learned absolute positional embeddings'. Fine-tuning (StarCoder from StarCoderBase) changes no architecture field.",
+    "n_layers": {
+      "value": 40,
+      "source": "https://arxiv.org/abs/2305.06161",
+      "status": "recorded",
+      "note": "Paper Table 11 'Num. of hidden layers'."
+    },
+    "hidden_size": {
+      "value": 6144,
+      "source": "https://arxiv.org/abs/2305.06161",
+      "status": "recorded",
+      "note": "Paper Table 11."
+    },
+    "n_heads": {
+      "value": 48,
+      "source": "https://arxiv.org/abs/2305.06161",
+      "status": "recorded",
+      "note": "Paper Table 11 'Num. of attention heads'."
+    },
+    "vocab_size": {
+      "value": 49152,
+      "source": "https://arxiv.org/abs/2305.06161",
+      "status": "recorded",
+      "note": "Paper sec. 5.1: 'vocabulary size of 49,152 tokens—including the sentinel tokens'. WizardCoder's HF config shows 49,153 (one added token)."
+    },
+    "positional_encoding": {
+      "value": "learned absolute",
+      "source": "https://arxiv.org/abs/2305.06161",
+      "status": "recorded",
+      "note": "Paper sec. 5.2: 'decoder-only Transformer with Multi-Query-Attention, and learned absolute positional embeddings'."
+    },
+    "context_length": {
+      "value": 8192,
+      "source": "https://arxiv.org/abs/2305.06161",
+      "status": "recorded",
+      "note": "Paper Table 11 'Max. position embeddings' 8192; card: 'a context window of 8192 tokens'."
+    }
+  },
+  "training_data": {
+    "value": "StarCoderBase (1T tokens, The Stack v1.2), then fine-tuned for 2 epochs on the Python subset of the training data: 35B Python tokens.",
+    "source": "https://arxiv.org/abs/2305.06161",
+    "status": "recorded",
+    "note": "Paper: 'We fine-tuned StarCoderBase on another 35B Python tokens, resulting in the creation of StarCoder'; sec. 5.6 'Starting from StarCoderBase, we fine-tuned a Python variant of the model for 2 epochs on the Python subset of the training data ... 8,500 steps'."
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/bigcode/starcoder"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (bigcode/starcoder@827cd7721231872c152e3faef5cae1b22964ed58)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer, release date (blog), license, architecture (paper), training data, 3 edge entries (fine_tuned_from starcoderbase; trained_on starcoderdata; the-stack-dedup rejected); sources: card, arXiv 2305.06161, release post, dataset API",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (2 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

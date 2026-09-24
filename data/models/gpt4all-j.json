@@ -1,0 +1,93 @@
+{
+  "id": "gpt4all-j",
+  "name": "GPT4All-J",
+  "identifiers": {
+    "huggingface": [
+      "nomic-ai/gpt4all-j"
+    ]
+  },
+  "developer": "Nomic AI",
+  "release_date": {
+    "value": "2023-04-11",
+    "source": "https://huggingface.co/api/models/nomic-ai/gpt4all-j",
+    "status": "partial",
+    "note": "HF repo creation date; the technical report carries no date and no dated developer post was found this session."
+  },
+  "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/nomic-ai/gpt4all-j"
+  },
+  "license": {
+    "value": "apache-2.0",
+    "source": "https://huggingface.co/nomic-ai/gpt4all-j/blob/5000faf803b3edcbeff9bdb6fdbbabd1a42addd0/README.md",
+    "status": "recorded",
+    "note": "Card: 'An Apache-2 licensed chatbot'; the technical report is titled 'GPT4All-J: An Apache-2 Licensed Assistant-Style Chatbot'. Uploader nomic-ai is the developer."
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "family read from config 'architectures': ['GPTJForCausalLM'].",
+    "n_layers": {
+      "value": 28,
+      "source": "https://huggingface.co/nomic-ai/gpt4all-j/raw/5000faf803b3edcbeff9bdb6fdbbabd1a42addd0/config.json",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 4096,
+      "source": "https://huggingface.co/nomic-ai/gpt4all-j/raw/5000faf803b3edcbeff9bdb6fdbbabd1a42addd0/config.json",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 16,
+      "source": "https://huggingface.co/nomic-ai/gpt4all-j/raw/5000faf803b3edcbeff9bdb6fdbbabd1a42addd0/config.json",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 50400,
+      "source": "https://huggingface.co/nomic-ai/gpt4all-j/raw/5000faf803b3edcbeff9bdb6fdbbabd1a42addd0/config.json",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": 2048,
+      "source": "https://huggingface.co/nomic-ai/gpt4all-j/raw/5000faf803b3edcbeff9bdb6fdbbabd1a42addd0/config.json",
+      "status": "recorded"
+    },
+    "positional_encoding": {
+      "value": "rotary (RoPE), partial: 64 of 256 dims per head",
+      "source": "https://huggingface.co/EleutherAI/gpt-j-6b/blob/47e169305d2e8376be1d31e765533382721b2cc1/README.md",
+      "status": "recorded",
+      "note": "Propagated from gpt-j-6b: the report says the weights are derived from GPT-J and the config matches (28 layers, hidden 4096, 16 heads)."
+    }
+  },
+  "training_data": {
+    "value": "The GPT4All-J dataset: prompts from LAION OIG subsets, Stack Overflow questions, a Bigscience/P3 subsample and custom creative-writing prompts; ~800k points, 'a superset of the original 400k GPT4All examples'. The initial-release model was trained on 437,605 post-processed examples (four epochs, LoRA); the full fine-tune of GPT-J for one epoch. Default HF revision is v1.0; later revisions (v1.1-breezy, v1.2-jazzy, v1.3-groovy) filter or extend the data.",
+    "source": "https://static.nomic.ai/gpt4all/2023_GPT4All-J_Technical_Report_2.pdf",
+    "status": "recorded",
+    "note": "Report: 'The model associated with our initial public release is trained with LoRA on the 437,605 post-processed examples for four epochs while the finetuned GPT-J was trained for one epoch.' Which of those two checkpoints is nomic-ai/gpt4all-j (full GPTJForCausalLM weights) is not stated on the card."
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/nomic-ai/gpt4all-j",
+    "https://huggingface.co/nomic-ai/gpt4all-j/raw/5000faf803b3edcbeff9bdb6fdbbabd1a42addd0/config.json",
+    "https://static.nomic.ai/gpt4all/2023_GPT4All-J_Technical_Report_2.pdf",
+    "https://huggingface.co/datasets/nomic-ai/gpt4all-j-prompt-generations"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (nomic-ai/gpt4all-j@5000faf803b3edcbeff9bdb6fdbbabd1a42addd0)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer, license, positional encoding (propagated from gpt-j-6b), training data, 3 edges prepared; sources: card, GPT4All-J technical report",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (3 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

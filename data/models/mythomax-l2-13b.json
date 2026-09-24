@@ -1,0 +1,93 @@
+{
+  "id": "mythomax-l2-13b",
+  "name": "MythoMax-L2-13b",
+  "identifiers": {
+    "huggingface": [
+      "Gryphe/MythoMax-L2-13b"
+    ]
+  },
+  "developer": "Gryphe (individual developer; HF handle, name not_recorded on the card)",
+  "release_date": {
+    "value": "2023-08-10",
+    "source": "https://huggingface.co/api/models/Gryphe/MythoMax-L2-13b",
+    "status": "partial",
+    "note": "HF repo creation date; may predate or postdate public release."
+  },
+  "weights_status": "open",
+  "availability": {
+    "value": "available",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/Gryphe/MythoMax-L2-13b"
+  },
+  "license": {
+    "value": "other",
+    "source": "https://huggingface.co/Gryphe/MythoMax-L2-13b/blob/58e77dd48a65176f97f6f376c93efe9caad9c130/README.md",
+    "status": "partial",
+    "note": "From HF card metadata (`license: other`); the card carries no license text. Confirm."
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "family from config 'architectures'. Positional encoding left not_recorded, matching llama-2-13b.",
+    "n_layers": {
+      "value": 40,
+      "source": "https://huggingface.co/Gryphe/MythoMax-L2-13b/raw/58e77dd48a65176f97f6f376c93efe9caad9c130/config.json",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 5120,
+      "source": "https://huggingface.co/Gryphe/MythoMax-L2-13b/raw/58e77dd48a65176f97f6f376c93efe9caad9c130/config.json",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 40,
+      "source": "https://huggingface.co/Gryphe/MythoMax-L2-13b/raw/58e77dd48a65176f97f6f376c93efe9caad9c130/config.json",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 32000,
+      "source": "https://huggingface.co/Gryphe/MythoMax-L2-13b/raw/58e77dd48a65176f97f6f376c93efe9caad9c130/config.json",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": 4096,
+      "source": "https://huggingface.co/Gryphe/MythoMax-L2-13b/raw/58e77dd48a65176f97f6f376c93efe9caad9c130/config.json",
+      "status": "recorded"
+    },
+    "n_kv_heads": {
+      "value": 40,
+      "source": "https://huggingface.co/Gryphe/MythoMax-L2-13b/raw/58e77dd48a65176f97f6f376c93efe9caad9c130/config.json",
+      "status": "recorded"
+    },
+    "positional_encoding": {
+      "value": null,
+      "status": "not_recorded"
+    }
+  },
+  "training_data": {
+    "value": null,
+    "status": "not_recorded",
+    "note": "A tensor-level merge; the card describes no training run and does not say what the parents were trained on."
+  },
+  "techniques": [],
+  "primary_sources": [
+    "https://huggingface.co/Gryphe/MythoMax-L2-13b",
+    "https://huggingface.co/Gryphe/MythoMax-L2-13b/raw/58e77dd48a65176f97f6f376c93efe9caad9c130/config.json"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (Gryphe/MythoMax-L2-13b@58e77dd48a65176f97f6f376c93efe9caad9c130)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer, license note, architecture note, 2 merged_from edges left unaccepted (parents not resolvable); NOT-READY",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (0 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "id": "dolly-v1-6b",
+  "name": "Dolly v1 6B",
+  "identifiers": {
+    "huggingface": [
+      "databricks/dolly-v1-6b"
+    ]
+  },
+  "developer": "Databricks",
+  "release_date": {
+    "value": "2023-03-24",
+    "source": "https://www.databricks.com/blog/2023/03/24/hello-dolly-democratizing-magic-chatgpt-open-models.html",
+    "status": "recorded",
+    "note": "Databricks release post 'Hello Dolly', dated March 24, 2023. HF repo is unreachable (HTTP 401), so the model card was read from an Internet Archive snapshot dated 2023-04-02."
+  },
+  "weights_status": "unknown",
+  "availability": {
+    "value": "removed",
+    "checked": "2026-09-24",
+    "source": "https://huggingface.co/databricks/dolly-v1-6b",
+    "note": "HF API returned HTTP 401 for databricks/dolly-v1-6b (and 401 for the HF model page). 'removed' means unreachable at its original address, not a confirmed deletion. Model card read from the Internet Archive snapshot cited in primary_sources."
+  },
+  "license": {
+    "value": "cc-by-nc-4.0",
+    "source": "http://web.archive.org/web/20230402044135/https://huggingface.co/databricks/dolly-v1-6b",
+    "status": "partial",
+    "note": "Archived card metadata: `license: cc-by-nc-4.0`. The card body states no model license of its own, only that the Stanford Alpaca data is CC-NC-BY-4.0."
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "n_layers": {
+      "value": 28,
+      "source": "http://web.archive.org/web/20230402044135/https://huggingface.co/databricks/dolly-v1-6b",
+      "status": "recorded",
+      "note": "Card: 'Like its base model, dolly-v1-6b has six billion parameters consisting of 28 transformer layers with 16 attention heads each.'"
+    },
+    "hidden_size": {
+      "value": null,
+      "status": "not_recorded",
+      "note": "Config unreachable and the archived card does not state this value."
+    },
+    "n_heads": {
+      "value": 16,
+      "source": "http://web.archive.org/web/20230402044135/https://huggingface.co/databricks/dolly-v1-6b",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": null,
+      "status": "not_recorded",
+      "note": "Config unreachable and the archived card does not state this value."
+    },
+    "context_length": {
+      "value": null,
+      "status": "not_recorded",
+      "note": "Config unreachable and the archived card does not state this value."
+    },
+    "positional_encoding": {
+      "value": "rotary (RoPE)",
+      "source": "http://web.archive.org/web/20230402044135/https://huggingface.co/databricks/dolly-v1-6b",
+      "status": "recorded",
+      "note": "Card: 'It employs Rotary Position Embedding (RoPE) and shares the same tokenizer as GPT-3.' Partial-dimension detail (64 of 256) is on gpt-j-6b's record; not restated here because the card does not state it."
+    },
+    "note": "Card (archived): 'a 6 billion parameter causal language model ... derived from EleutherAI's GPT-J'."
+  },
+  "training_data": {
+    "value": "Stanford Alpaca: 'a ~52K record instruction corpus ... consisting of question/answer pairs generated using the techniques outlined in the Self-Instruct paper'. Original run: 30 minutes, 1 epoch (blog); the most recent checkpoint on the card was trained for 10 epochs.",
+    "source": "http://web.archive.org/web/20230402044135/https://huggingface.co/databricks/dolly-v1-6b",
+    "status": "recorded"
+  },
+  "techniques": [],
+  "primary_sources": [
+    "http://web.archive.org/web/20230402044135/https://huggingface.co/databricks/dolly-v1-6b",
+    "https://www.databricks.com/blog/2023/03/24/hello-dolly-democratizing-magic-chatgpt-open-models.html"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "ingested as candidate from HF (databricks/dolly-v1-6b@None)",
+      "by": "ingest_hf.py"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "preparer: developer, release date (blog), license (partial, archived card metadata), architecture (layers/heads/RoPE), training data, 2 edges prepared; sources: archived card 2023-04-02, Databricks blog",
+      "by": "claude (preparer, Sonnet 5)"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "reviewed and promoted from staging (2 edge(s) accepted)",
+      "by": "Wilson Pruitt"
+    }
+  ]
+}
