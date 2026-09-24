@@ -1,6 +1,12 @@
 {
   "id": "ultrachat",
   "name": "UltraChat",
+  "identifiers": {
+    "huggingface": [
+      "openbmb/UltraChat",
+      "stingning/ultrachat"
+    ]
+  },
   "builder": "OpenBMB / Tsinghua University",
   "release_date": {
     "value": "2023-05-23",

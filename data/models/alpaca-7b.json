@@ -1,6 +1,11 @@
 {
   "id": "alpaca-7b",
   "name": "Alpaca 7B",
+  "identifiers": {
+    "huggingface": [
+      "tatsu-lab/alpaca-7b-wdiff"
+    ]
+  },
   "developer": "Stanford CRFM (Tatsu Lab)",
   "release_date": {
     "value": "2023-03-13",

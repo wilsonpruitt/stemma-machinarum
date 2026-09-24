@@ -1,6 +1,12 @@
 {
   "id": "gpt-j-6b",
   "name": "GPT-J 6B",
+  "identifiers": {
+    "huggingface": [
+      "EleutherAI/gpt-j-6b",
+      "EleutherAI/gpt-j-6B"
+    ]
+  },
   "developer": "EleutherAI (Ben Wang, Aran Komatsuzaki)",
   "release_date": {
     "value": "2021-06",

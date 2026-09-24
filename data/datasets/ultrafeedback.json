@@ -1,6 +1,11 @@
 {
   "id": "ultrafeedback",
   "name": "UltraFeedback",
+  "identifiers": {
+    "huggingface": [
+      "openbmb/UltraFeedback"
+    ]
+  },
   "builder": "OpenBMB / Tsinghua University",
   "release_date": {
     "value": "2023-10-02",

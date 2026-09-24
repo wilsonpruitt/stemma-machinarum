@@ -1,6 +1,11 @@
 {
   "id": "pythia-6-9b",
   "name": "Pythia 6.9B",
+  "identifiers": {
+    "huggingface": [
+      "EleutherAI/pythia-6.9b"
+    ]
+  },
   "developer": "EleutherAI",
   "release_date": {
     "value": "2023-04-03",

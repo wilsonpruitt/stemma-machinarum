@@ -1,6 +1,11 @@
 {
   "id": "falcon-7b",
   "name": "Falcon 7B",
+  "identifiers": {
+    "huggingface": [
+      "tiiuae/falcon-7b"
+    ]
+  },
   "developer": "Technology Innovation Institute (TII)",
   "release_date": {
     "value": "2023-04-24",

@@ -28,7 +28,8 @@ Two audiences:
 - `data/techniques/` — technique records (transformer-decoder, RLHF,
   etc.), kept deliberately separate from lineage.
 - `scripts/` — `validate.py` (schema + sourcing rules), `ingest_hf.py`
-  (Hugging Face candidate ingest, staging only), `export_graph.py`
+  (Hugging Face candidate ingest, staging only), `promote.py` (moves a
+  reviewed candidate into `data/`; see `docs/review.md`), `export_graph.py`
   (graph export).
 - `narrative/` — a field notebook of primary sources read while
   building this, which becomes the project's own history over time.

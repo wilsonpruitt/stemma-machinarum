@@ -1,0 +1,62 @@
+# Phase 2 pilot candidates: open-weight decoder models, 2018-2023.
+# One Hugging Face repo per line; `#` starts a comment.
+# Run: python3 scripts/ingest_hf.py --list scripts/pilot_candidates.txt
+# Repos already in Stemma are skipped automatically.
+
+# --- size siblings of recorded specimens
+openai-community/gpt2
+openai-community/gpt2-medium
+openai-community/gpt2-large
+EleutherAI/gpt-neo-125m
+EleutherAI/gpt-neo-1.3B
+EleutherAI/pythia-70m
+EleutherAI/pythia-160m
+EleutherAI/pythia-410m
+EleutherAI/pythia-1b
+EleutherAI/pythia-1.4b
+EleutherAI/pythia-2.8b
+EleutherAI/pythia-12b
+EleutherAI/pythia-6.9b-deduped
+facebook/opt-125m
+facebook/opt-1.3b
+facebook/opt-13b
+facebook/opt-30b
+facebook/opt-66b
+bigscience/bloom
+bigscience/bloom-560m
+tiiuae/falcon-40b
+meta-llama/Llama-2-13b-hf
+meta-llama/Llama-2-70b-hf
+
+# --- developers' own fine-tunes (base_model claim may be `declared`)
+bigscience/bloomz-7b1
+tiiuae/falcon-7b-instruct
+tiiuae/falcon-40b-instruct
+codellama/CodeLlama-7b-Python-hf
+codellama/CodeLlama-7b-Instruct-hf
+mistralai/Mistral-7B-Instruct-v0.1
+mistralai/Mixtral-8x7B-v0.1
+mistralai/Mixtral-8x7B-Instruct-v0.1
+lmsys/vicuna-7b-v1.5
+lmsys/vicuna-13b-v1.5
+HuggingFaceH4/zephyr-7b-alpha
+
+# --- third-party fine-tunes, quantizations, reproductions
+databricks/dolly-v2-12b
+teknium/OpenHermes-2.5-Mistral-7B
+Open-Orca/Mistral-7B-OpenOrca
+NousResearch/Nous-Hermes-llama-2-7b
+WizardLMTeam/WizardLM-13B-V1.2
+TheBloke/Mistral-7B-Instruct-v0.1-GPTQ
+openlm-research/open_llama_7b
+upstage/SOLAR-10.7B-v1.0
+
+# --- other independent 2023 base models
+togethercomputer/RedPajama-INCITE-7B-Base
+stabilityai/stablelm-base-alpha-7b
+Salesforce/xgen-7b-8k-base
+Qwen/Qwen-7B
+microsoft/phi-2
+
+# --- availability test: MosaicML's org is unreachable (see mpt-7b)
+mosaicml/mpt-7b-instruct

@@ -1,6 +1,11 @@
 {
   "id": "zephyr-7b-beta",
   "name": "Zephyr 7B β",
+  "identifiers": {
+    "huggingface": [
+      "HuggingFaceH4/zephyr-7b-beta"
+    ]
+  },
   "developer": "Hugging Face (H4 team)",
   "release_date": {
     "value": "2023-10-25",

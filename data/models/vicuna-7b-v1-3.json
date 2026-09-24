@@ -1,6 +1,11 @@
 {
   "id": "vicuna-7b-v1-3",
   "name": "Vicuna 7B v1.3",
+  "identifiers": {
+    "huggingface": [
+      "lmsys/vicuna-7b-v1.3"
+    ]
+  },
   "developer": "LMSYS",
   "release_date": {
     "value": "2023-06-22",

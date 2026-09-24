@@ -1,6 +1,11 @@
 {
   "id": "opt-6-7b",
   "name": "OPT 6.7B",
+  "identifiers": {
+    "huggingface": [
+      "facebook/opt-6.7b"
+    ]
+  },
   "developer": "Meta AI",
   "release_date": {
     "value": "2022-05-02",

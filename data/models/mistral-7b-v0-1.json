@@ -1,6 +1,11 @@
 {
   "id": "mistral-7b-v0-1",
   "name": "Mistral 7B (v0.1)",
+  "identifiers": {
+    "huggingface": [
+      "mistralai/Mistral-7B-v0.1"
+    ]
+  },
   "developer": "Mistral AI",
   "release_date": {
     "value": "2023-09-27",

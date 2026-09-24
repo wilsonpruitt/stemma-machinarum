@@ -36,6 +36,14 @@
       "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
     },
     "name": { "type": "string" },
+    "identifiers": {
+      "type": "object",
+      "description": "External ids for matching this record to other catalogs. Hugging Face repo ids are listed so ingest can recognize a repo already in Stemma; aliases (renamed repos) are allowed.",
+      "properties": {
+        "huggingface": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    },
     "builder": { "type": "string", "description": "Who assembled the dataset (may differ from who trained on it)." },
     "release_date": { "$ref": "#/$defs/sourced_string" },
     "availability": { "$ref": "#/$defs/availability" },

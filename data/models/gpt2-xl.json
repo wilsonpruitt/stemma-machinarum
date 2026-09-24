@@ -1,6 +1,12 @@
 {
   "id": "gpt2-xl",
   "name": "GPT-2 XL (1.5B)",
+  "identifiers": {
+    "huggingface": [
+      "openai-community/gpt2-xl",
+      "gpt2-xl"
+    ]
+  },
   "developer": "OpenAI",
   "release_date": {
     "value": "2019-11",

@@ -1,6 +1,12 @@
 {
   "id": "llama-2-7b",
   "name": "Llama 2 7B",
+  "identifiers": {
+    "huggingface": [
+      "meta-llama/Llama-2-7b-hf",
+      "meta-llama/Llama-2-7b"
+    ]
+  },
   "developer": "Meta",
   "release_date": {
     "value": "2023-07-18",

@@ -1,6 +1,11 @@
 {
   "id": "gpt-neo-2-7b",
   "name": "GPT-Neo 2.7B",
+  "identifiers": {
+    "huggingface": [
+      "EleutherAI/gpt-neo-2.7B"
+    ]
+  },
   "developer": "EleutherAI",
   "release_date": {
     "value": "2021-03-21",

@@ -1,6 +1,11 @@
 {
   "id": "mpt-7b",
   "name": "MPT-7B",
+  "identifiers": {
+    "huggingface": [
+      "mosaicml/mpt-7b"
+    ]
+  },
   "developer": "MosaicML",
   "release_date": {
     "value": "2023-05-05",

@@ -66,6 +66,8 @@ stemma/
 │   └── techniques/<technique-id>.json
 ├── scripts/
 │   ├── ingest_hf.py            # pulls candidate records from Hugging Face
+│   ├── promote.py              # moves a reviewed candidate from staging into data/
+│   ├── pilot_candidates.txt    # Phase 2 repo list
 │   ├── validate.py             # schema + evidence-rule checks
 │   └── export_graph.py         # graph export (JSON, GraphML)
 ├── narrative/
@@ -75,7 +77,8 @@ stemma/
 │   └── glossary.md
 └── docs/
     ├── method.md               # evidence tags, sourcing rules, corrections policy
-    └── disputes.md             # policy for contested edges
+    ├── disputes.md             # policy for contested edges
+    └── review.md               # procedure for reviewing staged candidates
 ```
 
 ## 5. Track A: the narrative (Wilson's learning)

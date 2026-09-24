@@ -1,6 +1,11 @@
 {
   "id": "gpt-neox-20b",
   "name": "GPT-NeoX-20B",
+  "identifiers": {
+    "huggingface": [
+      "EleutherAI/gpt-neox-20b"
+    ]
+  },
   "developer": "EleutherAI",
   "release_date": {
     "value": "2022-04-14",

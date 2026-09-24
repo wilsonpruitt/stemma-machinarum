@@ -1,6 +1,12 @@
 {
   "id": "code-llama-7b",
   "name": "Code Llama 7B",
+  "identifiers": {
+    "huggingface": [
+      "meta-llama/CodeLlama-7b-hf",
+      "codellama/CodeLlama-7b-hf"
+    ]
+  },
   "developer": "Meta",
   "release_date": {
     "value": "2023-08-24",

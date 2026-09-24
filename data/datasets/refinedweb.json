@@ -1,6 +1,11 @@
 {
   "id": "refinedweb",
   "name": "RefinedWeb",
+  "identifiers": {
+    "huggingface": [
+      "tiiuae/falcon-refinedweb"
+    ]
+  },
   "builder": "Technology Innovation Institute (TII)",
   "release_date": {
     "value": "2023-06-01",
