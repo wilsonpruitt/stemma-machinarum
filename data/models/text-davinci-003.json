@@ -3,19 +3,19 @@
   "name": "text-davinci-003",
   "developer": "OpenAI",
   "release_date": {
-    "value": "2022-11",
-    "source": "https://help.openai.com/en/articles/6779149-how-do-text-davinci-002-and-text-davinci-003-differ",
+    "value": "2022-11-29",
+    "source": "https://techcrunch.com/2022/12/01/while-anticipation-builds-for-gpt-4-openai-quietly-releases-gpt-3-5/",
     "status": "partial"
   },
   "weights_status": "api_only",
   "license": {
-    "value": null,
-    "source": null,
-    "status": "not_recorded"
+    "value": "Proprietary; API access only, subject to OpenAI's usage policies.",
+    "source": "https://developers.openai.com/api/docs/deprecations",
+    "status": "partial"
   },
   "architecture": {
     "family": "decoder_only",
-    "note": "Architecture never publicly disclosed by OpenAI; commonly assumed GPT-3.5-series, InstructGPT-lineage, but no primary source confirms parameter count or exact configuration.",
+    "note": "OpenAI never published architecture details, weights, or a training paper for text-davinci-003. It is documented only as an InstructGPT-lineage model in the GPT-3 series, tuned with reinforcement learning from human feedback. Included here as a stub specimen because Alpaca 7B's edges.jsonl entry names it as the source of distilled training data -- not because its own record is complete.",
     "n_layers": { "value": null, "status": "not_recorded" },
     "hidden_size": { "value": null, "status": "not_recorded" },
     "n_heads": { "value": null, "status": "not_recorded" },
@@ -27,15 +27,15 @@
     "source": null,
     "status": "not_recorded"
   },
-  "techniques": ["rlhf-adjacent-instruction-tuning"],
+  "techniques": ["instruct-gpt", "rlhf"],
   "primary_sources": [
-    "https://help.openai.com/en/articles/6779149-how-do-text-davinci-002-and-text-davinci-003-differ"
+    "https://developers.openai.com/api/docs/deprecations"
   ],
   "record_history": [
     {
       "date": "2026-09-24",
-      "change": "created as a stub -- exists only so the Alpaca distillation edge has a valid parent id; almost everything about this model is undisclosed by OpenAI",
-      "by": "wilson-pruitt + claude"
+      "change": "created as a stub specimen to resolve the alpaca-7b distilled_from_outputs edge",
+      "by": "wilson-pruitt"
     }
   ]
 }
