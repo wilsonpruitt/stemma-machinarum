@@ -16,6 +16,8 @@ export type Family = {
   W: number;
   bands: [number, string][];
   monthPx?: number;
+  // Per-edge elbow height (fraction of the drop), keyed `child<parent`, where the default would cross a label.
+  elbow?: Record<string, number>;
 };
 
 const LLAMA_LANES: Record<string, number> = {
@@ -59,10 +61,10 @@ const MISTRAL_LANES: Record<string, number> = {
   // closed models
   'gpt-4': 90,
   // datasets / off-family
-  ultrachat: 320, ultrafeedback: 240, openorca: 320, nectar: 420, 'llama-2-7b-chat': 780,
+  ultrachat: 320, ultrafeedback: 240, openorca: 320, nectar: 330, 'llama-2-7b-chat': 780,
   // open weights
   'mistral-7b-v0-1': 560, 'mistral-7b-instruct-v0-1': 700, 'mistral-7b-instruct-v0-1-gptq': 840,
-  'mistral-7b-openorca': 460, 'openhermes-2-5-mistral-7b': 840, 'solar-10-7b-v1-0': 980,
+  'mistral-7b-openorca': 460, 'openhermes-2-5-mistral-7b': 840, 'solar-10-7b-v1-0': 1240,
   'zephyr-7b-alpha': 420, 'mistral-7b-sft-beta': 560, 'zephyr-7b-beta': 700,
   'openchat-3-5': 420, 'starling-rm-7b-alpha': 780, 'starling-lm-7b-alpha': 560,
   'mixtral-8x7b-v0-1': 980, 'mixtral-8x7b-instruct-v0-1': 1120,
@@ -88,9 +90,10 @@ export const MISTRAL: Family = {
   ],
   start: [2023, 8],
   months: 6,
-  W: 1300,
+  W: 1400,
   bands: [[90, 'Closed'], [350, 'Datasets'], [830, 'Open weights']],
   monthPx: 220,
+  elbow: { 'solar-10-7b-v1-0<mistral-7b-v0-1': 0.8 },
 };
 export const LLAMA: Family = {
   id: 'llama',
@@ -164,7 +167,7 @@ export function drawFamily(byId: Map<string, Rec>, allEdges: Edge[], crop?: { to
     const form = FORM[e.relation];
     let d = `M${px},${py} L${cx},${cy}`;
     if (form === 'weights' && cx !== px) {
-      const mid = Math.round(py + (cy - py) * 0.7);
+      const mid = Math.round(py + (cy - py) * (fam.elbow?.[`${e.child}<${e.parent}`] ?? 0.7));
       d = `M${px},${py} L${px},${mid} L${cx},${mid} L${cx},${cy}`;
     }
     const title = esc(`${e.child} ← ${e.relation} ← ${e.parent} (${e.evidence})`);
