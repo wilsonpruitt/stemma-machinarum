@@ -44,6 +44,10 @@ Every sourced field in the schema takes the shape
   `"status": "not_recorded"`.
 - `"status": "recorded"` is only valid when `value` and `source` are both
   present — `scripts/validate.py` enforces this.
+- An optional `"note"` carries a caveat that must travel with the value —
+  e.g. the source says "32k" and the record stores `32000`, or the date
+  is the paper's rather than the weights'. If a value needs more than a
+  sentence of qualification, it probably belongs at `"partial"`.
 - Never fill a gap with a plausible-sounding guess. A missing value is
   data (it tells an agent or reader "this hasn't been checked yet"); a
   guessed value is misinformation with the same shape as a fact.

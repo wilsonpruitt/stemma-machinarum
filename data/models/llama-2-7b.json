@@ -1,0 +1,72 @@
+{
+  "id": "llama-2-7b",
+  "name": "Llama 2 7B",
+  "developer": "Meta",
+  "release_date": {
+    "value": "2023-07-18",
+    "source": "https://ai.meta.com/blog/llama-2/",
+    "status": "recorded"
+  },
+  "weights_status": "open",
+  "license": {
+    "value": "Llama 2 Community License Agreement (research and commercial use; licensees with >700M monthly active users on the release date must request a separate license from Meta).",
+    "source": "https://github.com/meta-llama/llama/blob/main/LICENSE",
+    "status": "recorded"
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "Paper (sec. 2.2): 'We adopt most of the pretraining setting and model architecture from Llama 1'; primary differences are longer context and GQA, and GQA is used only at 34B/70B (Table 1 marks 7B without GQA). Per-size dimensions are not given in the paper, and Meta's HF config is gated, so layers/hidden/heads stay not_recorded rather than copied from Llama 1.",
+    "n_layers": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "hidden_size": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "n_heads": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "vocab_size": {
+      "value": 32000,
+      "source": "https://arxiv.org/abs/2307.09288",
+      "status": "recorded",
+      "note": "Paper says 'The total vocabulary size is 32k tokens' and 'the same tokenizer as Llama 1'."
+    },
+    "positional_encoding": {
+      "value": "rotary (RoPE)",
+      "source": "https://arxiv.org/abs/2307.09288",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": 4096,
+      "source": "https://arxiv.org/abs/2307.09288",
+      "status": "recorded",
+      "note": "Table 1: '4k'."
+    }
+  },
+  "training_data": {
+    "value": "2.0T tokens, 'a new mix of data from publicly available sources, which does not include data from Meta's products or services.' Per-source breakdown not disclosed (unlike Llama 1).",
+    "source": "https://arxiv.org/abs/2307.09288",
+    "status": "partial"
+  },
+  "techniques": [
+    "transformer-decoder",
+    "rotary-position-embedding",
+    "rmsnorm",
+    "swiglu"
+  ],
+  "primary_sources": [
+    "https://arxiv.org/abs/2307.09288",
+    "https://ai.meta.com/blog/llama-2/",
+    "https://github.com/meta-llama/llama/blob/main/LICENSE"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created from primary sources (Phase 1 seed, batch 1)",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}

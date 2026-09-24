@@ -1,0 +1,60 @@
+{
+  "id": "llama-2-7b-chat",
+  "name": "Llama 2-Chat 7B",
+  "developer": "Meta",
+  "release_date": {
+    "value": "2023-07-18",
+    "source": "https://ai.meta.com/blog/llama-2/",
+    "status": "recorded"
+  },
+  "weights_status": "open",
+  "license": {
+    "value": "Llama 2 Community License Agreement (research and commercial use; licensees with >700M monthly active users on the release date must request a separate license from Meta).",
+    "source": "https://github.com/meta-llama/llama/blob/main/LICENSE",
+    "status": "recorded"
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "Inherits Llama 2 7B's architecture; Meta's HF config is gated, so no values recorded here.",
+    "n_layers": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "hidden_size": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "n_heads": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "vocab_size": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "positional_encoding": {
+      "value": null,
+      "status": "not_recorded"
+    }
+  },
+  "training_data": {
+    "value": "Supervised fine-tuning plus RLHF on Meta-collected human preference data; see paper sec. 3.",
+    "source": "https://arxiv.org/abs/2307.09288",
+    "status": "partial"
+  },
+  "techniques": [
+    "instruction-tuning",
+    "rlhf"
+  ],
+  "primary_sources": [
+    "https://arxiv.org/abs/2307.09288",
+    "https://ai.meta.com/blog/llama-2/"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created from primary sources (Phase 1 seed, batch 1)",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}

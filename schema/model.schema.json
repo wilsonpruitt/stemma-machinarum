@@ -9,7 +9,8 @@
       "properties": {
         "value": { "type": ["string", "null"] },
         "source": { "type": ["string", "null"], "format": "uri" },
-        "status": { "enum": ["recorded", "partial", "not_recorded"] }
+        "status": { "enum": ["recorded", "partial", "not_recorded"] },
+        "note": { "type": "string", "description": "Caveat that must travel with this value." }
       },
       "required": ["value", "status"],
       "additionalProperties": false
@@ -19,7 +20,8 @@
       "properties": {
         "value": { "type": ["number", "null"] },
         "source": { "type": ["string", "null"], "format": "uri" },
-        "status": { "enum": ["recorded", "partial", "not_recorded"] }
+        "status": { "enum": ["recorded", "partial", "not_recorded"] },
+        "note": { "type": "string", "description": "Caveat that must travel with this value." }
       },
       "required": ["value", "status"],
       "additionalProperties": false

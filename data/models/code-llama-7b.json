@@ -1,0 +1,77 @@
+{
+  "id": "code-llama-7b",
+  "name": "Code Llama 7B",
+  "developer": "Meta",
+  "release_date": {
+    "value": "2023-08-24",
+    "source": "https://arxiv.org/abs/2308.12950",
+    "status": "recorded"
+  },
+  "weights_status": "open",
+  "license": {
+    "value": "Released under the same custom license as Llama 2 (paper: 'released under the same custom permissive license').",
+    "source": "https://arxiv.org/abs/2308.12950",
+    "status": "recorded"
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "n_layers": {
+      "value": 32,
+      "source": "https://huggingface.co/codellama/CodeLlama-7b-hf/raw/6c284d1468fe6c413cf56183e69b194dcfa27fe6/config.json",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 4096,
+      "source": "https://huggingface.co/codellama/CodeLlama-7b-hf/raw/6c284d1468fe6c413cf56183e69b194dcfa27fe6/config.json",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 32,
+      "source": "https://huggingface.co/codellama/CodeLlama-7b-hf/raw/6c284d1468fe6c413cf56183e69b194dcfa27fe6/config.json",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 32016,
+      "source": "https://huggingface.co/codellama/CodeLlama-7b-hf/raw/6c284d1468fe6c413cf56183e69b194dcfa27fe6/config.json",
+      "status": "recorded"
+    },
+    "positional_encoding": {
+      "value": "rotary (RoPE)",
+      "source": "https://huggingface.co/codellama/CodeLlama-7b-hf/raw/6c284d1468fe6c413cf56183e69b194dcfa27fe6/config.json",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": 16384,
+      "source": "https://huggingface.co/codellama/CodeLlama-7b-hf/raw/6c284d1468fe6c413cf56183e69b194dcfa27fe6/config.json",
+      "status": "recorded"
+    },
+    "n_kv_heads": {
+      "value": 32,
+      "source": "https://huggingface.co/codellama/CodeLlama-7b-hf/raw/6c284d1468fe6c413cf56183e69b194dcfa27fe6/config.json",
+      "status": "recorded"
+    },
+    "note": "Config is from the codellama/ HF org's transformers conversion, pinned by commit. Paper: RoPE base period raised from 10,000 to 1,000,000 for long-context fine-tuning (config rope_theta = 1000000). Vocab 32016 vs Llama 2's 32000; the extra tokens are not explained in the sources read."
+  },
+  "training_data": {
+    "value": "Initialized from Llama 2 7B, then 500B tokens of 'a near-deduplicated dataset of publicly available code' (8% natural language about code).",
+    "source": "https://arxiv.org/abs/2308.12950",
+    "status": "partial"
+  },
+  "techniques": [
+    "transformer-decoder",
+    "rotary-position-embedding",
+    "rmsnorm",
+    "swiglu"
+  ],
+  "primary_sources": [
+    "https://arxiv.org/abs/2308.12950",
+    "https://huggingface.co/codellama/CodeLlama-7b-hf/raw/6c284d1468fe6c413cf56183e69b194dcfa27fe6/config.json"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created from primary sources (Phase 1 seed, batch 1)",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}

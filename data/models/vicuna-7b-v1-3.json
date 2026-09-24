@@ -1,0 +1,71 @@
+{
+  "id": "vicuna-7b-v1-3",
+  "name": "Vicuna 7B v1.3",
+  "developer": "LMSYS",
+  "release_date": {
+    "value": "2023-06-22",
+    "source": "https://github.com/lm-sys/FastChat/blob/main/docs/vicuna_weights_version.md",
+    "status": "recorded"
+  },
+  "weights_status": "open",
+  "license": {
+    "value": "Non-commercial license (model card). Blog: subject to the LLaMA model license, OpenAI's Terms of Use for generated data, and ShareGPT's privacy practices.",
+    "source": "https://huggingface.co/lmsys/vicuna-7b-v1.3",
+    "status": "recorded"
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "n_layers": {
+      "value": 32,
+      "source": "https://huggingface.co/lmsys/vicuna-7b-v1.3/raw/236eeeab96f0dc2e463f2bebb7bb49809279c6d6/config.json",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 4096,
+      "source": "https://huggingface.co/lmsys/vicuna-7b-v1.3/raw/236eeeab96f0dc2e463f2bebb7bb49809279c6d6/config.json",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 32,
+      "source": "https://huggingface.co/lmsys/vicuna-7b-v1.3/raw/236eeeab96f0dc2e463f2bebb7bb49809279c6d6/config.json",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 32000,
+      "source": "https://huggingface.co/lmsys/vicuna-7b-v1.3/raw/236eeeab96f0dc2e463f2bebb7bb49809279c6d6/config.json",
+      "status": "recorded"
+    },
+    "positional_encoding": {
+      "value": "rotary (RoPE)",
+      "source": "https://huggingface.co/lmsys/vicuna-7b-v1.3/raw/236eeeab96f0dc2e463f2bebb7bb49809279c6d6/config.json",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": 2048,
+      "source": "https://huggingface.co/lmsys/vicuna-7b-v1.3/raw/236eeeab96f0dc2e463f2bebb7bb49809279c6d6/config.json",
+      "status": "recorded"
+    },
+    "note": "v1.3 released merged weights directly (earlier versions were deltas over LLaMA)."
+  },
+  "training_data": {
+    "value": "~125K conversations collected from ShareGPT.com (model card), a site 'where users can share their ChatGPT conversations' (LMSYS blog). v1.3: twice the ShareGPT data of earlier versions.",
+    "source": "https://huggingface.co/lmsys/vicuna-7b-v1.3",
+    "status": "partial"
+  },
+  "techniques": [
+    "instruction-tuning"
+  ],
+  "primary_sources": [
+    "https://lmsys.org/blog/2023-03-30-vicuna/",
+    "https://github.com/lm-sys/FastChat/blob/main/docs/vicuna_weights_version.md",
+    "https://huggingface.co/lmsys/vicuna-7b-v1.3",
+    "https://huggingface.co/lmsys/vicuna-7b-v1.3/raw/236eeeab96f0dc2e463f2bebb7bb49809279c6d6/config.json"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created from primary sources (Phase 1 seed, batch 1)",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}

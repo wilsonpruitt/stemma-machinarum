@@ -1,0 +1,58 @@
+{
+  "id": "chatgpt",
+  "name": "ChatGPT (Nov. 2022 launch model)",
+  "developer": "OpenAI",
+  "release_date": {
+    "value": "2022-11-30",
+    "source": "https://web.archive.org/web/20230102000459/https://openai.com/blog/chatgpt/",
+    "status": "recorded"
+  },
+  "weights_status": "closed",
+  "license": {
+    "value": "Proprietary service; no weights released.",
+    "source": "https://web.archive.org/web/20230102000459/https://openai.com/blog/chatgpt/",
+    "status": "partial"
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "Stub specimen. OpenAI: 'fine-tuned from a model in the GPT-3.5 series', trained with RLHF, 'a sibling model to InstructGPT'. The model behind the ChatGPT product changed over time; which version produced the ShareGPT / UltraChat data is not_recorded.",
+    "n_layers": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "hidden_size": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "n_heads": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "vocab_size": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "positional_encoding": {
+      "value": null,
+      "status": "not_recorded"
+    }
+  },
+  "training_data": {
+    "value": null,
+    "source": null,
+    "status": "not_recorded"
+  },
+  "techniques": [
+    "rlhf"
+  ],
+  "primary_sources": [
+    "https://web.archive.org/web/20230102000459/https://openai.com/blog/chatgpt/"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created as a stub specimen to resolve vicuna/zephyr distilled_from_outputs edges",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}
