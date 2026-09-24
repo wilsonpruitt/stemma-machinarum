@@ -44,7 +44,8 @@
     "context_length": {
       "value": 32768,
       "source": "https://huggingface.co/HuggingFaceH4/zephyr-7b-beta/raw/892b3d7a7b1cf10c7a701c60881cd93df615734c/config.json",
-      "status": "recorded"
+      "status": "recorded",
+      "note": "Config max_position_embeddings, inherited from Mistral 7B's config; the Mistral paper gives 8192 as the design context length."
     },
     "n_kv_heads": {
       "value": 8,
@@ -75,6 +76,11 @@
     {
       "date": "2026-09-24",
       "change": "created from primary sources (Phase 1 seed, batch 1)",
+      "by": "wilson-pruitt + claude"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "note on context_length provenance",
       "by": "wilson-pruitt + claude"
     }
   ]

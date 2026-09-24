@@ -3,7 +3,7 @@
 Handoff date: 2026-09-24
 Owner: Wilson Pruitt
 Working name: **Stemma Machinarum** (short form "Stemma")
-Planned home: `stemma.network` · GitHub org `stemma-machinarum` (claim if not yet done)
+Planned home: `stemma.network` (registered at Cloudflare, 2026-09-24; not yet wired to any host) · GitHub org `stemma-machinarum` (claim if not yet done)
 
 ---
 
@@ -69,6 +69,7 @@ stemma/
 ├── narrative/
 │   ├── reading-order.md
 │   ├── notebook/                # one entry per source read
+│   ├── exercises/               # hands-on exercises (section 5)
 │   └── glossary.md
 └── docs/
     ├── method.md               # evidence tags, sourcing rules, corrections policy
@@ -214,4 +215,4 @@ Keep **classification** (grouping by structural characters, Reuleaux-style) sepa
 - [ ] Code license (MIT or Apache 2.0) and data license (CC BY 4.0 is the usual choice for open data).
 - [ ] Whether narrative notebook entries are public in the repo or kept private until later.
 - [ ] Register `stemma.foundation` defensively now, or later?
-- [ ] Which static site setup for `stemma.network` (defer until after v0.1).
+- [ ] Which static site setup for `stemma.network` (defer until after v0.1). Domain is registered at Cloudflare; wire it to the host with DNS-only records.
