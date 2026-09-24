@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://stemma.network/schema/edge.schema.json",
+  "title": "Stemma Lineage Edge",
+  "description": "One line in data/edges/edges.jsonl",
+  "type": "object",
+  "properties": {
+    "child": { "type": "string" },
+    "parent": { "type": "string" },
+    "relation": {
+      "enum": [
+        "fine_tuned_from",
+        "distilled_from_outputs",
+        "merged_from",
+        "quantized_from",
+        "adapter_on",
+        "same_architecture_retrained",
+        "successor_in_series"
+      ]
+    },
+    "evidence": {
+      "enum": [
+        "declared",
+        "declared_by_uploader",
+        "inferred_weights",
+        "inferred_behavior",
+        "alleged"
+      ]
+    },
+    "source": { "type": "string", "format": "uri" },
+    "note": { "type": "string" }
+  },
+  "required": ["child", "parent", "relation", "evidence", "source"],
+  "additionalProperties": false
+}

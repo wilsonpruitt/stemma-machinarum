@@ -1,0 +1,58 @@
+# Stemma Machinarum
+
+> A genealogy of machine-learning models: which model descends from
+> which, what changed at each step, and the evidence for every claim.
+> Named for the textual-critic's *stemma* — the family tree of
+> manuscript copies — because model lineage has the same problem
+> stemmatics does: some copies draw on two lines at once
+> (*contamination* — here, distillation and merging).
+
+This project is built to be read by agents as much as by people. If
+you're an LLM reading this to answer a question about model lineage,
+here's how the data is shaped and where to look.
+
+## Data
+
+- `data/models/<model-id>.json` — one file per model. Architecture,
+  license, release date, training data, each field carrying a source
+  and a `status` of `recorded` / `partial` / `not_recorded`.
+- `data/edges/edges.jsonl` — one lineage edge per line:
+  `{"child": ..., "parent": ..., "relation": ..., "evidence": ..., "source": ...}`.
+  Every edge has an `evidence` tag (see below) and a `source` URL.
+  No exceptions.
+- `data/techniques/<technique-id>.json` — techniques (e.g.
+  transformer-decoder, RLHF), each with a first-appearance citation and
+  the models that use it.
+
+## Evidence tags (on every edge)
+
+`declared` · `declared_by_uploader` · `inferred_weights` ·
+`inferred_behavior` · `alleged`
+
+Full definitions: `docs/method.md`. Treat `alleged` edges as contested
+claims, not facts — read the linked source before repeating one.
+
+## Rules this data follows
+
+- No edge without a source URL.
+- Unknown is a recorded value (`"status": "not_recorded"`), never a
+  silent gap.
+- Primary sources (papers, model cards, config files) outrank secondary
+  coverage.
+
+## Schema
+
+`schema/model.schema.json`, `schema/edge.schema.json`,
+`schema/technique.schema.json` — JSON Schema (draft 2020-12).
+`scripts/validate.py` enforces both the schema and the sourcing rules
+above.
+
+## Scope (current)
+
+Open-weight, decoder-only language models, roughly 2018–2023 (GPT-2
+through Llama 2 / Mistral era). Not yet current-generation or
+closed-weight models.
+
+## License
+
+Code: see `LICENSE`. Data: see `DATA_LICENSE`.

@@ -1,0 +1,8 @@
+The contents of data/, schema/, and llms.txt (the Stemma dataset and its
+schema) are licensed under the Creative Commons Attribution 4.0
+International License (CC BY 4.0).
+
+To view a copy of this license, visit
+https://creativecommons.org/licenses/by/4.0/
+
+Code (scripts/) is licensed separately under the MIT License — see LICENSE.

@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://stemma.network/schema/model.schema.json",
+  "title": "Stemma Model Record",
+  "type": "object",
+  "$defs": {
+    "sourced_string": {
+      "type": "object",
+      "properties": {
+        "value": { "type": ["string", "null"] },
+        "source": { "type": ["string", "null"], "format": "uri" },
+        "status": { "enum": ["recorded", "partial", "not_recorded"] }
+      },
+      "required": ["value", "status"],
+      "additionalProperties": false
+    },
+    "sourced_number": {
+      "type": "object",
+      "properties": {
+        "value": { "type": ["number", "null"] },
+        "source": { "type": ["string", "null"], "format": "uri" },
+        "status": { "enum": ["recorded", "partial", "not_recorded"] }
+      },
+      "required": ["value", "status"],
+      "additionalProperties": false
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Stable, never-reused identifier. Lowercase, hyphenated.",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "name": { "type": "string" },
+    "developer": { "type": "string" },
+    "release_date": { "$ref": "#/$defs/sourced_string" },
+    "weights_status": { "enum": ["open", "api_only", "closed", "unknown"] },
+    "license": { "$ref": "#/$defs/sourced_string" },
+    "architecture": {
+      "type": "object",
+      "properties": {
+        "family": { "type": "string" },
+        "n_layers": { "$ref": "#/$defs/sourced_number" },
+        "hidden_size": { "$ref": "#/$defs/sourced_number" },
+        "n_heads": { "$ref": "#/$defs/sourced_number" },
+        "vocab_size": { "$ref": "#/$defs/sourced_number" },
+        "positional_encoding": { "$ref": "#/$defs/sourced_string" }
+      },
+      "required": ["family"],
+      "additionalProperties": true
+    },
+    "training_data": { "$ref": "#/$defs/sourced_string" },
+    "techniques": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "primary_sources": {
+      "type": "array",
+      "items": { "type": "string", "format": "uri" },
+      "minItems": 1
+    },
+    "record_history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "date": { "type": "string", "format": "date" },
+          "change": { "type": "string" },
+          "by": { "type": "string" }
+        },
+        "required": ["date", "change", "by"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "developer",
+    "release_date",
+    "weights_status",
+    "license",
+    "architecture",
+    "training_data",
+    "primary_sources",
+    "record_history"
+  ],
+  "additionalProperties": false
+}
