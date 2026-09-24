@@ -92,6 +92,9 @@ svg.stemma { display: block; width: 100%; height: auto; font-family: Georgia, se
 .stemma .open { fill: var(--fg); }
 .stemma .closed { fill: var(--bg); stroke: var(--fg); stroke-width: 1.6; stroke-dasharray: 3 2; }
 .stemma .ds { fill: var(--bg); stroke: var(--fg); stroke-width: 1.4; }
+.e.stub { stroke-width: 1.4; stroke-dasharray: 3 3; }
+.stemma .q { fill: var(--bg); stroke: var(--fg); stroke-width: 1.2; stroke-dasharray: 2 2; }
+.stemma .qm { fill: var(--muted); font: 9px system-ui, sans-serif; }
 .figure-wide { margin: 1.2em -16px; overflow-x: auto; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
 .figure-wide svg.stemma { min-width: 1000px; }
 @media (min-width: 900px) { .figure-wide { margin-left: calc(50% - 45vw); margin-right: calc(50% - 45vw); } }

@@ -14,13 +14,13 @@ const narrow = drawFamilyNarrow(byId, edges);
   <p>
     Textual critics draw the family tree of a text’s manuscripts as a <em>stemma</em>: the oldest copies at the top, each
     copy below the one it was made from. This is the same drawing for one family of language models, from LLaMA (February
-    2023) through Llama 2, Code Llama, and the chat models fine-tuned from them.
+    2023) through Llama 2, Code Llama, TinyLlama, and the fine-tunes, adapters and merges built on them.
   </p>
   <p>
-    Time runs down the page. The two hollow circles at the top left are closed models: their weights were never
+    Time runs down the page. The hollow circles at the top left are closed models: their weights were never
     published, so, like a lost manuscript, they are known only through what descends from them. The dashed lines are
-    what stemmatics calls <strong>contamination</strong>: text written by those closed models became the training data
-    for Alpaca and Vicuna, so those open models draw on two lines at once.
+    what stemmatics calls <strong>contamination</strong>: text written or graded by those closed models became the
+    training data for Alpaca, Vicuna, Baize, Orca, Tulu and others, so those open models draw on two lines at once.
   </p>
   <div class="only-wide figure-wide" set:html={svg} />
   <div class="only-narrow">
@@ -42,7 +42,10 @@ const narrow = drawFamilyNarrow(byId, edges);
   <ul>
     <li>A node sits at its release date. A child is never drawn level with its parent, so a few nodes sit slightly below
       their true month; the date under each name is the recorded one.</li>
-    <li>ShareGPT has no recorded release date, so it is placed just above the first model trained on it.</li>
+    <li>ShareGPT and SlimPajama have no recorded release date, so each is placed just above the first model trained on it.</li>
+    <li>A dashed stub ending in a hollow <strong>?</strong> (MythoLogic and MythoMax) marks a model whose parents are not
+      recorded in Stemma. Both are merges of other models, but those parents are not records here, so no edge is drawn.
+      The stub marks a connection the graph does not yet hold; it does not say the model has no parents.</li>
     <li>Line form tells you the relation; colour tells you the evidence. The full definitions are in the
       <a href="/method/#relations">method</a>.</li>
   </ul>
