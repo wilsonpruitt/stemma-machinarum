@@ -20,6 +20,10 @@ here's how the data is shaped and where to look.
   `{"child": ..., "parent": ..., "relation": ..., "evidence": ..., "source": ...}`.
   Every edge has an `evidence` tag (see below) and a `source` URL.
   No exceptions.
+  Relations `distilled_from_outputs` (trained on the parent's text) and
+  `feedback_from` (trained on the parent's rankings/judgments) mean no
+  weights passed; optional `via` names the intermediary dataset.
+  Definitions: docs/method.md#relations.
 - `data/techniques/<technique-id>.json` — techniques (e.g.
   transformer-decoder, RLHF), each with a first-appearance citation and
   the models that use it.

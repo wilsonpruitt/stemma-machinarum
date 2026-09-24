@@ -52,6 +52,44 @@ Every sourced field in the schema takes the shape
   data (it tells an agent or reader "this hasn't been checked yet"); a
   guessed value is misinformation with the same shape as a fact.
 
+## Relations
+
+An edge's `relation` says *how* the parent reached the child. Two families:
+
+**Weights descend.** The child starts from the parent's parameters.
+- `fine_tuned_from`: further training on the parent's weights, including
+  continued pretraining (Code Llama from Llama 2).
+- `merged_from`, `quantized_from`, `adapter_on`: weights combined,
+  compressed, or extended without retraining the whole model.
+
+**Influence without weights.** The child never touches the parent's
+parameters; the parent shaped its *training signal*. This is where closed
+models enter an open model's stemma, and where contamination is hardest to see.
+- `distilled_from_outputs`: the child trained on text the parent
+  *wrote* (Alpaca on text-davinci-003, Vicuna on ChatGPT).
+- `feedback_from`: the child learned from the parent's *judgments*
+  (rankings, scores, critiques of other text) rather than from its text
+  (Zephyr's DPO step on GPT-4's rankings). Copying a teacher and being
+  graded by one are different inheritances, so they get separate labels.
+
+**Series relations.** No weights or training signal pass.
+- `successor_in_series`: the developer presents the child as the next
+  version, trained from scratch (Llama 2 after Llama 1).
+- `same_architecture_retrained`: same design, new training run, not
+  presented as a successor.
+
+**`via`.** Influence-without-weights usually arrives second-hand, through
+a dataset that someone *else* built from a closed model's outputs (ShareGPT,
+UltraChat, UltraFeedback). An edge records that channel in `via`, with who
+built it. The edge still points at the model; `via` keeps the path readable
+when the same dataset feeds many children. Datasets may become nodes of
+their own later. Until then, spell the dataset name identically across
+edges so the path can be traced.
+
+Closed parents are often unversioned: "ChatGPT" named a product whose
+underlying model changed over time. Such a parent is a stub record whose
+version is `not_recorded`, not a guess at the snapshot.
+
 ## Classification vs. lineage
 
 `data/techniques/` groups models by structural character (Reuleaux-style

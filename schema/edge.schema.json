@@ -11,6 +11,7 @@
       "enum": [
         "fine_tuned_from",
         "distilled_from_outputs",
+        "feedback_from",
         "merged_from",
         "quantized_from",
         "adapter_on",
@@ -28,6 +29,7 @@
       ]
     },
     "source": { "type": "string", "format": "uri" },
+    "via": { "type": "string", "description": "Intermediary through which the parent's influence reached the child (usually a dataset), with who built it." },
     "note": { "type": "string" }
   },
   "required": ["child", "parent", "relation", "evidence", "source"],

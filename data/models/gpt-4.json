@@ -1,0 +1,59 @@
+{
+  "id": "gpt-4",
+  "name": "GPT-4 (Mar. 2023)",
+  "developer": "OpenAI",
+  "release_date": {
+    "value": "2023-03-15",
+    "source": "https://arxiv.org/abs/2303.08774",
+    "status": "partial",
+    "note": "arXiv v1 date of the technical report."
+  },
+  "weights_status": "closed",
+  "license": {
+    "value": "Proprietary; no weights released.",
+    "source": "https://arxiv.org/abs/2303.08774",
+    "status": "partial"
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "Stub specimen. Report: 'a Transformer-based model pre-trained to predict the next token in a document' and 'contains no further details about the architecture (including model size), hardware, training compute, dataset construction, training method, or similar.' Which GPT-4 snapshot ranked UltraFeedback is not_recorded.",
+    "n_layers": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "hidden_size": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "n_heads": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "vocab_size": {
+      "value": null,
+      "status": "not_recorded"
+    },
+    "positional_encoding": {
+      "value": null,
+      "status": "not_recorded"
+    }
+  },
+  "training_data": {
+    "value": null,
+    "source": null,
+    "status": "not_recorded"
+  },
+  "techniques": [
+    "rlhf"
+  ],
+  "primary_sources": [
+    "https://arxiv.org/abs/2303.08774"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created as a stub specimen to resolve zephyr-7b-beta feedback_from edge",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}

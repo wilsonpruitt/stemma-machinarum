@@ -63,6 +63,7 @@ def write_graphml(nodes, edges, out_dir: Path):
         ("d_relation", "relation", "edge"),
         ("d_evidence", "evidence", "edge"),
         ("d_source", "source", "edge"),
+        ("d_via", "via", "edge"),
     ]:
         key = ET.SubElement(root, f"{{{ns}}}key")
         key.set("id", key_id)
@@ -95,6 +96,7 @@ def write_graphml(nodes, edges, out_dir: Path):
             ("d_relation", "relation"),
             ("d_evidence", "evidence"),
             ("d_source", "source"),
+            ("d_via", "via"),
         ]:
             data_el = ET.SubElement(edge_el, f"{{{ns}}}data")
             data_el.set("key", key_id)
