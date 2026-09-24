@@ -2,9 +2,11 @@
 import Base from '../layouts/Base.astro';
 import StemmaKey from '../components/StemmaKey.astro';
 import { loadRecords, loadEdges } from '../lib/data';
-import { drawFamily } from '../lib/stemma-svg';
+import { drawFamily, drawFamilyNarrow } from '../lib/stemma-svg';
 const { byId } = await loadRecords();
-const svg = drawFamily(byId, loadEdges());
+const edges = loadEdges();
+const svg = drawFamily(byId, edges);
+const narrow = drawFamilyNarrow(byId, edges);
 ---
 <Base title="The stemma" description="The LLaMA family of language models drawn as a manuscript stemma: descent, training data, and contamination, each line sourced.">
   <p class="eyebrow">The stemma · first family</p>
@@ -20,11 +22,20 @@ const svg = drawFamily(byId, loadEdges());
     what stemmatics calls <strong>contamination</strong>: text written by those closed models became the training data
     for Alpaca and Vicuna, so those open models draw on two lines at once.
   </p>
-  <div class="figure-wide" set:html={svg} />
-  <p class="muted">
-    Every line is a recorded edge and links to its source; every node links to its record. On a narrow screen, scroll
-    the drawing sideways.
-  </p>
+  <div class="only-wide figure-wide" set:html={svg} />
+  <div class="only-narrow">
+    <div class="figure-narrow" set:html={narrow} />
+    <p class="muted src">
+      On a phone the families are drawn as one indented column: each model sits under the model it came from, siblings
+      in date order. The closed models and datasets sit in the left margin, and their lines run into each model that
+      trained on them.
+    </p>
+    <details class="full-drawing">
+      <summary>Show the full drawing (scrolls sideways)</summary>
+      <div class="figure-wide" set:html={svg} />
+    </details>
+  </div>
+  <p class="muted">Every line is a recorded edge and links to its source; every node links to its record.</p>
   <h2>Key</h2>
   <StemmaKey />
   <h2>How to read it</h2>

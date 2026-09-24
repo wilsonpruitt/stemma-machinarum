@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import Tag from '../components/Tag.astro';
 import { loadRecords, loadEdges, loadStations, notesCount, isRead, EVIDENCE_TAGS } from '../lib/data';
-import { drawFamily } from '../lib/stemma-svg';
+import { drawFamily, drawFamilyNarrow } from '../lib/stemma-svg';
 const { models, datasets, byId } = await loadRecords();
 const edges = loadEdges();
 const { entries } = await loadStations();
@@ -10,6 +10,7 @@ const dates: string[] = [];
 for (const r of byId.values()) for (const h of r.data.record_history ?? []) dates.push(h.date);
 const lastChange = dates.sort().at(-1);
 const svg = drawFamily(byId, edges, { top: 170 }).replace(/<\/?a\b[^>]*>/g, '');
+const narrow = drawFamilyNarrow(byId, edges, { links: false });
 const read = entries.filter((e) => e.data.kind === 'source' && isRead(e)).length;
 const total = entries.filter((e) => e.data.kind === 'source').length;
 const notes = entries.reduce((s, e) => s + notesCount(e.body), 0);
@@ -30,7 +31,8 @@ const notes = entries.reduce((s, e) => s + notesCount(e.body), 0);
   </p>
 
   <a class="glimpse" href="/graph/" aria-label="The LLaMA family drawn as a stemma">
-    <Fragment set:html={svg} />
+    <span class="only-wide"><Fragment set:html={svg} /></span>
+    <span class="only-narrow"><Fragment set:html={narrow} /></span>
     <span class="cta">See the whole family →</span>
   </a>
   <p class="muted src">

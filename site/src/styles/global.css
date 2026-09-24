@@ -105,3 +105,13 @@ svg.stemma { display: block; width: 100%; height: auto; font-family: Georgia, se
 footer.site .wrap { display: flex; flex-wrap: wrap; gap: 4px 16px; }
 footer.site a { color: var(--muted); }
 header.site nav { display: flex; flex-wrap: wrap; gap: 4px 18px; }
+.only-narrow { display: none; }
+@media (max-width: 699px) {
+  .only-wide { display: none; }
+  .only-narrow { display: block; }
+}
+.figure-narrow { margin: 1.2em 0 0.6em; }
+.figure-narrow svg.stemma .lbl { font-size: 14px; }
+.full-drawing { margin: 0.8em 0 1.2em; font-family: system-ui, sans-serif; font-size: 0.9rem; }
+.full-drawing summary { cursor: pointer; color: var(--link); }
+.glimpse .only-narrow svg.stemma { pointer-events: none; }
