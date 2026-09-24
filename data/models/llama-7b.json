@@ -1,0 +1,66 @@
+{
+  "id": "llama-7b",
+  "name": "LLaMA 7B",
+  "developer": "Meta AI",
+  "release_date": {
+    "value": "2023-02-24",
+    "source": "https://ai.meta.com/blog/large-language-model-llama-meta-ai/",
+    "status": "recorded"
+  },
+  "weights_status": "open",
+  "license": {
+    "value": "Non-commercial research license; gated access via application to Meta (no standalone public license-text URL located)",
+    "source": "https://ai.meta.com/blog/large-language-model-llama-meta-ai/",
+    "status": "partial"
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "n_layers": {
+      "value": 32,
+      "source": "https://arxiv.org/abs/2302.13971",
+      "status": "recorded"
+    },
+    "hidden_size": {
+      "value": 4096,
+      "source": "https://arxiv.org/abs/2302.13971",
+      "status": "recorded"
+    },
+    "n_heads": {
+      "value": 32,
+      "source": "https://arxiv.org/abs/2302.13971",
+      "status": "recorded"
+    },
+    "vocab_size": {
+      "value": 32000,
+      "source": "https://arxiv.org/abs/2302.13971",
+      "status": "recorded"
+    },
+    "positional_encoding": {
+      "value": "rotary (RoPE)",
+      "source": "https://arxiv.org/abs/2302.13971",
+      "status": "recorded"
+    },
+    "context_length": {
+      "value": 2048,
+      "source": "https://arxiv.org/abs/2302.13971",
+      "status": "recorded"
+    }
+  },
+  "training_data": {
+    "value": "Fully disclosed mix: CommonCrawl, C4, GitHub, Wikipedia, Books (Gutenberg + Books3), ArXiv, StackExchange, with exact token-count table per source.",
+    "source": "https://arxiv.org/abs/2302.13971",
+    "status": "recorded"
+  },
+  "techniques": ["transformer-decoder", "rotary-position-embedding", "rmsnorm", "swiglu"],
+  "primary_sources": [
+    "https://arxiv.org/abs/2302.13971",
+    "https://ai.meta.com/blog/large-language-model-llama-meta-ai/"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created from primary sources (paper, Meta AI blog post)",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "id": "text-davinci-003",
+  "name": "text-davinci-003",
+  "developer": "OpenAI",
+  "release_date": {
+    "value": "2022-11",
+    "source": "https://help.openai.com/en/articles/6779149-how-do-text-davinci-002-and-text-davinci-003-differ",
+    "status": "partial"
+  },
+  "weights_status": "api_only",
+  "license": {
+    "value": null,
+    "source": null,
+    "status": "not_recorded"
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "Architecture never publicly disclosed by OpenAI; commonly assumed GPT-3.5-series, InstructGPT-lineage, but no primary source confirms parameter count or exact configuration.",
+    "n_layers": { "value": null, "status": "not_recorded" },
+    "hidden_size": { "value": null, "status": "not_recorded" },
+    "n_heads": { "value": null, "status": "not_recorded" },
+    "vocab_size": { "value": null, "status": "not_recorded" },
+    "positional_encoding": { "value": null, "status": "not_recorded" }
+  },
+  "training_data": {
+    "value": null,
+    "source": null,
+    "status": "not_recorded"
+  },
+  "techniques": ["rlhf-adjacent-instruction-tuning"],
+  "primary_sources": [
+    "https://help.openai.com/en/articles/6779149-how-do-text-davinci-002-and-text-davinci-003-differ"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created as a stub -- exists only so the Alpaca distillation edge has a valid parent id; almost everything about this model is undisclosed by OpenAI",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+{"child": "alpaca-7b", "parent": "llama-7b", "relation": "fine_tuned_from", "evidence": "declared", "source": "https://crfm.stanford.edu/2023/03/13/alpaca.html", "note": "Stanford CRFM: \"fine-tuned from Meta's LLaMA 7B model\""}
+{"child": "alpaca-7b", "parent": "text-davinci-003", "relation": "distilled_from_outputs", "evidence": "declared", "source": "https://crfm.stanford.edu/2023/03/13/alpaca.html", "note": "training data generated self-instruct style using text-davinci-003 outputs, per Stanford CRFM"}

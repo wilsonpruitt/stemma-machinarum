@@ -1,0 +1,42 @@
+{
+  "id": "alpaca-7b",
+  "name": "Alpaca 7B",
+  "developer": "Stanford CRFM (Tatsu Lab)",
+  "release_date": {
+    "value": "2023-03-13",
+    "source": "https://crfm.stanford.edu/2023/03/13/alpaca.html",
+    "status": "recorded"
+  },
+  "weights_status": "open",
+  "license": {
+    "value": "Research-only; commercial use explicitly prohibited. Fine-tuned weights not directly redistributed (LLaMA's own license restricts this) -- release was a training recipe / diff, not confirmed as full weight redistribution.",
+    "source": "https://crfm.stanford.edu/2023/03/13/alpaca.html",
+    "status": "partial"
+  },
+  "architecture": {
+    "family": "decoder_only",
+    "note": "Inherits LLaMA 7B's architecture unchanged; no separate config published for the fine-tuned model.",
+    "n_layers": { "value": null, "status": "not_recorded" },
+    "hidden_size": { "value": null, "status": "not_recorded" },
+    "n_heads": { "value": null, "status": "not_recorded" },
+    "vocab_size": { "value": null, "status": "not_recorded" },
+    "positional_encoding": { "value": null, "status": "not_recorded" }
+  },
+  "training_data": {
+    "value": "52K instruction-following examples generated self-instruct style from OpenAI's text-davinci-003.",
+    "source": "https://crfm.stanford.edu/2023/03/13/alpaca.html",
+    "status": "recorded"
+  },
+  "techniques": ["instruction-tuning", "self-instruct"],
+  "primary_sources": [
+    "https://crfm.stanford.edu/2023/03/13/alpaca.html",
+    "https://github.com/tatsu-lab/stanford_alpaca"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created from primary sources (Stanford CRFM blog post, GitHub repo)",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}
