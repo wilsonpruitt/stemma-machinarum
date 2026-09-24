@@ -118,3 +118,4 @@ header.site nav { display: flex; flex-wrap: wrap; gap: 4px 18px; }
 .full-drawing { margin: 0.8em 0 1.2em; font-family: system-ui, sans-serif; font-size: 0.9rem; }
 .full-drawing summary { cursor: pointer; color: var(--link); }
 .glimpse .only-narrow svg.stemma { pointer-events: none; }
+.stemma .offfam { fill: var(--bg); stroke: var(--link); stroke-width: 1.4; stroke-dasharray: 2 2; }

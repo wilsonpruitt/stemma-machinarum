@@ -2,7 +2,23 @@
 // Pilot for Phase 3: columns are hand-set for this family; heights come from release dates; every line is a recorded edge.
 import type { Edge, Rec } from './data';
 
-export const LANES: Record<string, number> = {
+export type Family = {
+  id: string;
+  aria: string;
+  lanes: Record<string, number>;
+  short: Record<string, string>;
+  // Records whose parents Stemma has not recorded. Drawn with a stub, not a line.
+  noParents: string[];
+  // A recorded edge whose parent is drawn in another family: a labelled stub instead of a duplicated tree.
+  offFamily?: { child: string; parent: string; label: string; href: string }[];
+  start: [number, number];
+  months: number;
+  W: number;
+  bands: [number, string][];
+  monthPx?: number;
+};
+
+const LLAMA_LANES: Record<string, number> = {
   // closed models
   'text-davinci-003': 110, chatgpt: 250, 'gpt-4': 170,
   // datasets
@@ -21,9 +37,7 @@ export const LANES: Record<string, number> = {
   'mythologic-l2-13b': 1500, 'mythomax-l2-13b': 1620,
   'tulu-2-7b': 720, 'tulu-2-dpo-7b': 720, 'orca-2-7b': 840, 'tinyllama-1-1b-intermediate-step-1431k-3t': 1220,
 };
-// Records whose parents Stemma has not recorded (merges whose parents are not yet records). Drawn with a stub, not a line.
-export const NO_PARENTS = ['mythologic-l2-13b', 'mythomax-l2-13b'];
-const SHORT: Record<string, string> = {
+const LLAMA_SHORT: Record<string, string> = {
   'text-davinci-003': 'text-davinci-003', chatgpt: 'ChatGPT', 'gpt-4': 'GPT-4',
   'flan-v2': 'FLAN v2', 'alpaca-52k': 'Alpaca 52K', 'alpaca-cleaned': 'Alpaca-cleaned', baize: 'Baize data',
   'baize-sdf': 'Baize SDF', starcoderdata: 'StarCoderData', oasst1: 'OASST1', 'sharegpt-vicuna': 'ShareGPT',
@@ -41,6 +55,54 @@ const SHORT: Record<string, string> = {
   'tulu-2-7b': 'Tulu 2 7B', 'tulu-2-dpo-7b': 'Tulu 2-DPO 7B', 'orca-2-7b': 'Orca 2 7B',
   'tinyllama-1-1b-intermediate-step-1431k-3t': 'TinyLlama 1.1B',
 };
+const MISTRAL_LANES: Record<string, number> = {
+  // closed models
+  'gpt-4': 90,
+  // datasets / off-family
+  ultrachat: 320, ultrafeedback: 240, openorca: 320, nectar: 420, 'llama-2-7b-chat': 780,
+  // open weights
+  'mistral-7b-v0-1': 560, 'mistral-7b-instruct-v0-1': 700, 'mistral-7b-instruct-v0-1-gptq': 840,
+  'mistral-7b-openorca': 460, 'openhermes-2-5-mistral-7b': 840, 'solar-10-7b-v1-0': 980,
+  'zephyr-7b-alpha': 420, 'mistral-7b-sft-beta': 560, 'zephyr-7b-beta': 700,
+  'openchat-3-5': 420, 'starling-rm-7b-alpha': 780, 'starling-lm-7b-alpha': 560,
+  'mixtral-8x7b-v0-1': 980, 'mixtral-8x7b-instruct-v0-1': 1120,
+};
+const MISTRAL_SHORT: Record<string, string> = {
+  'gpt-4': 'GPT-4', ultrachat: 'UltraChat', ultrafeedback: 'UltraFeedback', openorca: 'OpenOrca', nectar: 'Nectar',
+  'llama-2-7b-chat': 'Llama 2-Chat 7B',
+  'mistral-7b-v0-1': 'Mistral 7B', 'mistral-7b-instruct-v0-1': 'Mistral 7B Instruct',
+  'mistral-7b-instruct-v0-1-gptq': '… GPTQ', 'mistral-7b-openorca': 'Mistral-OpenOrca',
+  'openhermes-2-5-mistral-7b': 'OpenHermes-2.5', 'solar-10-7b-v1-0': 'SOLAR 10.7B',
+  'zephyr-7b-alpha': 'Zephyr-α', 'mistral-7b-sft-beta': 'Zephyr SFT (β)', 'zephyr-7b-beta': 'Zephyr-β',
+  'openchat-3-5': 'OpenChat 3.5', 'starling-rm-7b-alpha': 'Starling-RM',
+  'starling-lm-7b-alpha': 'Starling-LM', 'mixtral-8x7b-v0-1': 'Mixtral 8x7B', 'mixtral-8x7b-instruct-v0-1': '… Instruct',
+};
+export const MISTRAL: Family = {
+  id: 'mistral',
+  aria: 'The Mistral family, drawn as a stemma',
+  lanes: MISTRAL_LANES,
+  short: MISTRAL_SHORT,
+  noParents: [],
+  offFamily: [
+    { child: 'starling-rm-7b-alpha', parent: 'llama-2-7b-chat', label: 'see the LLaMA family →', href: '/graph/#llama' },
+  ],
+  start: [2023, 8],
+  months: 6,
+  W: 1300,
+  bands: [[90, 'Closed'], [350, 'Datasets'], [830, 'Open weights']],
+  monthPx: 220,
+};
+export const LLAMA: Family = {
+  id: 'llama',
+  aria: 'The LLaMA family, drawn as a stemma',
+  lanes: LLAMA_LANES,
+  short: LLAMA_SHORT,
+  noParents: ['mythologic-l2-13b', 'mythomax-l2-13b'],
+  start: [2022, 11],
+  months: 14,
+  W: 1760,
+  bands: [[180, 'Closed · known by outputs'], [450, 'Datasets'], [1230, 'Open weights']],
+};
 const FORM: Record<string, string> = {
   fine_tuned_from: 'weights', merged_from: 'weights', quantized_from: 'weights', adapter_on: 'weights',
   trained_on: 'data',
@@ -48,18 +110,18 @@ const FORM: Record<string, string> = {
   successor_in_series: 'design', same_architecture_retrained: 'design', design_follows: 'design',
 };
 
-const TOP = 110, MONTH_PX = 100, MIN_GAP = 44, W = 1760;
-const START = [2022, 11];
+const TOP = 110, MONTH_PX = 100, MIN_GAP = 44;
 
 const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
-function monthY(date: string) {
+function monthY(date: string, START: [number, number], monthPx = MONTH_PX) {
   const y = +date.slice(0, 4), m = +date.slice(5, 7);
   const d = date.length >= 10 ? +date.slice(8, 10) : 15;
-  return TOP + ((y - START[0]) * 12 + (m - START[1]) + (d - 1) / 30) * MONTH_PX;
+  return TOP + ((y - START[0]) * 12 + (m - START[1]) + (d - 1) / 30) * monthPx;
 }
 
-export function drawFamily(byId: Map<string, Rec>, allEdges: Edge[], crop?: { top: number }) {
+export function drawFamily(byId: Map<string, Rec>, allEdges: Edge[], crop?: { top: number }, fam: Family = LLAMA) {
+  const { lanes: LANES, short: SHORT, noParents: NO_PARENTS, start: START, W, monthPx = MONTH_PX } = fam;
   const missing = Object.keys(LANES).filter((id) => !byId.has(id));
   if (missing.length) throw new Error(`Stemma drawing: no record for ${missing.join(', ')}`);
   const edges = allEdges.filter((e) => e.child in LANES && e.parent in LANES);
@@ -68,7 +130,7 @@ export function drawFamily(byId: Map<string, Rec>, allEdges: Edge[], crop?: { to
   const undated: string[] = [];
   for (const id of Object.keys(LANES)) {
     const date = byId.get(id)!.data.release_date?.value;
-    if (date) pos.set(id, [LANES[id], monthY(date)]);
+    if (date) pos.set(id, [LANES[id], monthY(date, START, monthPx)]);
     else undated.push(id);
   }
   for (const id of undated) {
@@ -84,16 +146,16 @@ export function drawFamily(byId: Map<string, Rec>, allEdges: Edge[], crop?: { to
 
   const H = Math.round(Math.max(...[...pos.values()].map(([, y]) => y)) + 60);
   const o: string[] = [];
-  o.push(`<svg class="stemma" xmlns="http://www.w3.org/2000/svg" viewBox="0 ${crop?.top ?? 30} ${W} ${H - (crop?.top ?? 30)}" role="img" aria-label="The LLaMA family, drawn as a stemma">`);
+  o.push(`<svg class="stemma" xmlns="http://www.w3.org/2000/svg" viewBox="0 ${crop?.top ?? 30} ${W} ${H - (crop?.top ?? 30)}" role="img" aria-label="${fam.aria}">`);
 
-  for (let k = 0; k <= 14; k++) {
+  for (let k = 0; k <= fam.months; k++) {
     const mm = START[1] - 1 + k;
     const y = START[0] + Math.floor(mm / 12), m = (mm % 12) + 1;
-    const yy = TOP + k * MONTH_PX;
+    const yy = TOP + k * monthPx;
     o.push(`<line class="axis" x1="20" x2="${W - 20}" y1="${yy}" y2="${yy}"/>`);
     o.push(`<text class="month" x="20" y="${yy - 4}">${y}-${String(m).padStart(2, '0')}</text>`);
   }
-  for (const [x, label] of [[180, 'Closed · known by outputs'], [450, 'Datasets'], [1230, 'Open weights']] as const) {
+  for (const [x, label] of fam.bands) {
     o.push(`<text class="band" x="${x}" y="60" text-anchor="middle">${label}</text>`);
   }
 
@@ -109,17 +171,20 @@ export function drawFamily(byId: Map<string, Rec>, allEdges: Edge[], crop?: { to
     o.push(`<a href="${esc(e.source)}"><path class="e ${form} ev-${e.evidence}" d="${d}"><title>${title}</title></path></a>`);
   }
 
+  const offFamily = new Map((fam.offFamily ?? []).map((o) => [o.parent, o]));
   for (const [id, [x, y]] of pos) {
     const r = byId.get(id)!;
+    const off = offFamily.get(id);
     const closed = ['closed', 'api_only'].includes(r.data.weights_status);
-    const shape =
-      r.kind === 'dataset'
+    const shape = off
+      ? `<circle class="offfam" cx="${x}" cy="${y}" r="6"/>`
+      : r.kind === 'dataset'
         ? `<rect class="ds" x="${x - 7}" y="${y - 7}" width="14" height="14"/>`
         : closed
           ? `<circle class="closed" cx="${x}" cy="${y}" r="8"/>`
           : `<circle class="open" cx="${x}" cy="${y}" r="5.5"/>`;
-    const sub = closed ? 'closed' : undated.includes(id) ? 'undated' : r.data.release_date?.value ?? '';
-    const href = `/${r.kind === 'model' ? 'models' : 'datasets'}/${id}/`;
+    const sub = off ? off.label : closed ? 'closed' : undated.includes(id) ? 'undated' : r.data.release_date?.value ?? '';
+    const href = off ? off.href : `/${r.kind === 'model' ? 'models' : 'datasets'}/${id}/`;
     if (NO_PARENTS.includes(id)) {
       o.push(
         `<g class="noparents"><path class="e stub" d="M${x},${y - 7} L${x},${y - 30}"/><circle class="q" cx="${x}" cy="${y - 36}" r="6"/>` +
@@ -141,7 +206,8 @@ export function drawFamily(byId: Map<string, Rec>, allEdges: Edge[], crop?: { to
 // last row that uses it, and rails that have ended are reused so the gutter stays narrow.
 const N = { W: 380, RAIL0: 12, RAIL_GAP: 18, INDENT: 22, HEAD_ROW: 28, ROW: 46, PAD: 22 };
 
-export function drawFamilyNarrow(byId: Map<string, Rec>, allEdges: Edge[], opts: { links?: boolean } = {}) {
+export function drawFamilyNarrow(byId: Map<string, Rec>, allEdges: Edge[], opts: { links?: boolean } = {}, fam: Family = LLAMA) {
+  const { lanes: LANES, short: SHORT, noParents: NO_PARENTS } = fam;
   const links = opts.links ?? true;
   const ids = Object.keys(LANES);
   const edges = allEdges.filter((e) => e.child in LANES && e.parent in LANES);
@@ -215,7 +281,7 @@ export function drawFamilyNarrow(byId: Map<string, Rec>, allEdges: Edge[], opts:
 
   const wrap = (href: string, inner: string) => (links ? `<a href="${esc(href)}">${inner}</a>` : inner);
   const out: string[] = [];
-  out.push(`<svg class="stemma" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${N.W} ${H}" role="img" aria-label="The LLaMA family, drawn as a stemma (narrow layout)">`);
+  out.push(`<svg class="stemma" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${N.W} ${H}" role="img" aria-label="${fam.aria} (narrow layout)">`);
 
   const ev = (e: Edge) => `ev-${e.evidence}`;
   const title = (e: Edge) => `<title>${esc(`${e.child} ← ${e.relation} ← ${e.parent} (${e.evidence})`)}</title>`;
@@ -245,8 +311,10 @@ export function drawFamilyNarrow(byId: Map<string, Rec>, allEdges: Edge[], opts:
   for (const [id, [x, yy]] of pos) {
     const r = rec(id);
     const closed = isClosed(id);
-    const shape =
-      r.kind === 'dataset'
+    const off = (fam.offFamily ?? []).find((o) => o.parent === id);
+    const shape = off
+      ? `<circle class="offfam" cx="${x}" cy="${yy}" r="6"/>`
+      : r.kind === 'dataset'
         ? `<rect class="ds" x="${x - 7}" y="${yy - 7}" width="14" height="14"/>`
         : closed
           ? `<circle class="closed" cx="${x}" cy="${yy}" r="7"/>`
@@ -254,8 +322,8 @@ export function drawFamilyNarrow(byId: Map<string, Rec>, allEdges: Edge[], opts:
     const inline = gut.includes(id);
     const lx = inline ? COL + maxDepth * N.INDENT + 16 : x + 11;
     const orphan = NO_PARENTS.includes(id);
-    const sub = closed ? 'closed' : (date(id) || 'undated') + (orphan ? ' · parents not recorded' : '');
-    const href = `/${r.kind === 'model' ? 'models' : 'datasets'}/${id}/`;
+    const sub = off ? off.label : closed ? 'closed' : (date(id) || 'undated') + (orphan ? ' · parents not recorded' : '');
+    const href = off ? off.href : `/${r.kind === 'model' ? 'models' : 'datasets'}/${id}/`;
     const text = inline
       ? `<text class="lbl" x="${lx}" y="${yy + 4}">${esc(SHORT[id])} <tspan class="sub">${esc(sub)}</tspan></text>`
       : `<text class="lbl" x="${lx}" y="${yy + 4}">${esc(SHORT[id])}</text><text class="sub" x="${lx}" y="${yy + 18}">${esc(sub)}</text>`;

@@ -2,15 +2,23 @@
 import Base from '../layouts/Base.astro';
 import StemmaKey from '../components/StemmaKey.astro';
 import { loadRecords, loadEdges } from '../lib/data';
-import { drawFamily, drawFamilyNarrow } from '../lib/stemma-svg';
+import { drawFamily, drawFamilyNarrow, LLAMA, MISTRAL } from '../lib/stemma-svg';
 const { byId } = await loadRecords();
 const edges = loadEdges();
-const svg = drawFamily(byId, edges);
-const narrow = drawFamilyNarrow(byId, edges);
+const svg = drawFamily(byId, edges, undefined, LLAMA);
+const narrow = drawFamilyNarrow(byId, edges, {}, LLAMA);
+const svgM = drawFamily(byId, edges, undefined, MISTRAL);
+const narrowM = drawFamilyNarrow(byId, edges, {}, MISTRAL);
 ---
-<Base title="The stemma" description="The LLaMA family of language models drawn as a manuscript stemma: descent, training data, and contamination, each line sourced.">
-  <p class="eyebrow">The stemma · first family</p>
-  <h1>The LLaMA family, drawn as a stemma</h1>
+<Base title="The stemma" description="Two families of language models drawn as manuscript stemmas: descent, training data, and contamination, each line sourced.">
+  <p class="eyebrow">The stemma</p>
+  <h1>The stemma</h1>
+  <p>
+    Two families so far, drawn by hand. Each is its own drawing: a model appears in the family its weights
+    descend from, so a Llama-2-derived reward model that feeds a Mistral-family policy (Starling) is shown as a
+    dashed link back to the LLaMA drawing, not repeated.
+  </p>
+  <h2 id="llama">The LLaMA family</h2>
   <p>
     Textual critics draw the family tree of a text’s manuscripts as a <em>stemma</em>: the oldest copies at the top, each
     copy below the one it was made from. This is the same drawing for one family of language models, from LLaMA (February
@@ -36,6 +44,23 @@ const narrow = drawFamilyNarrow(byId, edges);
     </details>
   </div>
   <p class="muted">Every line is a recorded edge and links to its source; every node links to its record.</p>
+
+  <h2 id="mistral">The Mistral family</h2>
+  <p>
+    Mistral 7B (September 2023) and its fine-tunes, quantization, and Mixtral. This family shows a case the LLaMA
+    drawing does not: <strong>feedback</strong> from a reward model (Starling-RM, trained on GPT-4’s rankings)
+    rather than from a dataset directly, and a cross-family parent — Starling-RM was itself fine-tuned from
+    Llama 2-Chat 7B, drawn back in <a href="#llama">the LLaMA family</a> above.
+  </p>
+  <div class="only-wide figure-wide" set:html={svgM} />
+  <div class="only-narrow">
+    <div class="figure-narrow" set:html={narrowM} />
+    <details class="full-drawing">
+      <summary>Show the full drawing (scrolls sideways)</summary>
+      <div class="figure-wide" set:html={svgM} />
+    </details>
+  </div>
+  <p class="muted">Every line is a recorded edge and links to its source; every node links to its record.</p>
   <h2>Key</h2>
   <StemmaKey />
   <h2>How to read it</h2>
@@ -46,6 +71,9 @@ const narrow = drawFamilyNarrow(byId, edges);
     <li>A dashed stub ending in a hollow <strong>?</strong> (MythoLogic and MythoMax) marks a model whose parents are not
       recorded in Stemma. Both are merges of other models, but those parents are not records here, so no edge is drawn.
       The stub marks a connection the graph does not yet hold; it does not say the model has no parents.</li>
+    <li>The dashed ring in the Mistral drawing (Llama 2-Chat 7B) is a different kind of stub: that record exists in
+      Stemma, but it is drawn in full only in <a href="#llama">the LLaMA family</a>, to avoid repeating its own
+      lineage here. Follow it to see where it comes from.</li>
     <li>Line form tells you the relation; colour tells you the evidence. The full definitions are in the
       <a href="/method/#relations">method</a>.</li>
   </ul>
