@@ -97,6 +97,11 @@
       "date": "2026-09-24",
       "change": "availability checked and recorded",
       "by": "wilson-pruitt + claude"
+    },
+    {
+      "date": "2026-09-24",
+      "change": "added fine_tuned_from edge to mistral-7b-sft-beta (SFT stage), per that card",
+      "by": "claude (Sonnet 5), tranche-2 follow-up"
     }
   ]
 }
