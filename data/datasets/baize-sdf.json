@@ -1,0 +1,35 @@
+{
+  "id": "baize-sdf",
+  "name": "Baize SDF data (ChatGPT-ranked self-generations)",
+  "identifiers": {},
+  "builder": "UC San Diego / Sun Yat-sen University (Baize authors)",
+  "release_date": {
+    "value": "2023-04-03",
+    "source": "https://arxiv.org/abs/2304.01196",
+    "status": "partial",
+    "note": "arXiv v1 date of the Baize paper, which introduces SDF; the release date of any SDF data is not recorded."
+  },
+  "availability": {
+    "value": "unknown",
+    "checked": "2026-09-24",
+    "source": "https://github.com/project-baize/baize-chatbot",
+    "note": "Repo returned HTTP 200. The paper says 'we are also releasing the fine-tuning corpus' but does not say whether the SDF set is in it; not confirmed."
+  },
+  "content": {
+    "value": "Paper, Self-Distillation with Feedback (SDF): 'we use the resulted Baize v1.5 models to generate four responses for each instruction from the Quora dataset mentioned in Table 2. We then engage ChatGPT using the prompt provided in Appendix C to rank generate responses for self-distillation. Finally, we select the best response ranked by ChatGPT to finetune the model.' The training targets are the model's own generations (Baize v1.5); ChatGPT supplied only the ranking.",
+    "source": "https://arxiv.org/abs/2304.01196",
+    "status": "recorded",
+    "note": "Quora instructions only, per the paper's SDF passage; size not recorded."
+  },
+  "primary_sources": [
+    "https://arxiv.org/abs/2304.01196",
+    "https://github.com/project-baize/baize-chatbot"
+  ],
+  "record_history": [
+    {
+      "date": "2026-09-24",
+      "change": "created from primary sources (ruling: Wilson, after 3-tier panel split, see session log)",
+      "by": "wilson-pruitt + claude"
+    }
+  ]
+}
